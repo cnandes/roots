@@ -10,9 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_15_090008) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_15_094628) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "beds", force: :cascade do |t|
+    t.string "description"
+    t.integer "length"
+    t.integer "width"
+    t.bigint "garden_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["garden_id"], name: "index_beds_on_garden_id"
+  end
+
+  create_table "crops", force: :cascade do |t|
+    t.integer "quantity"
+    t.bigint "veggie_id", null: false
+    t.bigint "bed_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bed_id"], name: "index_crops_on_bed_id"
+    t.index ["veggie_id"], name: "index_crops_on_veggie_id"
+  end
+
+  create_table "gardens", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_gardens_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,4 +54,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_15_090008) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "veggies", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "beds", "gardens"
+  add_foreign_key "crops", "beds"
+  add_foreign_key "crops", "veggies", column: "veggie_id"
+  add_foreign_key "gardens", "users"
 end
