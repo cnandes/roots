@@ -1,0 +1,8 @@
+<div class="container p-10">
+
+<%= render "new_garden" %>
+<% @gardens.each do |garden| %>
+  <%= render "garden", garden: garden %>
+<% end %>
+
+</div>
