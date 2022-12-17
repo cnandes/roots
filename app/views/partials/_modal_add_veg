@@ -1,20 +1,20 @@
 <!-- ------------------------------- modal1 -------------------------------- -->
-<div class="modal fade" id="assignvegmodal1" aria-hidden="true" aria-labelledby="assignvegmodal1" tabindex="-1">
+<div class="modal fade" id="addvegmodal1" aria-hidden="true" aria-labelledby="addvegmodal1" tabindex="-1">
   <div class="modal-dialog modal-xl modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="assignvegmodal1">Modal 1</h1>
+        <h1 class="modal-title fs-5" id="addvegmodal1">Modal 1</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div class="container-fluid">
           <div class="row">
-            assign veg model 1
+            new veg model 1
           </div>
         </div>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-primary" data-bs-target="#assignvegmodal2" data-bs-toggle="modal"> second
+        <button class="btn btn-primary" data-bs-target="#addvegmodal2" data-bs-toggle="modal"> second
           modal</button>
       </div>
     </div>
@@ -22,22 +22,22 @@
 </div>
 
 <!-- ------------------------------- modal2 -------------------------------- -->
-<div class="modal fade" id="assignvegmodal2" aria-hidden="true" aria-labelledby="assignvegmodal2" tabindex="-1">
+<div class="modal fade" id="addvegmodal2" aria-hidden="true" aria-labelledby="addvegmodal2" tabindex="-1">
   <div class="modal-dialog modal-xl modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="assignvegmodal2">Modal 2</h1>
+        <h1 class="modal-title fs-5" id="addvegmodal2">Modal 2</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div class="container-fluid">
           <div class="row">
-            assign veg model 2
+            new veg model 2
           </div>
         </div>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-primary" data-bs-target="#assignvegmodal1" data-bs-toggle="modal">
+        <button class="btn btn-primary" data-bs-target="#addvegmodal1" data-bs-toggle="modal">
           first modal</button>
       </div>
     </div>
@@ -45,4 +45,4 @@
 </div>
 
 <!-- ------------------------------- button -------------------------------- -->
-<a class="btn btn-primary" data-bs-toggle="modal" href="#assignvegmodal1" role="button">assign veg</a>
+<a class="btn btn-primary" data-bs-toggle="modal" href="#addvegmodal1" role="button">add new veg</a>
