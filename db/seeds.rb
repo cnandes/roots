@@ -48,7 +48,7 @@ veggie_array = VEGE_ARRAY
 veggie_array.each do |vege|
   Veggie.create(name: vege)
 end
-puts "Added #{Veggie.all} veggies to the database 🌱"
+puts "Added #{Veggie.all.count} veggies to the database 🌱"
 
 # Add Crops to Beds
 puts "Planting Crops in Beds"
