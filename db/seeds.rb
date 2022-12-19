@@ -37,7 +37,6 @@ Garden.all.first(3).each do |garden|
       width: rand(3..6) * 100,
       length: rand(5..10) * 100
     )
-    puts "----"
     puts "Created Bed with id: #{bed.id} in Garden #{garden.id}" if bed.save
   end
 end
