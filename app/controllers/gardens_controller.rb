@@ -1,5 +1,5 @@
 class GardensController < ApplicationController
-  before_action :set_garden, only: %i[edit update]
+  before_action :set_garden, only: %i[edit update destroy]
   def edit
   end
 
@@ -11,7 +11,17 @@ class GardensController < ApplicationController
     end
   end
 
+  def destroy
+    if @garden.destroy
+      redirect_to root_path, status: :see_other
+    else
+      # render a _garden partial
+      # render @garden, status: :unprocessable_entity
+    end
+  end
+
   private
+
 
   def garden_params
     params.require(:garden).permit(:name)
