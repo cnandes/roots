@@ -1,5 +1,5 @@
 class GardensController < ApplicationController
-  before_action :set_garden, only: %i[edit update destroy]
+  before_action :set_garden, only: %i[show edit update destroy]
   def edit
   end
 
@@ -14,6 +14,10 @@ class GardensController < ApplicationController
   def index
     @gardens = Garden.all
     @garden = Garden.new
+  end
+
+  def show
+    @beds = @garden.beds
   end
 
   def create
