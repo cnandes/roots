@@ -1,0 +1,41 @@
+<div class="container">
+  <h1 class="card-title title text-dark">Gardens</h1>
+  <br>
+  <%# display upcoming naps %>
+  <div class="accordion"id="accordionPanelsStayOpenExample">
+    <div class="accordion-item">
+      <%# <h2 class="accordion-header"id="panelsStayOpen-headingOne"><button class="accordion-button"type="button"data-bs-toggle="collapse"data-bs-target="#panelsStayOpen-collapseOne"aria-expanded="true"aria-controls="panelsStayOpen-collapseOne">My Gardens</button></h2> %>
+      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+        <div class="accordion-body">
+          <div class="row">
+            <% if @gardens.empty? %>
+              <p class="text-muted readmore"> You have no gardens.</p>
+            <% end %>
+            <% @gardens.each do |garden| %>
+              <div class="col-lg-4 col-md-6 mb-4 pb-22">
+                <div class="card blog blog-primary rounded border-0 shadow overflow-hidden">
+                  <div class="position-relative">
+                    <%= image_tag "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1578423292-birdofparadise-indoor-plant-1578423286.jpg?crop=1xw:1xh;center,top&resize=480:*", class: "card-img-top", height: 300 %>
+                    <div class="overlay rounded-top"></div>
+                    <div class="card-body content">
+                      <h3 class="card-title title text-dark">
+                        <%= link_to garden.name, garden_path(garden), class: "link-text-dark" %>
+                      </h3>
+                      <div class="post-meta d-flex justify-content-between mt-3">
+                        <ul class="list-unstyled mb-0">
+                          <li class=" text-muted mb-2"><%= "Number of Beds: #{garden.beds.count}" %></li>
+                          <li class=" text-muted mb-2"><%= "Other info here" %></li>
+                          <li class=" text-muted mb-2"><%= "Other info here" %></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
