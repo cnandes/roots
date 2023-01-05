@@ -1,0 +1,29 @@
+<div class="card my-3">
+  <div class="card-header">
+    <h2>Add New Garden?</h2>
+  </div>
+  <div class="card-body">
+    <!-- ------------------------------- modal1 -------------------------------- -->
+    <div class="modal fade" id="newbedmodal1" aria-hidden="true" aria-labelledby="newbedmodal1" tabindex="-1">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="newbedmodal1">+ Garden</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+                <!-- ------------------------------- new garden form -------------------------------- -->
+                <%= render "new_garden_form", garden: @garden %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ------------------------------- button -------------------------------- -->
+    <a class="btn btn-primary" data-bs-toggle="modal" href="#newbedmodal1" role="button">+ Garden</a>
+  </div>
+</div>

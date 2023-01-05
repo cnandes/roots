@@ -1,10 +1,6 @@
 class GardensController < ApplicationController
   before_action :set_garden, only: %i[edit update destroy]
 
-  def index
-    @gardens = current_user.gardens
-  end
-
   def edit
   end
 
@@ -13,6 +9,23 @@ class GardensController < ApplicationController
       redirect_to root_path, notice: "NapSpace was successfully update."
     else
       render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def index
+    @gardens = current_user.gardens
+    @garden = Garden.new
+  end
+
+  def create
+    @user = current_user
+    @garden = Garden.new(garden_params)
+    @garden.user = @user
+
+    if @garden.save
+      redirect_to gardens_path
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
