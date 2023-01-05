@@ -13,6 +13,7 @@ class GardensController < ApplicationController
 
   def index
     @gardens = Garden.all
+    @garden = Garden.new
   end
 
   def create
