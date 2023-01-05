@@ -11,6 +11,23 @@ class GardensController < ApplicationController
     end
   end
 
+  def index
+    @gardens = Garden.all
+    @garden = Garden.new
+  end
+
+  def create
+    @user = current_user
+    @garden = Garden.new(garden_params)
+    @garden.user = @user
+
+    if @garden.save
+      redirect_to gardens_path
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   def destroy
     if @garden.destroy
       redirect_to root_path, status: :see_other
