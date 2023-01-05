@@ -1,10 +1,6 @@
 class BedsController < ApplicationController
-  before_action :set_garden, only: %i[index create]
-  def index
-    @beds = @garden.beds
-  end
-
-  def create
+  def create_bed
+    @garden = Garden.find(params[:id])
     @bed = Bed.new(bed_params)
     @bed.garden = @garden
     if @bed.save
@@ -20,7 +16,7 @@ class BedsController < ApplicationController
     params.require(:bed).permit(:description, :length, :width)
   end
 
-  def set_garden
-    @garden = Garden.find(params[:id])
-  end
+  # def set_garden
+  #   @garden = Garden.find(params[:id])
+  # end
 end
