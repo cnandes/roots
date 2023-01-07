@@ -41,8 +41,10 @@ class GardensController < ApplicationController
     end
   end
 
-  private
+  def edit_garden_bed
+  end
 
+  private
 
   def garden_params
     params.require(:garden).permit(:name)
