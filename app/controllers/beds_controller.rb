@@ -9,7 +9,8 @@ class BedsController < ApplicationController
     if @bed.save
       redirect_to garden_path(@garden)
     else
-      render :new, status: :unprocessable_entity
+      # to do: figure out how to get this error to work
+     render "gardens/show", status: :unprocessable_entity
     end
   end
 
@@ -18,5 +19,4 @@ class BedsController < ApplicationController
   def bed_params
     params.require(:bed).permit(:description, :length, :width)
   end
-
 end
