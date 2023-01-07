@@ -5,7 +5,7 @@
   <div class="card-body">
     <h5 class="card-title">beds</h5>
     <p class="card-text">TO DO: iterate over beds and display bed info</p>
-    <%= render "partials/modal_edit_garden" %>
+    <%= render "partials/modal_edit_garden", garden: garden %>
     <%= link_to "delete garden",
                 garden,
                 data: {turbo_method: :delete, turbo_confirm: "Are you sure?" },
