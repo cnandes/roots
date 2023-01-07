@@ -4,13 +4,12 @@
   </div>
   <div class="card-body">
     <h5 class="card-title">Crops</h5>
-    <p class="card-text">TO DO: iterate over crops and display info</p>
     <ul>
       <% bed.crops.each do |crop| %>
         <li><%= crop.veggie.name %> x <%= crop.quantity %></li>
       <% end %>
     </ul>
-    <%= render "partials/modal_add_crop", {bed: bed, veggies: @veggies} %>
+    <%= render "partials/modal_add_crop", {bed: bed} %>
     <a href="#" class="btn btn-primary">TO DO: add link to edit bed</a>
   </div>
 </div>

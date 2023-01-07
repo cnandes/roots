@@ -10,8 +10,8 @@
         <div class="container-fluid">
           <div class="row">
             <%= simple_form_for @crop do |f| %>
-              <%= f.input :quantity %>
               <%= f.association :veggie %>
+              <%= f.input :quantity %>
               <%= f.association :bed, label_method: :description, include_blank: false %>
               <%= f.button :submit %>
             <% end %>
@@ -19,8 +19,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-primary" data-bs-target="#addcropmodal2" data-bs-toggle="modal"> second
-          modal</button>
+        <p>Don't see the veggie you want?</p>
+        <button class="btn btn-primary" data-bs-target="#addcropmodal2" data-bs-toggle="modal">Add new Veggie</button>
       </div>
     </div>
   </div>
@@ -31,19 +31,19 @@
   <div class="modal-dialog modal-xl modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="addcropmodal2">Modal 2</h1>
+        <h1 class="modal-title fs-5" id="addcropmodal2">Create new veggie</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div class="container-fluid">
           <div class="row">
-            new crop model 2
+            <%# TODO: render ADD NEW VEGGIE form/partial here %>
+            <p>TODO: render ADD NEW VEGGIE form/partial here</p>
           </div>
         </div>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-primary" data-bs-target="#addcropmodal1" data-bs-toggle="modal">
-          first modal</button>
+        <button class="btn btn-primary" data-bs-target="#addcropmodal1" data-bs-toggle="modal">Back</button>
       </div>
     </div>
   </div>
