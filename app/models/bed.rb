@@ -1,6 +1,6 @@
 class Bed < ApplicationRecord
   belongs_to :garden
-  has_many :crops
+  has_many :crops, dependent: :destroy
 
   validates :description, presence: true
   validates :length, presence: true, numericality: { greater_than: 0 }
