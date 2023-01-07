@@ -1,6 +1,26 @@
 <div class="container p-10">
+  <!-- ------------------------------- modal1 -------------------------------- -->
+  <div class="modal fade" id="newbedmodal1" aria-hidden="true" aria-labelledby="newbedmodal1" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="newbedmodal1">+ Garden</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row">
+              <!-- ------------------------------- new garden form -------------------------------- -->
+              <%= render "new_garden_form", garden: @garden %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<%= render "new_garden" %>
+  <!-- ------------------------------- button -------------------------------- -->
+  <a class="btn btn-primary" data-bs-toggle="modal" href="#newbedmodal1" role="button">+ Garden</a>
 <% @gardens.each do |garden| %>
   <%= render "garden", garden: garden %>
 <% end %>

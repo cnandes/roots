@@ -10,7 +10,7 @@ class BedsController < ApplicationController
       redirect_to garden_path(@garden)
     else
       # to do: figure out how to get this error to work
-     render "gardens/show", status: :unprocessable_entity
+      render "gardens/show", status: :unprocessable_entity
     end
   end
 
