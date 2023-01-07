@@ -1,6 +1,9 @@
 class BedsController < ApplicationController
+  def new
+  end
+
   def create
-    @garden = Garden.find(params[:id])
+    @garden = Garden.find(params[:garden_id])
     @bed = Bed.new(bed_params)
     @bed.garden = @garden
     if @bed.save
@@ -15,4 +18,5 @@ class BedsController < ApplicationController
   def bed_params
     params.require(:bed).permit(:description, :length, :width)
   end
+
 end
