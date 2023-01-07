@@ -5,7 +5,7 @@ class GardensController < ApplicationController
 
   def update
     if @garden.update(garden_params)
-      redirect_to root_path, notice: "NapSpace was successfully update."
+      redirect_to gardens_path , notice: "Garden was successfully updated."
     else
       render :edit, status: :unprocessable_entity
     end
