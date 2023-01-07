@@ -5,7 +5,7 @@ class CropsController < ApplicationController
     if @crop.save
       redirect_to garden_path(@crop.bed.garden)
     else
-      render :new, status: :unprocessable_entity
+      # render :new, status: :unprocessable_entity
     end
   end
 

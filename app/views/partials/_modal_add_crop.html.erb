@@ -6,15 +6,12 @@
         <h1 class="modal-title fs-5" id="addcropmodal1"><%= bed.description %> - Add a crop</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <p><%= bed.description %></p>
+
       <div class="modal-body">
         <div class="container-fluid">
           <div class="row">
-            <%= simple_form_for @crop do |f| %>
-              <%= f.association :veggie %>
-              <%= f.input :quantity %>
-              <%= f.association :bed, label_method: :description, include_blank: false %>
-              <%= f.button :submit %>
-            <% end %>
+            <%= render "crops/new_crop_form", {crop: @crop, bed: bed} %>
           </div>
         </div>
       </div>
