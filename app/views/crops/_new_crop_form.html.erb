@@ -1,9 +1,0 @@
-<%= simple_form_for crop do |f| %>
-  <%= f.association :veggie %>
-  <%= f.input :quantity %>
-  <%= f.association :bed, label_method: :description, include_blank: false %>
-  <%= puts "----------------------------------------" %>
-  <%= puts bed.description %>
-  <%= puts "----------------------------------------" %>
-  <%= f.button :submit %>
-<% end %>

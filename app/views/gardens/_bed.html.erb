@@ -29,8 +29,9 @@
                   <%# <%= f.association :veggie, as: :select2, collection: Veggie.all %>
                   <%= f.association :veggie %>
                   <%= f.input :quantity %>
-                  <%# TODO: hide this input while keeping its input selected %>
-                  <%= f.association :bed, label_method: :description, include_blank: false, selected: bed.id %>
+                  <div class="d-none">
+                    <%= f.association :bed, label_method: :description, include_blank: false, selected: bed.id %>
+                  </div>
                   <%= f.button :submit %>
                 <% end %>
               </div>
