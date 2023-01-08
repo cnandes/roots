@@ -34,7 +34,7 @@ class GardensController < ApplicationController
 
   def destroy
     if @garden.destroy
-      redirect_to root_path, status: :see_other
+      redirect_to gardens_path, status: :see_other
     else
       # render a _garden partial
       # render @garden, status: :unprocessable_entity
