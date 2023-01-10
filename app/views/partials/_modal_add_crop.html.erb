@@ -1,0 +1,50 @@
+<!-- ------------------------------- modal1 -------------------------------- -->
+<div class="modal fade" id="addcropmodal1" aria-hidden="true" aria-labelledby="addcropmodal1" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="addcropmodal1"><%= bed.description %> - Add a crop</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <p><%= bed.description %></p>
+
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <%= render "crops/new_crop_form", {crop: @crop, bed: bed} %>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <p>Don't see the veggie you want?</p>
+        <button class="btn btn-primary" data-bs-target="#addcropmodal2" data-bs-toggle="modal">Add new Veggie</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ------------------------------- modal2 -------------------------------- -->
+<div class="modal fade" id="addcropmodal2" aria-hidden="true" aria-labelledby="addcropmodal2" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="addcropmodal2">Create new veggie</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <%# TODO: render ADD NEW VEGGIE form/partial here %>
+            <p>TODO: render ADD NEW VEGGIE form/partial here</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-target="#addcropmodal1" data-bs-toggle="modal">Back</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ------------------------------- button -------------------------------- -->
+<a class="btn btn-primary" data-bs-toggle="modal" href="#addcropmodal1" role="button">add new crop</a>

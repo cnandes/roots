@@ -5,7 +5,7 @@ class GardensController < ApplicationController
 
   def update
     if @garden.update(garden_params)
-      redirect_to root_path, notice: "NapSpace was successfully update."
+      redirect_to gardens_path , notice: "Garden was successfully updated."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -18,6 +18,7 @@ class GardensController < ApplicationController
 
   def show
     @beds = @garden.beds
+    @crop = Crop.new
   end
 
   def create
@@ -34,14 +35,11 @@ class GardensController < ApplicationController
 
   def destroy
     if @garden.destroy
-      redirect_to root_path, status: :see_other
+      redirect_to gardens_path, status: :see_other
     else
       # render a _garden partial
       # render @garden, status: :unprocessable_entity
     end
-  end
-
-  def edit_garden_bed
   end
 
   private

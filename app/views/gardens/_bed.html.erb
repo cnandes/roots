@@ -8,5 +8,72 @@
 
     <%= link_to "Update Beds", edit_bed_path(bed), class:"btn btn-primary" %>
 
+    <ul>
+      <% bed.crops.each do |crop| %>
+        <li><%= crop.veggie.name %> x <%= crop.quantity %></li>
+      <% end %>
+    </ul>
+
+    <%# ------------- Button ------------------ %>
+    <a class="btn btn-primary" data-bs-toggle="modal" href="#addcropmodal<%= bed.id %>" role="button">add new crop</a>
+
+    <%# ------------- Modal for adding a crop ------------------ %>
+    <div class="modal fade" id="addcropmodal<%= bed.id %>" aria-hidden="true" aria-labelledby="addcropmodal<%= bed.id %>" tabindex="-1">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="addcropmodal<%= bed.id %>"><%= bed.description %> - Add a crop</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+                <%= simple_form_for @crop do |f| %>
+                  <%# TODO: implement the following when TAs are available %>
+                  <%# <%= f.association :veggie, as: :select2, collection: Veggie.all %>
+                  <%= f.association :veggie %>
+                  <%= f.input :quantity %>
+                  <div class="d-none">
+                    <%= f.association :bed, label_method: :description, include_blank: false, selected: bed.id %>
+                  </div>
+                  <%= f.button :submit %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <p>Don't see the veggie you want?</p>
+            <button class="btn btn-primary" data-bs-target="#addveggiemodal" data-bs-toggle="modal">Add new Veggie</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%# ------------- Modal for adding a veggie ------------------ %>
+    <div class="modal fade" id="addveggiemodal" aria-hidden="true" aria-labelledby="addveggiemodal" tabindex="-1">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="addveggiemodal">Create new veggie</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+                <%# TODO: render ADD NEW VEGGIE form/partial here %>
+                <p>TODO: render ADD NEW VEGGIE form/partial here</p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <%# TODO: fix this back button, may be easier to close instead - worse UI though %>
+            <button class="btn btn-primary" data-bs-target="#addcropmodal<%= bed.id %>" data-bs-toggle="modal">Back</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%# ------------- Button ------------- %>
+    <a href="#" class="btn btn-primary">TO DO: add link to edit bed</a>
   </div>
 </div>
