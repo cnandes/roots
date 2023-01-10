@@ -73,5 +73,10 @@
 
     <%# ------------- Button ------------- %>
     <%= link_to "Update Beds", edit_bed_path(bed), class:"btn btn-primary" %>
+    <%= link_to "Delete Bed",
+                bed,
+                data: {turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                class: "btn btn-danger"
+              %>
   </div>
 </div>
