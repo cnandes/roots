@@ -16,7 +16,7 @@ class CropsController < ApplicationController
     if @crop.destroy
       redirect_to garden_path(garden), notice: "Crop was successfully removed."
     else
-      # notice: "Crop removal was unsuccessful."
+      render garden, status: :unprocessable_entity
     end
   end
 
