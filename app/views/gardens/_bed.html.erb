@@ -8,7 +8,14 @@
 
     <ul>
       <% bed.crops.each do |crop| %>
-        <li><%= crop.veggie.name %> x <%= crop.quantity %></li>
+        <li>
+          <%= crop.veggie.name %> x <%= crop.quantity %>
+          <%= link_to "x",
+            crop,
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?" },
+            class: "btn btn-danger"
+          %>
+        </li>
       <% end %>
     </ul>
 

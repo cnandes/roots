@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :gardens
 
   resources :beds, only: %i[edit update]
-  resources :crops, only: %i[create]
+  resources :crops, only: %i[create destroy]
   resources :veggies, only: %i[new create index]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
