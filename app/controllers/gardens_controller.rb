@@ -17,6 +17,7 @@ class GardensController < ApplicationController
   end
 
   def show
+    @bed = Bed.new
     @beds = @garden.beds
     @crop = Crop.new
   end
