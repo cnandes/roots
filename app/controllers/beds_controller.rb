@@ -1,21 +1,5 @@
 class BedsController < ApplicationController
-  before_action :set_bed, only: %i[edit update]
-
-  def new
-  end
-
-  def create
-    @garden = Garden.find(params[:garden_id])
-    @bed = Bed.new(bed_params)
-    @bed.garden = @garden
-    if @bed.save
-      redirect_to garden_path(@garden)
-    else
-      # TO DO: figure out how to get this error to work
-      # render "gardens/show", status: :unprocessable_entity
-    end
-  end
-
+  before_action :set_bed, only: %i[edit update destroy]
   def edit
   end
 
@@ -24,6 +8,14 @@ class BedsController < ApplicationController
       redirect_to garden_path(@garden), status: :see_other
     else
       render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    if @bed.destroy
+      redirect_to bed_path, status: :see_other
+    else
+      render @bed, status: :unprocessable_entity
     end
   end
 
