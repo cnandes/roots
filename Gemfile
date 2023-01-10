@@ -55,6 +55,10 @@ gem "devise"
 gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
+gem "select2-rails"
+# See // https://github.com/argerim/select2-rails
+gem 'select2_simple_form', github: 'lndl/select2_simple_form', tag: '0.7.3'
+# See https://github.com/lndl/select2_simple_form
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]

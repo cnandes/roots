@@ -1,20 +1,20 @@
 <!-- ------------------------------- modal1 -------------------------------- -->
-<div class="modal fade" id="addcropmodal1" aria-hidden="true" aria-labelledby="addcropmodal1" tabindex="-1">
+<div class="modal fade" id="editgardenmodal1" aria-hidden="true" aria-labelledby="editgardenmodal1" tabindex="-1">
   <div class="modal-dialog modal-xl modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="addcropmodal1">Modal 1</h1>
+        <h1 class="modal-title fs-5" id="editgardenmodal1">Modal 1</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div class="container-fluid">
           <div class="row">
-            new crop model 1
+            edit garden model 1
           </div>
         </div>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-primary" data-bs-target="#addcropmodal2" data-bs-toggle="modal"> second
+        <button class="btn btn-primary" data-bs-target="#editgardenmodal2" data-bs-toggle="modal"> second
           modal</button>
       </div>
     </div>
@@ -22,22 +22,22 @@
 </div>
 
 <!-- ------------------------------- modal2 -------------------------------- -->
-<div class="modal fade" id="addcropmodal2" aria-hidden="true" aria-labelledby="addcropmodal2" tabindex="-1">
+<div class="modal fade" id="editgardenmodal2" aria-hidden="true" aria-labelledby="editgardenmodal2" tabindex="-1">
   <div class="modal-dialog modal-xl modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="addcropmodal2">Modal 2</h1>
+        <h1 class="modal-title fs-5" id="editgardenmodal2">Modal 2</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div class="container-fluid">
           <div class="row">
-            new crop model 2
+            edit garden model 1
           </div>
         </div>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-primary" data-bs-target="#addcropmodal1" data-bs-toggle="modal">
+        <button class="btn btn-primary" data-bs-target="#editgardenmodal1" data-bs-toggle="modal">
           first modal</button>
       </div>
     </div>
@@ -45,4 +45,4 @@
 </div>
 
 <!-- ------------------------------- button -------------------------------- -->
-<a class="btn btn-primary" data-bs-toggle="modal" href="#addcropmodal1" role="button">add new crop</a>
+<a class="btn btn-primary" data-bs-toggle="modal" href="#editgardenmodal1" role="button">edit garden</a>
