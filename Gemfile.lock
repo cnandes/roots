@@ -6,6 +6,15 @@ GIT
       actionpack (>= 5.2)
       activemodel (>= 5.2)
 
+GIT
+  remote: https://github.com/lndl/select2_simple_form.git
+  revision: c3bb030a675a1c5a5fc5ce375564a0ba20381a7f
+  tag: 0.7.3
+  specs:
+    select2_simple_form (0.7.3)
+      rails (> 4.0.0)
+      select2-rails (~> 3.5.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -207,6 +216,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    select2-rails (3.5.11)
     selenium-webdriver (4.7.1)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
@@ -267,6 +277,8 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.4)
   sassc-rails
+  select2-rails
+  select2_simple_form!
   selenium-webdriver
   simple_form!
   sprockets-rails
