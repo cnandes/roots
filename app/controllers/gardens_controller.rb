@@ -17,7 +17,6 @@ class GardensController < ApplicationController
   end
 
   def show
-    @bed = Bed.new
     @beds = @garden.beds
     @crop = Crop.new
   end
@@ -44,7 +43,6 @@ class GardensController < ApplicationController
   end
 
   private
-
 
   def garden_params
     params.require(:garden).permit(:name)
