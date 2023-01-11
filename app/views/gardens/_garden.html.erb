@@ -8,14 +8,29 @@
         <%= render "partials/modal_edit_garden", garden: garden %>
         <%= link_to ('<i class="fa-solid fa-trash-can"></i>').html_safe,
                 garden,
-                data: {turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this garden?" },
                 class: "btn btn-light"
                 %>
       </div>
     </div>
   </div>
   <div class="card-body garden">
-    <h5 class="card-title">beds</h5>
-    <p class="card-text">TO DO: iterate over beds and display bed info</p>
+    <div class="d-flex flex-wrap">
+      <% garden.beds.each do |bed|%>
+        <div class="card bed m-2" data-toggle="tooltip" data-placement="top" title="<%= bed.description %>">
+          <div class="card-body">
+            <div class="d-flex flex-wrap justify-content-around">
+              <% bed.crops.each do |crop| %>
+                <% 3.times do %>
+                  <h2 class="m-2">
+                    <%= crop.veggie.emoji %>
+                  </h2>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

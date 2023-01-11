@@ -45,4 +45,4 @@
 </div>
 
 <!-- ------------------------------- button -------------------------------- -->
-<a class="btn btn-primary" data-bs-toggle="modal" href="#editgardenmodal1" role="button"><i class="fa-solid fa-pencil"></i></a>
+<a class="btn btn-light" data-bs-toggle="modal" href="#editgardenmodal1" role="button" data-toggle="tooltip" data-placement="top" title="Edit Garden"><i class="fa-solid fa-pencil"></i></a>
