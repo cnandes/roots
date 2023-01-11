@@ -1,15 +1,21 @@
 <div class="card my-3">
   <div class="card-header">
-    <h2><%= link_to garden.name, garden_path(garden) %></h2>
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">beds</h5>
-    <p class="card-text">TO DO: iterate over beds and display bed info</p>
-    <%= render "partials/modal_edit_garden", garden: garden %>
-    <%= link_to "delete garden",
+    <div class="d-flex justify-content-between">
+      <div>
+        <h2><%= link_to garden.name, garden_path(garden) %></h2>
+      </div>
+      <div>
+        <%= render "partials/modal_edit_garden", garden: garden %>
+        <%= link_to ('<i class="fa-solid fa-trash-can"></i>').html_safe,
                 garden,
                 data: {turbo_method: :delete, turbo_confirm: "Are you sure?" },
-                class: "btn btn-danger"
-              %>
+                class: "btn btn-light"
+                %>
+      </div>
+    </div>
+  </div>
+  <div class="card-body garden">
+    <h5 class="card-title">beds</h5>
+    <p class="card-text">TO DO: iterate over beds and display bed info</p>
   </div>
 </div>
