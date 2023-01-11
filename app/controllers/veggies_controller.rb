@@ -6,7 +6,7 @@ class VeggiesController < ApplicationController
   def create
     @veggie = Veggie.new(veggie_params)
     if @veggie.save
-      redirect_to veggies_path
+      redirect_to :back
     else
       render :new, status: :unprocessable_entity
     end
