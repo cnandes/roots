@@ -3,18 +3,14 @@ class VeggiesController < ApplicationController
     @veggies = Veggie.all
   end
 
-  def new
-    @veggie = Veggie.new
-  end
-
   def create
     @veggie = Veggie.new(veggie_params)
+
+    # this is quite hacky but it will work providing we do not call create outside of garden show page
+    id = request.referer.last.to_i
+
     if @veggie.save
-      if params[:garden_id]
-        redirect_to gardens_path(Garden.find(params[:garden_id]))
-      else
-        redirect_to new_veggy_path, notice: "#{@veggie.name} has been added!"
-      end
+      redirect_to garden_path(Garden.find(id)), notice: "#{@veggie.name} has been added successfully!"
     else
       # TODO: same as the others - won't render in modal
       # render :new, status: :unprocessable_entity
