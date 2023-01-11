@@ -8,7 +8,8 @@ class VeggiesController < ApplicationController
     if @veggie.save
       redirect_to :back
     else
-      render :new, status: :unprocessable_entity
+      # TODO: same as the others - won't render in modal
+      # render :new, status: :unprocessable_entity
     end
   end
 
