@@ -19,8 +19,8 @@
             <%= image_tag "veg_avatar.jpg", class: "avatar dropdown-toggle",style: "height:42px",
  id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%= link_to "Gardening News", "https://www.abc.net.au/gardening", class: "dropdown-item" %>
+              <%= link_to "Vegetable Info", "https://en.wikipedia.org/wiki/Vegetable", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
