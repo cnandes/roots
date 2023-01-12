@@ -5,6 +5,7 @@ class VeggiesController < ApplicationController
 
   def create
     @veggie = Veggie.new(veggie_params)
+    @veggie.name.capitalize!
 
     # this is quite hacky but it will work providing we do not call create outside of garden show page
     id = request.referer.last.to_i
