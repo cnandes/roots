@@ -1,7 +1,7 @@
 class Veggie < ApplicationRecord
   has_many :beds, through: :crops
 
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
 
   # method for front end testing only
   def emoji

@@ -5,7 +5,7 @@ class GardensController < ApplicationController
 
   def update
     if @garden.update(garden_params)
-      redirect_to gardens_path , notice: "Garden was successfully updated."
+      redirect_to gardens_path, notice: "Garden was successfully updated."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -20,6 +20,7 @@ class GardensController < ApplicationController
     @bed = Bed.new
     @beds = @garden.beds
     @crop = Crop.new
+    @veggie = Veggie.new
   end
 
   def create

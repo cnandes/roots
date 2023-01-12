@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   resources :beds, only: %i[edit update destroy]
   resources :crops, only: %i[create destroy]
 
-  resources :veggies, only: %i[new create index]
+  resources :veggies, only: %i[create index]
 end
