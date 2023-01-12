@@ -2,10 +2,20 @@
   <div class="card-header garden-header">
     <div class="d-flex justify-content-between">
       <div>
+        <%# ------------- Link to Garden Show ------------- %>
         <h2><%= link_to garden.name, garden_path(garden) %></h2>
       </div>
       <div>
+        <%# ------------- Icon link to Garden Show ------------- %>
+        <%= link_to ('<i class="fa-solid fa-eye"></i>').html_safe,
+                garden_path(garden),
+                class: "btn btn-light"
+                %>
+
+        <%# ------------- Edit Button ------------- %>
         <%= render "partials/modal_edit_garden", garden: garden %>
+
+        <%# ------------- Delete Button ------------- %>
         <%= link_to ('<i class="fa-solid fa-trash-can"></i>').html_safe,
                 garden,
                 data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this garden?" },
@@ -16,19 +26,38 @@
   </div>
   <div class="card-body garden">
     <div class="d-flex flex-wrap justify-content-around">
-      <% garden.beds.each do |bed|%>
-        <div class="m-2">
-          <span class="badge badge-primary mb-1"><%= bed.description %></span>
-          <div class="card bed">
-            <div class="card-body">
-              <div class="d-flex flex-wrap justify-content-around">
-                <% bed.crops.each do |crop| %>
-                  <% 3.times do %>
-                    <h2 class="m-2" data-toggle="tooltip" data-placement="top" title="<%= crop.veggie.name %>">
-                      <%= crop.veggie.emoji %>
-                    </h2>
+      <% if garden.beds %>
+        <%# ------------- Iterate over beds in garden ------------- %>
+        <% garden.beds.each do |bed|%>
+          <div class="m-2">
+            <%# ------------- Bed description badge ------------- %>
+            <span class="badge badge-primary mb-1"><%= bed.description %></span>
+            <div class="card plot-bed">
+              <div class="card-body">
+                <div class="d-flex flex-wrap justify-content-around">
+                  <%# ------------- Plot crop emojis in bed ------------- %>
+                  <% bed.crops.each do |crop| %>
+                    <% 3.times do %>
+                      <h2 class="m-2" data-toggle="tooltip" data-placement="top" title="<%= crop.veggie.name %>">
+                        <%= crop.veggie.emoji %>
+                      </h2>
+                    <% end %>
                   <% end %>
-                <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+      <%# ------------- No Beds Display ------------- %>
+      <% if garden.beds.empty? %>
+        <div class="card no-plot-bed">
+          <div class="card-body">
+            <div class="d-flex align-items-center flex-row">
+              <p class="card-text text-center m-4"> </p>
+              <div class="m-10">
+              <%= link_to "+ Bed", garden_path(garden),
+                  class: "btn btn-secondary btn-sm" %>
               </div>
             </div>
           </div>

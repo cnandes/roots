@@ -1,0 +1,27 @@
+<div class="card border-0 m-2" style="max-width: 18rem;">
+  <div class="card-header crop_card_header">
+    <div class="d-flex justify-content-between">
+      <h3 class="text-centre"><%= crop.emoji %></h3>
+      <h3>
+        <%= link_to ('<i class="fa-solid fa-trash-can"></i>').html_safe,
+          crop,
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?" },
+          class: "btn btn-light"
+        %>
+      </h3>
+    </div>
+  </div>
+  <div class="card-body crop_card_body">
+    <div class="card border-0 rounded">
+      <div class="card-body">
+        <h5 class="card-title"><%= crop.veggie.name %></h5>
+        <% if crop.comment.present? %>
+          <p class="card-text">Notes: <em class="text-muted"><%= crop.comment %></em></p>
+        <% end %>
+        <p class="card-text">Date planted: <em class="text-muted"><%= crop.date_planted %></em></p>
+        <p class="card-text">Time to harvest: <em class="text-muted"><%= crop.duration %> weeks</em></p>
+        <p class="card-text">Quantity: <em class="text-muted"><%= crop.quantity %></em></p>
+      </div>
+    </div>
+  </div>
+</div>
