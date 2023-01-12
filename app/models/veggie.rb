@@ -5,7 +5,7 @@ class Veggie < ApplicationRecord
 
   # method for front end testing only
   def emoji
-    emoji_array = %i[🍎 🌽 🥑 🥝 🍌 🥦 🍑 🍅 🍆]
+    emoji_array = %i[🍎 🌽 🥑 🥝 🍌 🥦 🍑 🍅 🍆 🌱]
     return emoji_array.sample
   end
 end

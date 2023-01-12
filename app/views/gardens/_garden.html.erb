@@ -17,16 +17,19 @@
   <div class="card-body garden">
     <div class="d-flex flex-wrap justify-content-around">
       <% garden.beds.each do |bed|%>
-        <div class="card bed m-2" data-toggle="tooltip" data-placement="top" title="<%= bed.description %>">
-          <div class="card-body">
-            <div class="d-flex flex-wrap justify-content-around">
-              <% bed.crops.each do |crop| %>
-                <% 3.times do %>
-                  <h2 class="m-2">
-                    <%= crop.veggie.emoji %>
-                  </h2>
+        <div class="m-2">
+          <span class="badge badge-primary mb-1"><%= bed.description %></span>
+          <div class="card bed">
+            <div class="card-body">
+              <div class="d-flex flex-wrap justify-content-around">
+                <% bed.crops.each do |crop| %>
+                  <% 3.times do %>
+                    <h2 class="m-2" data-toggle="tooltip" data-placement="top" title="<%= crop.veggie.name %>">
+                      <%= crop.veggie.emoji %>
+                    </h2>
+                  <% end %>
                 <% end %>
-              <% end %>
+              </div>
             </div>
           </div>
         </div>
