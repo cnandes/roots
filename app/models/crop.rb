@@ -9,6 +9,6 @@ class Crop < ApplicationRecord
   validates :emoji, inclusion: { in: EMOJI_ARRAY }
 
   def date_planted
-    return created_at
+    return created_at.strftime(" %m/%d/%Y")
   end
 end

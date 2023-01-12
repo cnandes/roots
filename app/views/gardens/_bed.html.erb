@@ -1,6 +1,6 @@
 <% require_relative '../../../db/crop_emojis' %>
 
-<div class="card my-3">
+<div class="card my-3 rounded">
   <div class="card-header bed-header">
     <div class="d-flex justify-content-between">
       <div>
@@ -20,16 +20,18 @@
     </div>
   </div>
 
-  <%# ------------- Crop Cards ------------- %>
+
   <div class="card-body bed-card">
-    <h5 class="card-title">Crops</h5>
+
+    <%# ------------- Add Crop Button ------------------ %>
+    <a class="btn btn-primary m-2" data-bs-toggle="modal" href="#addcropmodal<%= bed.id %>" role="button"><i class="fa-solid fa-plus"></i> Crop</a>
+
+    <%# ------------- Crop Cards ------------- %>
     <div class="d-flex justify-content-start flex-wrap flex-row">
         <% bed.crops.each do |crop| %>
         <%= render "crop", crop: crop %>
         <% end %>
     </div>
-    <%# ------------- Button ------------------ %>
-    <a class="btn btn-primary" data-bs-toggle="modal" href="#addcropmodal<%= bed.id %>" role="button">Add new Crop</a>
 
     <%# ------------- Modal for adding a crop ------------------ %>
     <div class="modal fade" id="addcropmodal<%= bed.id %>" aria-hidden="true" aria-labelledby="addcropmodal<%= bed.id %>" tabindex="-1">
