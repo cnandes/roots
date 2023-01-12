@@ -1,3 +1,5 @@
+<% require_relative '../../../db/crop_emojis' %>
+
 <div class="card my-3">
   <div class="card-header">
     <h2><%= bed.description %></h2>
@@ -38,6 +40,10 @@
                   <%# <%= f.association :veggie, as: :select2, collection: Veggie.all %>
                   <%= f.association :veggie %>
                   <%= f.input :quantity %>
+                  <%= f.input :duration %>
+                  <%= f.label :emoji %>
+                  <%= f.select :emoji, EMOJI_ARRAY %>
+                  <%= f.input :comment %>
                   <div class="d-none">
                     <%= f.association :bed, label_method: :description, include_blank: false, selected: bed.id %>
                   </div>
