@@ -5,7 +5,6 @@
   <div class="card-body">
     <h5 class="card-title">Crops</h5>
 
-
     <ul>
       <% bed.crops.each do |crop| %>
         <li>
@@ -20,14 +19,14 @@
     </ul>
 
     <%# ------------- Button ------------------ %>
-    <a class="btn btn-primary" data-bs-toggle="modal" href="#addcropmodal<%= bed.id %>" role="button">add new crop</a>
+    <a class="btn btn-primary" data-bs-toggle="modal" href="#addcropmodal<%= bed.id %>" role="button">Add new Crop</a>
 
     <%# ------------- Modal for adding a crop ------------------ %>
     <div class="modal fade" id="addcropmodal<%= bed.id %>" aria-hidden="true" aria-labelledby="addcropmodal<%= bed.id %>" tabindex="-1">
       <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="addcropmodal<%= bed.id %>"><%= bed.description %> - Add a crop</h1>
+            <h1 class="modal-title fs-5" id="addcropmodal<%= bed.id %>"><%= bed.description %> - Add a Crop</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
@@ -47,7 +46,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <p>Don't see the veggie you want?</p>
+            <p>Don't see the Veggie you want?</p>
             <button class="btn btn-primary" data-bs-target="#addveggiemodal" data-bs-toggle="modal">Add new Veggie</button>
           </div>
         </div>
@@ -59,14 +58,13 @@
       <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="addveggiemodal">Create new veggie</h1>
+            <h1 class="modal-title fs-5" id="addveggiemodal">Create new Veggie</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <div class="container-fluid">
               <div class="row">
-                <%# TODO: render ADD NEW VEGGIE form/partial here %>
-                <p>TODO: render ADD NEW VEGGIE form/partial here</p>
+                <%= render "veggies/veggie_form" %>
               </div>
             </div>
           </div>
