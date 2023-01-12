@@ -21,7 +21,7 @@ class CropsController < ApplicationController
   end
 
   def crop_params
-    params.require(:crop).permit(:veggie_id, :bed_id, :quantity)
+    params.require(:crop).permit(:veggie_id, :bed_id, :quantity, :duration, :emoji, :comment)
   end
 
   def set_crop
