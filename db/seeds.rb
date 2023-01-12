@@ -9,10 +9,10 @@
 require 'faker'
 require_relative 'veggie_names'
 
-if User.all.empty?
-  puts "Please create at least one User via the sign up page."
-  return
-end
+# if User.all.empty?
+#   puts "Please create at least one User via the sign up page."
+#   return
+# end
 
 puts "Cleansing DB"
 Crop.destroy_all
@@ -20,26 +20,26 @@ Veggie.destroy_all
 Bed.destroy_all
 Garden.destroy_all
 
-# Add 4 Gardens
-puts "Populating Gardens"
-4.times do
-  garden = Garden.new(user_id: 1, name: "#{Faker::Address.community} Garden")
-  puts "Created Garden with id: #{garden.id}" if garden.save
-end
+# # Add 4 Gardens
+# puts "Populating Gardens"
+# 4.times do
+#   garden = Garden.new(user_id: 1, name: "#{Faker::Address.community} Garden")
+#   puts "Created Garden with id: #{garden.id}" if garden.save
+# end
 
-# Add Beds all gardens (one will remain empty as an edge case for views)
-puts "Populating Beds"
-Garden.all.first(3).each do |garden|
-  rand(2..5).times do
-    bed = Bed.new(
-      description: "#{Faker::Games::Minecraft.biome} Bed",
-      garden_id: garden.id,
-      width: rand(3..6) * 100,
-      length: rand(5..10) * 100
-    )
-    puts "Created Bed with id: #{bed.id} in Garden #{garden.id}" if bed.save
-  end
-end
+# # Add Beds all gardens (one will remain empty as an edge case for views)
+# puts "Populating Beds"
+# Garden.all.first(3).each do |garden|
+#   rand(2..5).times do
+#     bed = Bed.new(
+#       description: "#{Faker::Games::Minecraft.biome} Bed",
+#       garden_id: garden.id,
+#       width: rand(3..6) * 100,
+#       length: rand(5..10) * 100
+#     )
+#     puts "Created Bed with id: #{bed.id} in Garden #{garden.id}" if bed.save
+#   end
+# end
 
 # Add many Veggies
 puts "Populating Veggies"
@@ -50,14 +50,14 @@ end
 puts "Added #{Veggie.all.count} veggies to the database 🌱"
 
 # Add Crops to Beds
-puts "Planting Crops in Beds"
-Bed.all.each do |bed|
-  rand(2..4).times do
-    crop = Crop.new(
-      quantity: rand(1..10),
-      bed_id: bed.id,
-      veggie_id: Veggie.first.id + rand(veggie_array.length)
-    )
-    puts "Created crop with id: #{crop.id} in bed with id: #{bed.id}" if crop.save
-  end
-end
+# puts "Planting Crops in Beds"
+# Bed.all.each do |bed|
+#   rand(2..4).times do
+#     crop = Crop.new(
+#       quantity: rand(1..10),
+#       bed_id: bed.id,
+#       veggie_id: Veggie.first.id + rand(veggie_array.length)
+#     )
+#     puts "Created crop with id: #{crop.id} in bed with id: #{bed.id}" if crop.save
+#   end
+# end
