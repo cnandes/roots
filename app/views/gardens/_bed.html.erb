@@ -1,8 +1,23 @@
 <% require_relative '../../../db/crop_emojis' %>
 
 <div class="card my-3">
-  <div class="card-header">
-    <h2><%= bed.description %></h2>
+  <div class="card-header bed-header">
+    <div class="d-flex justify-content-between">
+      <div>
+        <h2><%= bed.description %></h2>
+      </div>
+      <div>
+        <%# ------------- Edit Bed Button ------------- %>
+        <%= link_to ('<i class="fa-solid fa-pencil"></i>').html_safe, edit_bed_path(bed), class:"btn btn-light" %>
+
+        <%# ------------- Delete Bed Button ------------- %>
+        <%= link_to ('<i class="fa-solid fa-trash-can"></i>').html_safe,
+                bed,
+                data: {turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                class: "btn btn-light"
+              %>
+      </div>
+    </div>
   </div>
   <div class="card-body">
     <h5 class="card-title">Crops</h5>
@@ -81,13 +96,5 @@
         </div>
       </div>
     </div>
-
-    <%# ------------- Button ------------- %>
-    <%= link_to "Update Beds", edit_bed_path(bed), class:"btn btn-primary" %>
-    <%= link_to "Delete Bed",
-                bed,
-                data: {turbo_method: :delete, turbo_confirm: "Are you sure?" },
-                class: "btn btn-danger"
-              %>
   </div>
 </div>

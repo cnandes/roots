@@ -1,4 +1,4 @@
-.bed {
+.plot-bed {
   background-image: url(bed-background-colour-lower-clarity.jpg);
   background-size: cover;
   opacity: 1;
@@ -7,4 +7,35 @@
   border-style: ridge;
   border-color: $darkbrown;
   border-width: medium;
+}
+
+.no-plot-bed {
+  background-image: url(bed-background-greyscale.jpeg);
+  background-size: cover;
+  opacity: 1;
+  height: 250px;
+  width: 193px;
+  border-style: ridge;
+  border-color: grey;
+  border-width: medium;
+  color: rgb(66, 65, 65);
+}
+
+.bed-card {
+  background-image: url(bed-background-colour-lower-clarity.jpg);
+}
+
+.no-beds{
+  background-image: url(bed-background-greyscale.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 400px;
+  opacity: 0.4;
+}
+
+.bed-header {
+  color: $mossgreen;
+  a {
+    color: $mossgreen;
+  }
 }
