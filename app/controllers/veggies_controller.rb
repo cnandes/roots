@@ -8,7 +8,9 @@ class VeggiesController < ApplicationController
     @veggie.name.capitalize!
 
     # this is quite hacky but it will work providing we do not call create outside of garden show page
-    id = request.referer.last.to_i
+    id = /\d+$/.match(request.referer)[0].to_i
+    # raise
+    # request.referer.last.to_i
 
     if @veggie.save
       redirect_to garden_path(Garden.find(id)), notice: "#{@veggie.name} has been added successfully!"
