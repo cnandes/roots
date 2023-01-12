@@ -6,6 +6,12 @@
         <h2><%= link_to garden.name, garden_path(garden) %></h2>
       </div>
       <div>
+        <%# ------------- Icon link to Garden Show ------------- %>
+        <%= link_to ('<i class="fa-solid fa-eye"></i>').html_safe,
+                garden_path(garden),
+                class: "btn btn-light"
+                %>
+
         <%# ------------- Edit Button ------------- %>
         <%= render "partials/modal_edit_garden", garden: garden %>
 

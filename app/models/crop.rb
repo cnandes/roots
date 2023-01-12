@@ -7,4 +7,8 @@ class Crop < ApplicationRecord
   validates :quantity, presence: true, numericality: { greater_than: 0 }
   validates :duration, presence: true, numericality: { greater_than: 0 }
   validates :emoji, inclusion: { in: EMOJI_ARRAY }
+
+  def date_planted
+    return created_at
+  end
 end
