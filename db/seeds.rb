@@ -42,10 +42,10 @@ Garden.destroy_all
 # end
 
 # Add many Veggies
-puts "Populating Veggies"
+puts "Populating Summer Veggies"
 veggie_array = VEGE_ARRAY
 veggie_array.each do |vege|
-  Veggie.create(name: vege)
+  Veggie.create(name: vege, season: "Summer")
 end
 puts "Added #{Veggie.all.count} veggies to the database 🌱"
 

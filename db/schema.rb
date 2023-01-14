@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_14_002930) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_14_010612) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -30,9 +30,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_14_002930) do
     t.bigint "bed_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "duration"
+    t.integer "weeks_to_harvest"
     t.string "emoji"
     t.text "comment"
+    t.date "plant_date"
+    t.boolean "planted"
+    t.string "season"
     t.index ["bed_id"], name: "index_crops_on_bed_id"
     t.index ["veggie_id"], name: "index_crops_on_veggie_id"
   end
