@@ -1,5 +1,5 @@
 class CropsController < ApplicationController
-  before_action :set_crop, only: %i[destroy plant]
+  before_action :set_crop, only: %i[destroy plant_now]
 
   def create
     @crop = Crop.new(crop_params)
