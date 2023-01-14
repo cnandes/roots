@@ -1,4 +1,7 @@
 <%= simple_form_for @veggie do |f| %>
   <%= f.input :name %>
+  <%= f.label :season %>
+  <%= f.select :season, %w[Summer Autumn Winter Spring] %>
+  <br>
   <%= f.submit %>
 <% end %>
