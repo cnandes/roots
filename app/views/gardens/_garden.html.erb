@@ -37,10 +37,12 @@
                 <div class="d-flex flex-wrap justify-content-around">
                   <%# ------------- Plot crop emojis in bed ------------- %>
                   <% bed.crops.each do |crop| %>
-                    <% 3.times do %>
-                      <h2 class="m-2" data-toggle="tooltip" data-placement="top" title="<%= crop.veggie.name %>">
-                        <%= crop.emoji %>
-                      </h2>
+                    <% if crop.planted? %>
+                      <% 3.times do %>
+                        <h2 class="m-2" data-toggle="tooltip" data-placement="top" title="<%= crop.veggie.name %>">
+                          <%= crop.emoji %>
+                        </h2>
+                      <% end %>
                     <% end %>
                   <% end %>
                 </div>
