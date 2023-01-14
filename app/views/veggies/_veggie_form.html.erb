@@ -1,4 +1,11 @@
 <%= simple_form_for @veggie do |f| %>
   <%= f.input :name %>
-  <%= f.submit %>
+  <div class="mb-1">
+    <%= f.label :season %>
+    <%= f.select :season, %w[Summer Autumn Winter Spring] %>
+  </div>
+  <br>
+  <div class="btn btn-primary">
+    <%= f.button :submit, "Create Veggie" %>
+  </div>
 <% end %>

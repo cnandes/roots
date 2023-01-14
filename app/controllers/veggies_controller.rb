@@ -21,6 +21,6 @@ class VeggiesController < ApplicationController
   private
 
   def veggie_params
-    params.require(:veggie).permit(:name)
+    params.require(:veggie).permit(:name, :season)
   end
 end
