@@ -11,6 +11,7 @@ class Crop < ApplicationRecord
     in: %w[Summer Autumn Winter Spring],
     message: "%<value> is not a valid season"
   }
+  validates :plant_date, comparison: { less_than_or_equal_to: Date.today }
 
   def date_planted
     return created_at.strftime(" %m/%d/%Y")
