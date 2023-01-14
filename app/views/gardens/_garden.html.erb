@@ -35,10 +35,28 @@
             <div class="card plot-bed">
               <div class="card-body">
                 <div class="d-flex flex-wrap justify-content-around">
-                  <%# ------------- Plot crop emojis in bed ------------- %>
-                  <% bed.crops.each do |crop| %>
-                    <% if crop.planted? %>
+                  <%# ------------- Plot crop emojis in bed (max 12) ------------- %>
+                  <% bed.planted_crops.first(12).each do |crop| %>
+
+                    <%# ------------- If less that 4 crops in bed ------------- %>
+                    <% if bed.planted_crops.length <= 4 %>
                       <% 3.times do %>
+                        <h2 class="m-2" data-toggle="tooltip" data-placement="top" title="<%= crop.veggie.name %>">
+                          <%= crop.emoji %>
+                        </h2>
+                      <% end %>
+
+                    <%# ------------- If 5-6 crops in bed ------------- %>
+                    <% elsif bed.planted_crops.length <= 6 %>
+                      <% 2.times do %>
+                        <h2 class="m-2" data-toggle="tooltip" data-placement="top" title="<%= crop.veggie.name %>">
+                          <%= crop.emoji %>
+                        </h2>
+                      <% end %>
+
+                    <%# ------------- If more than 6 crops in bed ------------- %>
+                    <% else %>
+                      <% 1.times do %>
                         <h2 class="m-2" data-toggle="tooltip" data-placement="top" title="<%= crop.veggie.name %>">
                           <%= crop.emoji %>
                         </h2>
