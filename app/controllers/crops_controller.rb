@@ -1,5 +1,5 @@
 class CropsController < ApplicationController
-  before_action :set_crop, only: %i[destroy plant_now]
+  before_action :set_crop, only: %i[update destroy plant_now]
 
   def create
     @crop = Crop.new(crop_params)
@@ -9,6 +9,16 @@ class CropsController < ApplicationController
       redirect_to garden_path(@crop.bed.garden)
     else
       # render :new, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    garden = @crop.bed.garden
+
+    if @crop.update(crop_params)
+      redirect_to garden_path(garden), notice: "Crop has been updated."
+    else
+      # TODO: Validation failures in modals
     end
   end
 
