@@ -1,5 +1,5 @@
 class CropsController < ApplicationController
-  before_action :set_crop, only: %i[destroy]
+  before_action :set_crop, only: %i[destroy plant]
 
   def create
     @crop = Crop.new(crop_params)
@@ -18,6 +18,14 @@ class CropsController < ApplicationController
     else
       render garden, status: :unprocessable_entity
     end
+  end
+
+  def plant_now
+    return if @crop.planted
+
+    @crop.planted = true
+    @crop.plant_date = Date.today
+    @crop.save
   end
 
   def crop_params

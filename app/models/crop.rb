@@ -15,4 +15,16 @@ class Crop < ApplicationRecord
   def date_planted
     return created_at.strftime(" %m/%d/%Y")
   end
+
+  def season_background_colour
+    if season == "Summer"
+      # summer background colour
+    elsif season == "Spring"
+      # spring background colour
+    elsif season == "Autumn"
+      # autumn background colour
+    else
+      # winter background colour
+    end
+  end
 end
