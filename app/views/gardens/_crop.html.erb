@@ -21,7 +21,7 @@
         <% if crop.plant_date %>
           <p class="card-text">Date planted: <em class="text-muted"><%= crop.plant_date.to_fs(:long_ordinal) %></em></p>
         <% end %>
-        <p class="card-text">Weeks until harvest: <em class="text-muted"><%= crop.weeks_to_harvest %> weeks</em></p>
+        <p class="card-text">Weeks left until harvest: <em class="text-muted"><%= crop.weeks_to_harvest %></em></p>
         <p class="card-text">Quantity: <em class="text-muted"><%= crop.quantity %></em></p>
         <%# ADD BUTTON TO PLANT %>
       </div>
