@@ -5,5 +5,9 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    # TO DO: define all of these 🤪
+    # @current_garden =
+    # @upcoming_gardens =
+    # @past_gardens =
   end
 end
