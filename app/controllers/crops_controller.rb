@@ -3,6 +3,7 @@ class CropsController < ApplicationController
 
   def create
     @crop = Crop.new(crop_params)
+    @crop.plant_date = Date.today if @crop.planted
 
     if @crop.save
       redirect_to garden_path(@crop.bed.garden)
