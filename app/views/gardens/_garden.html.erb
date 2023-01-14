@@ -56,11 +56,9 @@
 
                     <%# ------------- If more than 6 crops in bed ------------- %>
                     <% else %>
-                      <% 1.times do %>
-                        <h2 class="m-2" data-toggle="tooltip" data-placement="top" title="<%= crop.veggie.name %> x <%= crop.quantity %>">
-                          <%= crop.emoji %>
-                        </h2>
-                      <% end %>
+                      <h2 class="m-2" data-toggle="tooltip" data-placement="top" title="<%= crop.veggie.name %> x <%= crop.quantity %>">
+                        <%= crop.emoji %>
+                      </h2>
                     <% end %>
                   <% end %>
                 </div>
