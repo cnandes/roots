@@ -44,15 +44,23 @@
           <div class="modal-body">
             <div class="container-fluid">
               <div class="row">
+              <%# THIS FORM WILL BE REPLACED - PLEASE DO NOT WORRY TO MUCH ABOUT STYLING %>
                 <%= simple_form_for @crop do |f| %>
-                  <%# TODO: implement the following when TAs are available %>
-                  <%# <%= f.association :veggie, as: :select2, collection: Veggie.all %>
                   <%= f.association :veggie %>
                   <%= f.input :quantity %>
-                  <%= f.input :duration %>
+                  <%= f.input :weeks_to_harvest %>
                   <%= f.label :emoji %>
                   <div class="pb-3">
                     <%= f.select :emoji, EMOJI_ARRAY %>
+                  </div>
+                  <%= f.input :plant_date %>
+                  <%# input for planted will be removed from this form once crop#edit in implemented %>
+                  <br>
+                  <%= f.input :planted, label: "Has the crop been planted?", input_html: { checked: true } %>
+                  <br>
+                  <%= f.label :season %>
+                  <div class="pb-3">
+                    <%= f.select :season, %w[Summer Autumn Winter Spring] %>
                   </div>
                   <%= f.input :comment %>
                   <div class="d-none">

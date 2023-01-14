@@ -5,8 +5,12 @@ class Crop < ApplicationRecord
   belongs_to :bed
 
   validates :quantity, presence: true, numericality: { greater_than: 0 }
-  validates :duration, presence: true, numericality: { greater_than: 0 }
+  validates :weeks_to_harvest, presence: true, numericality: { greater_than: 0 }
   validates :emoji, inclusion: { in: EMOJI_ARRAY }
+  validates :season, presence: true, inclusion: {
+    in: %w[Summer Autumn Winter Spring],
+    message: "%<value> is not a valid season"
+  }
 
   def date_planted
     return created_at.strftime(" %m/%d/%Y")

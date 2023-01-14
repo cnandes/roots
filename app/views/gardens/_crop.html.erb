@@ -18,8 +18,8 @@
         <% if crop.comment.present? %>
           <p class="card-text">Notes: <em class="text-muted"><%= crop.comment %></em></p>
         <% end %>
-        <p class="card-text">Date planted: <em class="text-muted"><%= crop.date_planted %></em></p>
-        <p class="card-text">Time to harvest: <em class="text-muted"><%= crop.duration %> weeks</em></p>
+        <p class="card-text">Date planted: <em class="text-muted"><%= crop.plant_date %></em></p>
+        <p class="card-text">Weeks to harvest: <em class="text-muted"><%= crop.weeks_to_harvest %> weeks</em></p>
         <p class="card-text">Quantity: <em class="text-muted"><%= crop.quantity %></em></p>
       </div>
     </div>
