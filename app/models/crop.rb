@@ -18,13 +18,14 @@ class Crop < ApplicationRecord
   end
 
   def season_background_colour
-    if season == "Summer"
+    case season
+    when "Summer"
       # summer background colour
-    elsif season == "Spring"
+    when "Spring"
       # spring background colour
-    elsif season == "Autumn"
+    when "Autumn"
       # autumn background colour
-    else
+    when "Winter"
       # winter background colour
     end
   end

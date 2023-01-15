@@ -23,7 +23,7 @@ class CropsController < ApplicationController
 
   def destroy
     if @crop.destroy
-      redirect_to garden_path(@garden), notice: "Crop was successfully removed!"
+      redirect_to garden_path(@garden), notice: "Crop has been removed!"
     else
       render garden, status: :unprocessable_entity
     end
@@ -42,6 +42,7 @@ class CropsController < ApplicationController
     end
   end
 
+  # This method "harvests" crops which have been planted.
   def harvest
     return unless @crop.planted
     return unless @crop.plant_date

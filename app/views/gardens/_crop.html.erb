@@ -24,7 +24,9 @@
         <% if crop.plant_date %>
           <p class="card-text">Date planted: <em class="text-muted"><%= crop.plant_date.to_fs(:long_ordinal) %></em></p>
         <% end %>
-        <% unless crop.harvested? %>
+        <% if crop.harvested? %>
+          <p class="card-text"><em class="text-muted">Harvested</em></p>
+        <% else %>
           <p class="card-text">Weeks left until harvest: <em class="text-muted"><%= crop.weeks_to_harvest %></em></p>
         <% end %>
         <p class="card-text">Quantity: <em class="text-muted"><%= crop.quantity %></em></p>
@@ -37,7 +39,7 @@
         <%# button to harvest crop %>
         <% if crop.planted %>
           <div class="btn btn-primary">
-            <%= link_to 'Harvest!', harvest_crop_path(crop), data: {turbo_confirm: "Are you sure?"} %>
+            <%= link_to 'Harvest!', harvest_crop_path(crop) %>
           </div>
         <% end %>
       </div>
