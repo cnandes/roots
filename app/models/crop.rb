@@ -4,8 +4,8 @@ class Crop < ApplicationRecord
   belongs_to :veggie
   belongs_to :bed
 
-  validates :quantity, presence: true, numericality: { greater_than: 0 }
-  validates :weeks_to_harvest, presence: true, numericality: { greater_than: 0 }
+  validates :quantity, presence: true, numericality: { greater_than: 0, less_than: 2_147_483_640 }
+  validates :weeks_to_harvest, presence: true, numericality: { greater_than: 0, less_than: 2_147_483_640 }
   validates :emoji, inclusion: { in: EMOJI_ARRAY }
   validates :season, presence: true, inclusion: {
     in: %w[Summer Autumn Winter Spring],
