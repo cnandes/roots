@@ -9,4 +9,8 @@ class Bed < ApplicationRecord
   def planted_crops
     return crops.where(planted: true)
   end
+
+  def future_crops
+    crops.where(planted: false, plant_date: nil)
+  end
 end

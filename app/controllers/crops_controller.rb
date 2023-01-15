@@ -1,33 +1,33 @@
 class CropsController < ApplicationController
-  before_action :set_crop, only: %i[update destroy plant]
-  before_action :set_garden, only: %i[update destroy plant]
+  before_action :set_crop, only: %i[update destroy plant harvest]
+  before_action :set_garden, only: %i[update destroy plant harvest]
 
   def create
     @crop = Crop.new(crop_params)
     @crop.plant_date = Date.today if @crop.planted
 
     if @crop.save
-      redirect_to garden_path(@crop.bed.garden)
+      redirect_to garden_path(@crop.bed.garden), notice: "#{@crop.emoji} #{@crop.veggie.name} has been added!"
     else
-      # render :new, status: :unprocessable_entity
+      # TODO: Validation failures in modals
     end
   end
 
   def update
-    # garden = @crop.bed.garden
-
     if @crop.update(crop_params)
-      redirect_to garden_path(@garden), notice: "Crop has been updated!"
+      redirect_to garden_path(@garden), notice: "#{@crop.emoji} #{@crop.veggie.name} has been updated!"
     else
       # TODO: Validation failures in modals
     end
   end
 
   def destroy
-    # garden = @crop.bed.garden
+    veggie_name = @crop.veggie.name
+    crop_emoji = @crop.emoji
     if @crop.destroy
-      redirect_to garden_path(@garden), notice: "Crop was successfully removed!"
+      redirect_to garden_path(@garden), notice: "#{crop_emoji} #{veggie_name} has been removed!"
     else
+      # TODO: Validation failures in modals
       render garden, status: :unprocessable_entity
     end
   end
@@ -36,11 +36,23 @@ class CropsController < ApplicationController
   def plant
     return if @crop.planted
 
-    # garden = @crop.bed.garden
     @crop.planted = true
     @crop.plant_date = Date.today
     if @crop.save
-      redirect_to garden_path(@garden), notice: "Crop has been planted!"
+      redirect_to garden_path(@garden), notice: "#{@crop.emoji} #{@crop.veggie.name} has been planted!"
+    else
+        # TODO: Validation failures in modals
+    end
+  end
+
+  # This method "harvests" crops which have been planted.
+  def harvest
+    return unless @crop.planted
+    return unless @crop.plant_date
+
+    @crop.planted = false
+    if @crop.save
+      redirect_to garden_path(@garden), notice: "#{@crop.emoji} #{@crop.veggie.name} has been harvested!"
     else
         # TODO: Validation failures in modals
     end

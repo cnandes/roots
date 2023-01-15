@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :crops, only: %i[create update destroy] do
     member do
       get :plant
+      get :harvest
     end
   end
 
