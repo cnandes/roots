@@ -7,7 +7,7 @@ class CropsController < ApplicationController
     @crop.plant_date = Date.today if @crop.planted
 
     if @crop.save
-      redirect_to garden_path(@crop.bed.garden), notice: "#{@crop.emoji} #{@crop.veggie.name} have been added!"
+      redirect_to garden_path(@crop.bed.garden), notice: "#{@crop.emoji} #{@crop.veggie.name} has been added!"
     else
       # TODO: Validation failures in modals
     end
@@ -15,7 +15,7 @@ class CropsController < ApplicationController
 
   def update
     if @crop.update(crop_params)
-      redirect_to garden_path(@garden), notice: "#{@crop.emoji} #{@crop.veggie.name} have been updated!"
+      redirect_to garden_path(@garden), notice: "#{@crop.emoji} #{@crop.veggie.name} has been updated!"
     else
       # TODO: Validation failures in modals
     end
@@ -25,7 +25,7 @@ class CropsController < ApplicationController
     veggie_name = @crop.veggie.name
     crop_emoji = @crop.emoji
     if @crop.destroy
-      redirect_to garden_path(@garden), notice: "#{crop_emoji} #{veggie_name} have been removed!"
+      redirect_to garden_path(@garden), notice: "#{crop_emoji} #{veggie_name} has been removed!"
     else
       # TODO: Validation failures in modals
       render garden, status: :unprocessable_entity
@@ -39,7 +39,7 @@ class CropsController < ApplicationController
     @crop.planted = true
     @crop.plant_date = Date.today
     if @crop.save
-      redirect_to garden_path(@garden), notice: "#{@crop.emoji} #{@crop.veggie.name} have been planted!"
+      redirect_to garden_path(@garden), notice: "#{@crop.emoji} #{@crop.veggie.name} has been planted!"
     else
         # TODO: Validation failures in modals
     end
@@ -52,7 +52,7 @@ class CropsController < ApplicationController
 
     @crop.planted = false
     if @crop.save
-      redirect_to garden_path(@garden), notice: "#{@crop.emoji} #{@crop.veggie.name} have been harvested!"
+      redirect_to garden_path(@garden), notice: "#{@crop.emoji} #{@crop.veggie.name} has been harvested!"
     else
         # TODO: Validation failures in modals
     end
