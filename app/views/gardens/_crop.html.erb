@@ -27,6 +27,11 @@
         <p class="card-text">Weeks left until harvest: <em class="text-muted"><%= crop.weeks_to_harvest %></em></p>
         <p class="card-text">Quantity: <em class="text-muted"><%= crop.quantity %></em></p>
         <%# ADD BUTTON TO PLANT %>
+        <% unless crop.planted %>
+          <div class="btn btn-primary">
+            <%= link_to 'Plant!', plant_crop_path(crop) %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
