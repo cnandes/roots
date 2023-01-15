@@ -1,6 +1,6 @@
 class CropsController < ApplicationController
-  before_action :set_crop, only: %i[update destroy plant]
-  before_action :set_garden, only: %i[update destroy plant]
+  before_action :set_crop, only: %i[update destroy plant harvest]
+  before_action :set_garden, only: %i[update destroy plant harvest]
 
   def create
     @crop = Crop.new(crop_params)
@@ -14,8 +14,6 @@ class CropsController < ApplicationController
   end
 
   def update
-    # garden = @crop.bed.garden
-
     if @crop.update(crop_params)
       redirect_to garden_path(@garden), notice: "Crop has been updated!"
     else
@@ -24,7 +22,6 @@ class CropsController < ApplicationController
   end
 
   def destroy
-    # garden = @crop.bed.garden
     if @crop.destroy
       redirect_to garden_path(@garden), notice: "Crop was successfully removed!"
     else
@@ -36,11 +33,22 @@ class CropsController < ApplicationController
   def plant
     return if @crop.planted
 
-    # garden = @crop.bed.garden
     @crop.planted = true
     @crop.plant_date = Date.today
     if @crop.save
       redirect_to garden_path(@garden), notice: "Crop has been planted!"
+    else
+        # TODO: Validation failures in modals
+    end
+  end
+
+  def harvest
+    return unless @crop.planted
+    return unless @crop.plant_date
+
+    @crop.planted = false
+    if @crop.save
+      redirect_to garden_path(@garden), notice: "Crop has been harvested!"
     else
         # TODO: Validation failures in modals
     end

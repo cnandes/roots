@@ -13,6 +13,10 @@ class Crop < ApplicationRecord
   }
   validates :plant_date, comparison: { less_than_or_equal_to: Date.today }, allow_nil: true
 
+  def harvested?
+    plant_date && !planted
+  end
+
   def season_background_colour
     if season == "Summer"
       # summer background colour
