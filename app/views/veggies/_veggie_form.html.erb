@@ -1,5 +1,5 @@
 <%= simple_form_for @veggie do |f| %>
-  <%= f.input :name %>
+  <%= f.input :name, label: "Veggie name (please use plural)" %>
   <div class="mb-1">
     <%= f.label :season %>
     <%= f.select :season, %w[Summer Autumn Winter Spring] %>

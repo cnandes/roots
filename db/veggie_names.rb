@@ -1,15 +1,15 @@
 VEGE_ARRAY = [
-  "Tomato",
-  "Capsicum",
-  "Pepper",
+  "Tomatoes",
+  "Capsicums",
+  "Peppers",
   "Blue Berries",
   "Strawberries",
-  "Cucumber",
-  "Melon",
+  "Cucumbers",
+  "Melons",
   "Beans",
   "Corn",
-  "Eggplant",
-  "Sweet Potato",
+  "Eggplants",
+  "Sweet Potatoes",
   "Peas",
   "Tomatillos"
 ]
