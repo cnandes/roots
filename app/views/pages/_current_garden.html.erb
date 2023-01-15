@@ -24,7 +24,7 @@
             <span class="badge badge-primary mb-1"><%= bed.description %></span>
             <div class="card plot-bed">
               <div class="card-body">
-                <div class="d-flex flex-wrap justify-content-around">
+                <div class="d-flex flex-wrap align-content-start justify-content-around">
                   <%# ------------- CURRENT CROPS LOGIC ------------- %>
                   <%  %>
                   <%# ------------- Plot crop emojis in bed (max 12) ------------- %>
@@ -37,9 +37,9 @@
                             <div class="progress crop-progress" style="width: 45%; height: 8px">
                               <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="<%= crop.progress %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= crop.progress %>%"></div>
                             </div>
-                            <h2 class="mx-2" data-toggle="tooltip" data-placement="top" title="<%= crop.veggie.name %> x <%= crop.quantity %>">
+                            <h1 class="mx-2" data-toggle="tooltip" data-placement="top" title="<%= crop.veggie.name %> x <%= crop.quantity %>">
                               <%= crop.emoji %>
-                            </h2>
+                            </h1>
                           </div>
                       <% end %>
 
@@ -47,7 +47,7 @@
                     <% elsif bed.planted_crops.length <= 6 %>
                       <% 2.times do %>
                           <div class="crop-emoji">
-                            <div class="progress crop-progress" style="width: 45%; height: 8px">
+                            <div class="progress crop-progress" style="width: 65%; height: 8px">
                               <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="<%= crop.progress %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= crop.progress %>%"></div>
                             </div>
                             <h2 class="mx-2" data-toggle="tooltip" data-placement="top" title="<%= crop.veggie.name %> x <%= crop.quantity %>">
