@@ -19,7 +19,11 @@
 
     <%# ------------- Current Tab Content ------------------ %>
     <div class="tab-pane fade show active" id="nav-current" role="tabpanel" aria-labelledby="nav-current-tab">
-      <%= render "dash_garden"%>
+      <div class="card dashboard border-top-0">
+        <div class="container dash_container">
+          <%= @gardens.each { |garden| render "dash_garden", garden: garden } %>
+        </div>
+      </div>
     </div>
 
     <%# ------------- Upcoming Tab Content ------------------ %>
