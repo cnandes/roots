@@ -4,8 +4,8 @@ class Crop < ApplicationRecord
   belongs_to :veggie
   belongs_to :bed
 
-  validates :quantity, presence: true, numericality: { greater_than: 0 }
-  validates :weeks_to_harvest, presence: true, numericality: { greater_than: 0 }
+  validates :quantity, presence: true, numericality: { greater_than: 0, less_than: 2_147_483_640 }
+  validates :weeks_to_harvest, presence: true, numericality: { greater_than: 0, less_than: 2_147_483_640 }
   validates :emoji, inclusion: { in: EMOJI_ARRAY }
   validates :season, presence: true, inclusion: {
     in: %w[Summer Autumn Winter Spring],
@@ -13,14 +13,19 @@ class Crop < ApplicationRecord
   }
   validates :plant_date, comparison: { less_than_or_equal_to: Date.today }, allow_nil: true
 
+  def harvested?
+    plant_date && !planted
+  end
+
   def season_background_colour
-    if season == "Summer"
+    case season
+    when "Summer"
       # summer background colour
-    elsif season == "Spring"
+    when "Spring"
       # spring background colour
-    elsif season == "Autumn"
+    when "Autumn"
       # autumn background colour
-    else
+    when "Winter"
       # winter background colour
     end
   end

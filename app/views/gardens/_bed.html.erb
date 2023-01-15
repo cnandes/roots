@@ -26,10 +26,17 @@
     <%# ------------- Add Crop Button ------------------ %>
     <a class="btn btn-primary m-2" data-bs-toggle="modal" href="#addcropmodal<%= bed.id %>" role="button"><i class="fa-solid fa-plus"></i> Crop</a>
 
-    <%# ------------- Crop Cards ------------- %>
+    <%# ------------- Planted Crop Cards ------------- %>
     <div class="d-flex justify-content-start flex-wrap flex-row">
-        <% bed.crops.each do |crop| %>
-        <%= render "crop", crop: crop %>
+        <% bed.planted_crops.each do |crop| %>
+          <%= render "crop", crop: crop %>
+        <% end %>
+    </div>
+
+    <%# ------------- Unplanted Crop Cards ------------- %>
+    <div class="d-flex justify-content-start flex-wrap flex-row">
+        <% bed.future_crops.each do |crop| %>
+          <%= render "crop", crop: crop %>
         <% end %>
     </div>
 
@@ -56,7 +63,7 @@
                   <%# <%= f.input :plant_date %>
                   <%# input for planted will be removed from this form once crop#edit in implemented %>
                   <br>
-                  <%= f.input :planted, label: "Has the crop been planted?", input_html: { checked: true } %>
+                  <%= f.input :planted, label: "Has the crop been planted?", input_html: { checked: false } %>
                   <br>
                   <%= f.label :season %>
                   <div class="pb-3">
