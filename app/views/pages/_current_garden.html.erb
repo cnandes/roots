@@ -34,9 +34,9 @@
                     <% if bed.planted_crops.length <= 4 %>
                       <% 3.times do %>
                           <div class="crop-emoji">
-                            <%# <div class="progress crop-progress" style="width: 45%; height: 8px">
+                            <div class="progress crop-progress" style="width: 45%; height: 8px">
                               <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="<%= crop.progress %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= crop.progress %>%"></div>
-                            </div> %>
+                            </div>
                             <h2 class="mx-2" data-toggle="tooltip" data-placement="top" title="<%= crop.veggie.name %> x <%= crop.quantity %>">
                               <%= crop.emoji %>
                             </h2>
