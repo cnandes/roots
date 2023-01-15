@@ -21,19 +21,33 @@
     <div class="tab-pane fade show active" id="nav-current" role="tabpanel" aria-labelledby="nav-current-tab">
       <div class="card dashboard border-top-0">
         <div class="container dash_container">
-          <%= @gardens.each { |garden| render "dash_garden", garden: garden } %>
+          <% @gardens.each do |garden| %>
+            <%= render "current_garden", garden: garden %>
+          <% end %>
         </div>
       </div>
     </div>
 
     <%# ------------- Upcoming Tab Content ------------------ %>
     <div class="tab-pane fade" id="nav-upcoming" role="tabpanel" aria-labelledby="nav-upcoming-tab">
-      <%= render "dash_garden"%>
+      <div class="card dashboard border-top-0">
+        <div class="container dash_container">
+          <% @gardens.each do |garden| %>
+            <%= render "upcoming_garden", garden: garden  %>
+          <% end %>
+        </div>
+      </div>
     </div>
 
     <%# ------------- History Tab Content ------------------ %>
     <div class="tab-pane fade" id="nav-history" role="tabpanel" aria-labelledby="nav-history-tab">
-      <%= render "dash_garden"%>
+      <div class="card dashboard border-top-0">
+        <div class="container dash_container">
+          <% @gardens.each do |garden| %>
+            <%= render "past_garden", garden: garden  %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

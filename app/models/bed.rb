@@ -13,4 +13,9 @@ class Bed < ApplicationRecord
   def future_crops
     crops.where(planted: false, plant_date: nil)
   end
+
+  # this seems like a cooked way to do this method but it works lol
+  def past_crops
+    crops.where(planted: false) - crops.where(planted: false, plant_date: nil)
+  end
 end
