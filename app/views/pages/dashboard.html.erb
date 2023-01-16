@@ -30,31 +30,36 @@
 
     <%# ------------- Upcoming Tab Content ------------------ %>
     <div class="tab-pane fade" id="nav-upcoming" role="tabpanel" aria-labelledby="nav-upcoming-tab">
-      <div class="card dashboard border-top-0">
-        <div class="container">
+      <div data-controller="dashboard-filtering">
+        <div class="card dashboard border-top-0">
+          <div class="container">
+              <%# ------------- Select Upcoming Season Form ------------------ %>
+              <%= form_with url: dashboard_path, method: :get do |form| %>
+                <%= form.label :season, "Search for:" %>
+                <%= form.select :season, ["Summer", "Autumn", "Winter", "Spring"] %>
+                <%= form.submit "!Go!" %>
+              <% end %>
 
-          <%# ------------- Select Upcoming Season Form ------------------ %>
-          <form class="form-inline" style="margin-top: 16px; margin-left: 10px">
-            <div class="form-group" style="width: 90px;">
-              <label for="exampleFormControlSelect1">Season</label>
-              <div data-controller="dashboard-filtering">
-                <select class="form-control" id="exampleFormControlSelect1" data-action="input->dashboard-filtering#filterBySeason">
-                  <option>Summer</option>
-                  <option>Autumn</option>
-                  <option>Winter</option>
-                  <option>Spring</option>
-                </select>
-                <p data-dashboard-filtering-target="season-upcoming"></p>
-              </div>
-            </div>
-          </form>
-        </div>
+              <%# <form class="form-inline" style="margin-top: 16px; margin-left: 10px">
+                <div class="form-group" style="width: 90px;">
+                  <label for="exampleFormControlSelect1">Season</label>
+                  <select class="form-control" id="exampleFormControlSelect1" data-action="input->dashboard-filtering#filterBySeason">
+                    <option disabled selected value>------</option>
+                    <option>Summer</option>
+                    <option>Autumn</option>
+                    <option>Winter</option>
+                    <option>Spring</option>
+                  </select>
+                </div>
+              </form> %>
+          </div>
 
-        <%# ------------- Render Gardens ------------------ %>
-        <div class="container dash_container">
-          <% @gardens.each do |garden| %>
-            <%= render "upcoming_garden", garden: garden  %>
-          <% end %>
+          <%# ------------- Render Gardens ------------------ %>
+          <div class="container dash_container">
+            <% @gardens.each do |garden| %>
+              <%= render "upcoming_garden", garden: garden  %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>

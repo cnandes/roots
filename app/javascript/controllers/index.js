@@ -4,8 +4,5 @@
 
 import { application } from "./application"
 
-import DashboardFilteringController from "./dashboard_filtering_controller"
-application.register("dashboard-filtering", DashboardFilteringController)
-
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)

@@ -28,7 +28,7 @@
                   <%# ------------- CURRENT CROPS LOGIC ------------- %>
                   <%  %>
                   <%# ------------- Plot crop emojis in bed (max 12) ------------- %>
-                  <% bed.future_crops.first(12).each do |crop| %>
+                    <% bed.future_crops.where(season: "Summer").first(12).each do |crop| %>
 
                     <%# ------------- If less that 4 crops in bed ------------- %>
                     <% if bed.future_crops.length <= 4 %>
