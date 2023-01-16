@@ -38,12 +38,14 @@
             <div class="form-group" style="width: 90px;">
               <label for="exampleFormControlSelect1">Season</label>
               <div data-controller="dashboard-filtering">
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="exampleFormControlSelect1" data-action="input->dashboard-filtering#filterBySeason">
+                  <option></option>
                   <option>Summer</option>
                   <option>Autumn</option>
                   <option>Winter</option>
                   <option>Spring</option>
                 </select>
+                <p data-dashboard-filtering-target="season-upcoming"></p>
               </div>
             </div>
           </form>

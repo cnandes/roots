@@ -6,4 +6,8 @@ export default class extends Controller {
   connect() {
     console.log(this.element);
   }
+
+  filterBySeason(event) {
+    console.log(event.currentTarget.value)
+  }
 }
