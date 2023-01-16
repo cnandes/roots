@@ -4,10 +4,6 @@ class PagesController < ApplicationController
   def home
   end
 
-  def dashboard
-    @gardens = current_user.gardens
-  end
-
   # def crops_history_date_range(crops)
   #   first = crops.first.created_at.year
   #   last = Date.today.year
