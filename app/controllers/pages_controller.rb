@@ -10,7 +10,7 @@ class PagesController < ApplicationController
     @crops_history_date_range = crops_history_date_range(@crops)
   end
 
-  privates
+  private
 
   def crops_history_date_range(crops)
     first = crops.first.created_at.year

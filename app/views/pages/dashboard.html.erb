@@ -37,12 +37,14 @@
           <form class="form-inline" style="margin-top: 16px; margin-left: 10px">
             <div class="form-group" style="width: 90px;">
               <label for="exampleFormControlSelect1">Season</label>
-              <select class="form-control" id="exampleFormControlSelect1">
-                <option>Summer</option>
-                <option>Autumn</option>
-                <option>Winter</option>
-                <option>Spring</option>
-              </select>
+              <div data-controller="dashboard-filtering">
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>Summer</option>
+                  <option>Autumn</option>
+                  <option>Winter</option>
+                  <option>Spring</option>
+                </select>
+              </div>
             </div>
           </form>
         </div>
