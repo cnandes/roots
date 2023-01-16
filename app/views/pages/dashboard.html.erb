@@ -31,6 +31,23 @@
     <%# ------------- Upcoming Tab Content ------------------ %>
     <div class="tab-pane fade" id="nav-upcoming" role="tabpanel" aria-labelledby="nav-upcoming-tab">
       <div class="card dashboard border-top-0">
+        <div class="container">
+
+          <%# ------------- Select Upcoming Season Form ------------------ %>
+          <%# <form class="form-inline" style="margin-top: 16px; margin-left: 10px">
+            <div class="form-group" style="width: 90px;">
+              <label for="exampleFormControlSelect1">Season</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>Summer</option>
+                <option>Autumn</option>
+                <option>Winter</option>
+                <option>Spring</option>
+              </select>
+            </div>
+          </form>
+        </div> %>
+
+        <%# ------------- Render Gardens ------------------ %>
         <div class="container dash_container">
           <% @gardens.each do |garden| %>
             <%= render "upcoming_garden", garden: garden  %>
