@@ -45,7 +45,7 @@
                       <% end %>
 
                     <%# ------------- If less that 4 crops in bed ------------- %>
-                    <% if bed.planted_crops.length <= 4 %>
+                    <% elsif bed.planted_crops.length <= 4 %>
                       <% 3.times do %>
                         <%= render "crop_emoji_current", crop: crop %>
                       <% end %>
