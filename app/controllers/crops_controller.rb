@@ -15,7 +15,7 @@ class CropsController < ApplicationController
 
   def update
     if @crop.update(crop_params)
-      redirect_to garden_path(@garden), notice: "#{@crop.emoji} #{@crop.veggie.name} have been updated!"
+      redirect_to garden_path(@garden), status: :see_other, notice: "#{@crop.emoji} #{@crop.veggie.name} have been updated!"
     else
       # TODO: Validation failures in modals
     end
@@ -25,7 +25,7 @@ class CropsController < ApplicationController
     veggie_name = @crop.veggie.name
     crop_emoji = @crop.emoji
     if @crop.destroy
-      redirect_to garden_path(@garden), notice: "#{crop_emoji} #{veggie_name} have been removed!"
+      redirect_to garden_path(@garden), status: :see_other, notice: "#{crop_emoji} #{veggie_name} have been removed!"
     else
       # TODO: Validation failures in modals
       render garden, status: :unprocessable_entity
