@@ -70,7 +70,7 @@
                     <%= f.input :planted, label: "Has the crop been planted?", as: :radio_buttons, collection: [['Yes', true], ['No', false]] %>
                   </div>
                   <div class="d-none" data-crop-form-target="date">
-                    <%= f.input :plant_date, include_blank: true, selected: nil %>
+                    <%= f.input :plant_date, include_blank: true, selected: nil, collection: (Date.today - (365 * 2))..Date.today %>
                   </div>
                   <br>
                   <%= f.input :comment, label: "Comments" %>
