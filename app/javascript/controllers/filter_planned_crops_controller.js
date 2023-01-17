@@ -8,7 +8,15 @@ export default class extends Controller {
   }
 
   filterBySeason(event) {
+    this.cropsTargets.forEach((target) => {
+      target.classList.add("invisible")
+    });
     let season = this.seasonTarget.value;
-    console.log(season)
+    this.cropsTargets.forEach((target) => {
+      if (target.getAttribute('value') === season) {
+        console.log(target.getAttribute('value'));
+        target.classList.remove("invisible")
+      };
+    });
   }
 }

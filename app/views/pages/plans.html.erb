@@ -1,16 +1,16 @@
 <div class="container p-10">
   <div data-controller="filter-planned-crops">
-    <div class="d-flex justify-content-between">
+    <div class="d-flex justify-content-between garden-header">
       <div>
         <h1>Plans</h1>
       </div>
-      <div class="input-group mb-3" style="width: 150px; margin-right: 12px;">
+      <div class="input-group mb-3" style="width: 240px; margin-right: 12px;">
         <div class="d-flex">
           <div class="input-group-prepend">
-            <label class="input-group-text" for="season">Season</label>
+            <label class="input-group-text bg-primary border border-light" for="season">Season</label>
           </div>
-          <select class="custom-select" id="season" data-action="change->filter-planned-crops#filterBySeason" data-filter-planned-crops-target="season">
-            <option selected>Choose...</option>
+          <select class="custom-select border border-light" id="season" data-action="change->filter-planned-crops#filterBySeason" data-filter-planned-crops-target="season">
+            <option selected>Please select a season</option>
             <option value="Summer">Summer</option>
             <option value="Autumn">Autumn</option>
             <option value="Winter">Winter</option>
