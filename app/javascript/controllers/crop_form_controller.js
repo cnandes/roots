@@ -1,26 +1,22 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["veggie", "season"]
+  static targets = ["season", "date"]
 
   connect() {
     console.log("Hello from the crop-form Stimulus controller")
   }
 
-  test(event) {
-    console.log("TEST WORKING")
-    console.log(event)
-    console.log(this.targets)
-  }
-
   seasonSelected(event) {
-    console.log("Season has been selected, refine veggie suggestions")
-    console.log(event)
-    // this.targets.veggie
+    // console.log("Season has been selected, refine veggie suggestions")
   }
 
-  planted_true(event) {
-    console.log("Planted is true, show date field")
-    console.log(event)
+  plantedChange(event) {
+    if (event.target.value == "true") {
+      this.dateTarget.classList.remove("d-none")
+    } else {
+      this.dateTarget.classList.add("d-none")
+    }
+
   }
 }

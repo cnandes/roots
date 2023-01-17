@@ -53,35 +53,35 @@
               <div class="row">
               <%# THIS FORM WILL BE REPLACED - PLEASE DO NOT WORRY TO MUCH ABOUT STYLING %>
                 <%= simple_form_for @crop, data: { controller: "crop-form"} do |f| %>
-                  <%= f.label :season %>
-                  <div class="pb-3">
+                  <div class="pb-3" data-action="change->crop-form#seasonSelected" >
                     <%# this should work all else being equal %>
-                    <%= f.select :season, %w[Summer Autumn Winter Spring], data: { action: "change->crop-form#test"} %>
+                    <%= f.select :season, %w[Summer Autumn Winter Spring] %>
                   </div>
-                  <%= f.association :veggie, collection: Veggie.seasonal_veggies("Winter") %>
-                  <%= f.input :quantity, data: { action: "blur->crop-form#test"} %>
+                  <div data-crop-form-target="veggie">
+                    <%= f.association :veggie, collection: @seasonal_veggies %>
+                  </div>
+                  <%= f.input :quantity %>
+                  <%= f.label :season %>
                   <%= f.input :weeks_to_harvest %>
                   <%= f.label :emoji %>
                   <div class="pb-3">
                     <%= f.select :emoji, EMOJI_ARRAY %>
                   </div>
                   <br>
-                  <%= f.input :planted, label: "Has the crop been planted?", as: :radio_buttons, collection: [['Yes', true], ['No', false]], data: {action: "change->crop-form#test"}  %>
-                  <%# <%= f.input :plant_date %>
+                  <div data-action="change->crop-form#plantedChange">
+                    <%= f.input :planted, label: "Has the crop been planted?", as: :radio_buttons, collection: [['Yes', true], ['No', false]]  %>
+                  </div>
+                  <div class="d-none" data-crop-form-target="date">
+                    <%= f.input :plant_date, include_blank: true %>
+                  </div>
                   <br>
-                  <%= f.input :comment, data: {action: "change->crop-form#test"} %>
+                  <%= f.input :comment %>
                   <div class="d-none">
                     <%= f.association :bed, label_method: :description, include_blank: false, selected: bed.id %>
                   </div>
                   <div class="btn btn-primary">
                     <%= f.button :submit, "Add Crop" %>
                   </div>
-                  <%# FOR STIMULUS TESTING PURPOSES ONLY %>
-                  <%# try to re initialise stimulus controller on shown.bs.modal %>
-                  <div class="btn btn-warning" data-action="click->crop-form#test">
-                    <p>Stimulus test button</p>
-                  </div>
-
                 <% end %>
               </div>
             </div>
