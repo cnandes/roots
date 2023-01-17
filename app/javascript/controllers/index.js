@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
+import FilterPlannedCropsController from "./filter_planned_crops_controller"
+application.register("filter-planned-crops", FilterPlannedCropsController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)

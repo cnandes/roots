@@ -1,36 +1,37 @@
 <div class="container p-10">
-  <div class="d-flex justify-content-between">
-    <div>
-      <h1>Plans</h1>
-    </div>
-    <div class="input-group mb-3" style="width: 150px; margin-right: 12px;">
-      <div class="d-flex">
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="season">Season</label>
+  <div data-controller="filter-planned-crops">
+    <div class="d-flex justify-content-between">
+      <div>
+        <h1>Plans</h1>
+      </div>
+      <div class="input-group mb-3" style="width: 150px; margin-right: 12px;">
+        <div class="d-flex">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="season">Season</label>
+          </div>
+          <select class="custom-select" id="season" data-action="change->filter-planned-crops#filterBySeason" data-filter-planned-crops-target="season">
+            <option selected>Choose...</option>
+            <option value="Summer">Summer</option>
+            <option value="Autumn">Autumn</option>
+            <option value="Winter">Winter</option>
+            <option value="Spring">Spring</option>
+          </select>
         </div>
-        <select class="custom-select" id="season">
-          <option selected>Choose...</option>
-          <option value="1">Summer</option>
-          <option value="2">Autumn</option>
-          <option value="3">Winter</option>
-          <option value="4">Spring</option>
-        </select>
       </div>
     </div>
-  </div>
-  <% if @gardens %>
-    <% @gardens.each do |garden| %>
-      <%= render "planned_garden", garden: garden %>
+    <% if @gardens %>
+      <% @gardens.each do |garden| %>
+        <%= render "planned_garden", garden: garden %>
+      <% end %>
     <% end %>
-  <% end %>
-  <% if @gardens.empty? %>
-    <div class="card my-3">
-      <div class="card-header">
-        <h2>You don't have any gardens yet</h2>
+    <% if @gardens.empty? %>
+      <div class="card my-3">
+        <div class="card-header">
+          <h2>You don't have any gardens yet</h2>
+        </div>
+        <div class="card-body no-gardens">
+        </div>
       </div>
-      <div class="card-body no-gardens">
-      </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
 </div>
