@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
+  get 'upcoming-gardens', to: 'pages#upcoming_gardens', as: :upcoming_gardens
 
   resources :gardens, only: %i[create index show edit update destroy] do
     resources :beds, only: %i[new create show]
@@ -15,5 +16,4 @@ Rails.application.routes.draw do
   end
 
   resources :veggies, only: %i[create index]
-  get '/gardens/upcoming', to: 'gardens#upcoming', as: :upcoming_gardens
 end

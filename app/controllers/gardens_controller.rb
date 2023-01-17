@@ -1,8 +1,8 @@
 class GardensController < ApplicationController
   before_action :set_garden, only: %i[show edit update destroy]
-  before_action :set_gardens, only: %i[index upcoming]
 
   def index
+    @gardens = current_user.gardens
     @garden = Garden.new
   end
 
@@ -57,9 +57,5 @@ class GardensController < ApplicationController
 
   def set_garden
     @garden = Garden.find(params[:id])
-  end
-
-  def set_gardens
-    @gardens = current_user.gardens
   end
 end

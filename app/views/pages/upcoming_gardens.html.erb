@@ -1,0 +1,17 @@
+<div class="container p-10">
+  <% if @gardens %>
+    <% @gardens.each do |garden| %>
+      <%= render "gardens/garden", garden: garden %>
+    <% end %>
+  <% end %>
+  <% if @gardens.empty? %>
+    <div class="card my-3">
+      <div class="card-header">
+        <h2>You don't have any gardens yet</h2>
+      </div>
+      <div class="card-body no-gardens">
+      </div>
+    </div>
+  <% end %>
+</div>
+</div>
