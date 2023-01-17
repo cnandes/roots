@@ -29,4 +29,10 @@ class Crop < ApplicationRecord
       # winter background colour
     end
   end
+
+  def progress
+    days = Date.today - Date.parse(plant_date.to_s)
+    weeks = days / 7
+    return (weeks / weeks_to_harvest).to_f * 100
+  end
 end
