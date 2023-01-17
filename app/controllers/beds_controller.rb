@@ -39,7 +39,7 @@ class BedsController < ApplicationController
   private
 
   def bed_params
-    params.require(:bed).permit(:description, :length, :width)
+    params.require(:bed).permit(:description)
   end
 
   def set_bed
