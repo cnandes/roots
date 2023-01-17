@@ -55,6 +55,7 @@
                 <%= simple_form_for @crop, data: { controller: "crop-form"} do |f| %>
                   <%= f.label :season %>
                   <div class="pb-3">
+                    <%# this should work all else being equal %>
                     <%= f.select :season, %w[Summer Autumn Winter Spring], data: { action: "change->crop-form#test"} %>
                   </div>
                   <%= f.association :veggie, collection: Veggie.seasonal_veggies("Winter") %>
@@ -76,8 +77,9 @@
                     <%= f.button :submit, "Add Crop" %>
                   </div>
                   <%# FOR STIMULUS TESTING PURPOSES ONLY %>
-                  <div class="btn" data-action="click->crop-form#test">
-                    <p>TEST BUTTON</p>
+                  <%# try to re initialise stimulus controller on shown.bs.modal %>
+                  <div class="btn btn-warning" data-action="click->crop-form#test">
+                    <p>Stimulus test button</p>
                   </div>
 
                 <% end %>

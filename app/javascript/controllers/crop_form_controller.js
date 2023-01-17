@@ -10,6 +10,7 @@ export default class extends Controller {
   test(event) {
     console.log("TEST WORKING")
     console.log(event)
+    console.log(this.targets)
   }
 
   seasonSelected(event) {
