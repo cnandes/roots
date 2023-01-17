@@ -59,7 +59,8 @@
                   <%= f.input :weeks_to_harvest %>
                   <%= f.label :season %>
                   <div class="pb-3">
-                    <%= f.select :season, %w[Summer Autumn Winter Spring], selected: @season %>
+                    <%= f.select :season, %w[Summer Autumn Winter Spring],
+                                 selected: @season %>
                   </div>
                   <%= f.label :emoji %>
                   <div class="pb-3">
@@ -67,15 +68,27 @@
                   </div>
                   <br>
                   <div data-action="change->crop-form#plantedChange">
-                    <%= f.input :planted, label: "Has the crop been planted?", as: :radio_buttons, collection: [['Yes', true], ['No', false]] %>
+                    <%= f.input :planted,
+                                label: "Has the crop been planted?",
+                                as: :radio_buttons,
+                                collection: [['Yes', true], ['No', false]] %>
                   </div>
                   <div class="d-none" data-crop-form-target="date">
-                    <%= f.input :plant_date, include_blank: true, selected: nil, collection: (Date.today - (365 * 2))..Date.today %>
+                    <%= f.input :plant_date,
+                                as: :date,
+                                include_blank: true,
+                                selected: nil,
+                                start_year: Date.today.year - 2,
+                                end_year: Date.today.year %>
                   </div>
                   <br>
-                  <%= f.input :comment, label: "Comments" %>
+                  <%= f.input :comment,
+                              label: "Comments" %>
                   <div class="d-none">
-                    <%= f.association :bed, label_method: :description, include_blank: false, selected: bed.id %>
+                    <%= f.association :bed,
+                                      label_method: :description,
+                                      include_blank: false,
+                                      selected: bed.id %>
                   </div>
                   <div class="btn btn-primary">
                     <%= f.button :submit, "Add Crop" %>
