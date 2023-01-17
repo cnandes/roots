@@ -70,12 +70,15 @@
       <%# ------------- No Beds Display ------------- %>
       <% if garden.beds.empty? %>
         <div class="card no-plot-bed">
-          <div class="card-body">
-            <div class="d-flex align-items-center flex-row">
-              <p class="card-text text-center m-4"> </p>
-              <div class="m-10">
-              <%= link_to "+ Bed", garden_path(garden),
-                  class: "btn btn-secondary btn-sm" %>
+
+          <div class="d-flex flex-column">
+            <div class="align-self-center">
+              <div class="card-body">
+                <p class="card-text text-center m-4"></p>
+                <div class="m-10">
+                  <%= link_to "+ Bed", garden_path(garden),
+                    class: "btn btn-secondary btn-sm" %>
+                </div>
               </div>
             </div>
           </div>
