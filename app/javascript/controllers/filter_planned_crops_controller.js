@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="filter-planned-crops"
 export default class extends Controller {
-  static targets = ["crops"]
+  static targets = ["crops", "season"]
   connect() {
     console.log("planned crops controller")
   }
