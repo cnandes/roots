@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-  get 'upcoming-gardens', to: 'pages#upcoming_gardens', as: :upcoming_gardens
+  get 'plans', to: 'pages#plans', as: :plans
 
   resources :gardens, only: %i[create index show edit update destroy] do
     resources :beds, only: %i[new create show]

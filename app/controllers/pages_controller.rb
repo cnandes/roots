@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   def home
   end
 
-  def upcoming_gardens
+  def plans
     @gardens = current_user.gardens
   end
   # def crops_history_date_range(crops)
