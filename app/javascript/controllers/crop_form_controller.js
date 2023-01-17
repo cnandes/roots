@@ -1,14 +1,10 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["season", "date"]
+  static targets = ["date"]
 
   connect() {
-    console.log("Hello from the crop-form Stimulus controller")
-  }
-
-  seasonSelected(event) {
-    // console.log("Season has been selected, refine veggie suggestions")
+    // console.log("Hello from the crop-form Stimulus controller")
   }
 
   plantedChange(event) {
