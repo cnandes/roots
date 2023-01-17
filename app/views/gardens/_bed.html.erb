@@ -52,30 +52,34 @@
             <div class="container-fluid">
               <div class="row">
               <%# THIS FORM WILL BE REPLACED - PLEASE DO NOT WORRY TO MUCH ABOUT STYLING %>
-                <%= simple_form_for @crop do |f| %>
-                  <%= f.association :veggie %>
-                  <%= f.input :quantity %>
+                <%= simple_form_for @crop, data: { controller: "crop-form"} do |f| %>
+                  <%= f.label :season %>
+                  <div class="pb-3">
+                    <%= f.select :season, %w[Summer Autumn Winter Spring], data: { action: "change->crop-form#test"} %>
+                  </div>
+                  <%= f.association :veggie, collection: Veggie.seasonal_veggies("Winter") %>
+                  <%= f.input :quantity, data: { action: "blur->crop-form#test"} %>
                   <%= f.input :weeks_to_harvest %>
                   <%= f.label :emoji %>
                   <div class="pb-3">
                     <%= f.select :emoji, EMOJI_ARRAY %>
                   </div>
+                  <br>
+                  <%= f.input :planted, label: "Has the crop been planted?", as: :radio_buttons, collection: [['Yes', true], ['No', false]], data: {action: "change->crop-form#test"}  %>
                   <%# <%= f.input :plant_date %>
-                  <%# input for planted will be removed from this form once crop#edit in implemented %>
                   <br>
-                  <%= f.input :planted, label: "Has the crop been planted?", input_html: { checked: false } %>
-                  <br>
-                  <%= f.label :season %>
-                  <div class="pb-3">
-                    <%= f.select :season, %w[Summer Autumn Winter Spring] %>
-                  </div>
-                  <%= f.input :comment %>
+                  <%= f.input :comment, data: {action: "change->crop-form#test"} %>
                   <div class="d-none">
                     <%= f.association :bed, label_method: :description, include_blank: false, selected: bed.id %>
                   </div>
                   <div class="btn btn-primary">
                     <%= f.button :submit, "Add Crop" %>
                   </div>
+                  <%# FOR STIMULUS TESTING PURPOSES ONLY %>
+                  <div class="btn" data-action="click->crop-form#test">
+                    <p>TEST BUTTON</p>
+                  </div>
+
                 <% end %>
               </div>
             </div>
