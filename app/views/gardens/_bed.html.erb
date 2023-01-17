@@ -50,16 +50,16 @@
           </div>
           <div class="modal-body">
             <div class="container-fluid">
-              <div class="row">
+              <div class="row" data-controller="crop-form">
                 <div class="col">
-                  <%= simple_form_for @crop, data: { controller: "crop-form"} do |f| %>
+                  <%= simple_form_for @crop do |f| %>
                     <div>
                       <%= f.association :veggie, collection: Veggie.all %>
                     </div>
                     <%= f.input :quantity %>
                     <%= f.input :weeks_to_harvest %>
                     <%= f.label :season %>
-                    <div class="pb-3">
+                    <div class="pb-3" data-action="change->crop-form#seasonSelected">
                       <%= f.select :season, %w[Summer Autumn Winter Spring],
                                   selected: @season %>
                     </div>
@@ -97,12 +97,30 @@
                   <% end %>
                 </div>
                 <div class="col">
-                  <h3>~ Seasonal Suggestions ~</h3>
-                  <ul class="list">
-                    <% @seasonal_veggies.each do |veggie| %>
-                      <li><%= veggie.name %></li>
+
+                <%# Seasonal suggestion Card (can not be rendered as partial as data-targets won't work) %>
+                  <div class="card border-0 m-2" style="max-width: 25rem;">
+                    <div class="card-header crop_card_header">
+                      <div class="d-flex justify-content-between">
+                        <h3 class="text-centre" data-crop-form-target="title">🌻 ~ Summer Veggies ~ 🌻</h3>
+                      </div>
+                    </div>
+                    <% @seasonal_veggies.each do |list| %>
+                      <div class="<%= "d-none" unless list.first.season == 'Summer' %>" data-crop-form-target="<%= list.first.season.downcase %>">
+                        <div class="card-body crop_card_body">
+                          <div class="card border-0 rounded">
+                            <div class="card-body">
+                              <ul>
+                                <% list.each do |veggie| %>
+                                  <li class="card-text"><%= veggie.name %></li>
+                                <% end %>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     <% end %>
-                  </ul>
+
                 </div>
               </div>
             </div>

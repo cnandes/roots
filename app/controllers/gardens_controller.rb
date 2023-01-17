@@ -22,7 +22,11 @@ class GardensController < ApplicationController
     @crop = Crop.new
     @veggie = Veggie.new
     @season = season
-    @seasonal_veggies = Veggie.seasonal_veggies(@season)
+    @seasonal_veggies = [
+      @summer_veggies = Veggie.seasonal_veggies("Summer"),
+      @spring_veggies = Veggie.seasonal_veggies("Spring"),
+      @autumn_veggies = Veggie.seasonal_veggies("Autumn"),
+      @winter_veggies = Veggie.seasonal_veggies("Winter")]
   end
 
   def create

@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import CropForm from "./crop_form_controller"
 application.register("crop-form", CropForm)
+
+import SeasonalVeggieList from "./seasonal_veggie_list_controller"
+application.register("seasonal-veggie-list", SeasonalVeggieList)
