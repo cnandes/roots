@@ -16,17 +16,4 @@ class Crop < ApplicationRecord
   def harvested?
     plant_date && !planted
   end
-
-  def season_background_colour
-    case season
-    when "Summer"
-      # summer background colour
-    when "Spring"
-      # spring background colour
-    when "Autumn"
-      # autumn background colour
-    when "Winter"
-      # winter background colour
-    end
-  end
 end
