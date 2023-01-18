@@ -1,17 +1,6 @@
 class GardensController < ApplicationController
   before_action :set_garden, only: %i[show edit update destroy]
 
-  def edit
-  end
-
-  def update
-    if @garden.update(garden_params)
-      redirect_to gardens_path, notice: "Garden was successfully updated."
-    else
-      render :edit, status: :unprocessable_entity
-    end
-  end
-
   def index
     @gardens = current_user.gardens
     @garden = Garden.new
@@ -33,15 +22,27 @@ class GardensController < ApplicationController
     @garden.user = @user
 
     if @garden.save
-      redirect_to gardens_path
+      redirect_to gardens_path, notice: "🪴 #{@garden.name} was added!"
     else
       render :new, status: :unprocessable_entity
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @garden.update(garden_params)
+      redirect_to gardens_path, notice: "🪴 #{@garden.name} was updated!"
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   def destroy
+    garden_name = @garden.name
     if @garden.destroy
-      redirect_to gardens_path, status: :see_other
+      redirect_to gardens_path, status: :see_other, notice: "🪴 #{garden_name} was removed!"
     else
       # render a _garden partial
       # render @garden, status: :unprocessable_entity

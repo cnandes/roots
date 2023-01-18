@@ -24,8 +24,9 @@
   <div class="card-body bed-card">
 
     <%# ------------- Add Crop Button ------------------ %>
-    <a class="btn btn-primary m-2" data-bs-toggle="modal" href="#addcropmodal<%= bed.id %>" role="button"><i class="fa-solid fa-plus"></i> Crop</a>
-
+    <div class="d-flex justify-content-end">
+      <a class="btn btn-primary m-2" data-bs-toggle="modal" href="#addcropmodal<%= bed.id %>" role="button"><i class="fa-solid fa-plus"></i> Crop</a>
+    </div>
     <%# ------------- Planted Crop Cards ------------- %>
     <div class="d-flex justify-content-start flex-wrap flex-row">
         <% bed.planted_crops.each do |crop| %>
