@@ -11,6 +11,7 @@ class GardensController < ApplicationController
     @beds = @garden.beds
     @crop = Crop.new
     @veggie = Veggie.new
+    @season = season
   end
 
   def create
@@ -57,5 +58,27 @@ class GardensController < ApplicationController
 
   def set_garden
     @garden = Garden.find(params[:id])
+  end
+
+  def season
+    year_day = Date.today.yday().to_i
+    year = Date.today.year.to_i
+    is_leap_year = ((year % 4).zero? && (year % 100 != 0)) || (year % 400).zero?
+    if is_leap_year && year_day > 60
+      # if is leap year  and date > 28 february
+      year_day -= 1
+    end
+
+    if year_day >= 355 || year_day < 81
+      result = "Summer"
+    elsif year_day >= 81 && year_day < 173
+      result = "Autumn"
+    elsif year_day >= 173 && year_day < 266
+      result = "Winter"
+    elsif year_day >= 266 && year_day < 355
+      result = "Spring"
+    end
+
+    result
   end
 end

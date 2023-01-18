@@ -9,3 +9,6 @@ application.register("filter-planned-crops", FilterPlannedCropsController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import CropForm from "./crop_form_controller"
+application.register("crop-form", CropForm)
