@@ -12,6 +12,8 @@ class GardensController < ApplicationController
     @crop = Crop.new
     @veggie = Veggie.new
     @season = season
+    @seasonal_veggies = seasonal_veggie_lists
+    @seasonal_titles = SEASONAL_TITLES
   end
 
   def create
@@ -81,4 +83,16 @@ class GardensController < ApplicationController
 
     result
   end
+
+  def seasonal_veggie_lists
+    seasons = %w[Summer Autumn Winter Spring]
+    seasons.map { |season| Veggie.seasonal_veggies(season) }
+  end
+
+  SEASONAL_TITLES = {
+    Summer: "🌻 ~ Summer Veggies ~ 🌻",
+    Autumn: "🍁 ~ Autumn Veggies ~ 🍁",
+    Winter: "❄️ ~ Winter Veggies ~ ❄️",
+    Spring: "🌷 ~ Spring Veggies ~ 🌷"
+  }
 end

@@ -51,50 +51,80 @@
           </div>
           <div class="modal-body">
             <div class="container-fluid">
-              <div class="row">
-                <%= simple_form_for @crop, data: { controller: "crop-form"} do |f| %>
-                  <div>
-                    <%= f.association :veggie, collection: Veggie.all %>
-                  </div>
-                  <%= f.input :quantity %>
-                  <%= f.input :weeks_to_harvest %>
-                  <%= f.label :season %>
-                  <div class="pb-3">
-                    <%= f.select :season, %w[Summer Autumn Winter Spring],
-                                 selected: @season %>
-                  </div>
-                  <%= f.label :emoji %>
-                  <div class="pb-3">
-                    <%= f.select :emoji, EMOJI_ARRAY %>
-                  </div>
-                  <br>
-                  <div data-action="change->crop-form#plantedChange">
-                    <%= f.input :planted,
-                                label: "Has the crop been planted?",
-                                as: :radio_buttons,
-                                collection: [['Yes', true], ['No', false]] %>
-                  </div>
-                  <div class="d-none" data-crop-form-target="date">
-                    <%= f.input :plant_date,
-                                as: :date,
-                                include_blank: true,
-                                selected: nil,
-                                start_year: Date.today.year - 2,
-                                end_year: Date.today.year %>
-                  </div>
-                  <br>
-                  <%= f.input :comment,
-                              label: "Comments" %>
-                  <div class="d-none">
-                    <%= f.association :bed,
-                                      label_method: :description,
-                                      include_blank: false,
-                                      selected: bed.id %>
-                  </div>
-                  <div class="btn btn-primary">
-                    <%= f.button :submit, "Add Crop" %>
-                  </div>
-                <% end %>
+              <div class="row" data-controller="crop-form">
+                <%# ------- Add crop form ------- %>
+                <div class="col">
+                  <%= simple_form_for @crop do |f| %>
+                    <div>
+                      <%= f.association :veggie, collection: Veggie.all %>
+                    </div>
+                    <%= f.input :quantity %>
+                    <%= f.input :weeks_to_harvest %>
+                    <%= f.label :season %>
+                    <div class="pb-3" data-action="change->crop-form#seasonSelected">
+                      <%= f.select :season, %w[Summer Autumn Winter Spring],
+                                  selected: @season %>
+                    </div>
+                    <%= f.label :emoji %>
+                    <div class="pb-3">
+                      <%= f.select :emoji, EMOJI_ARRAY %>
+                    </div>
+                    <br>
+                    <div data-action="change->crop-form#plantedChange">
+                      <%= f.input :planted,
+                                  label: "Has the crop been planted?",
+                                  as: :radio_buttons,
+                                  collection: [['Yes', true], ['No', false]] %>
+                    </div>
+                    <div class="d-none" data-crop-form-target="date">
+                      <%= f.input :plant_date,
+                                  as: :date,
+                                  include_blank: true,
+                                  selected: nil,
+                                  start_year: Date.today.year - 2,
+                                  end_year: Date.today.year %>
+                    </div>
+                    <br>
+                    <%= f.input :comment,
+                                label: "Comments" %>
+                    <div class="d-none">
+                      <%= f.association :bed,
+                                        label_method: :description,
+                                        include_blank: false,
+                                        selected: bed.id %>
+                    </div>
+                    <div class="btn btn-primary">
+                      <%= f.button :submit, "Add Crop" %>
+                    </div>
+                  <% end %>
+                </div>
+                <div class="col">
+
+                  <%# ------- Seasonal suggestion Card ------- %>
+                  <% @seasonal_veggies.each do |list| %>
+                    <div class="<%= list.first.season.downcase %> <%= "d-none" unless list.first.season == @season %>"
+                         data-crop-form-target="<%= list.first.season.downcase %>">
+                      <div class="card border-0 m-2" style="max-width: 24rem;">
+                        <div class="card-header crop_card_header">
+                          <div class="d-flex justify-content-around">
+                            <h3 class="text-centre mt-2"><%= @seasonal_titles[list.first.season.to_sym] %></h3>
+                          </div>
+                        </div>
+                        <div class="card-body crop_card_body card-bg">
+                          <div class="card border-0 rounded">
+                            <div class="card-body card-fg">
+                              <ul>
+                                <% list.each do |veggie| %>
+                                  <li class="card-text"><%= veggie.name %></li>
+                                <% end %>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
               </div>
             </div>
           </div>
