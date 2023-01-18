@@ -15,11 +15,11 @@ class PagesController < ApplicationController
 
   private
 
-  # def history_year_range(crops)
-  #   past_crops = crops - crops.where(plant_date: nil) - crops.where(planted: true)
-  #   past_crops.sort_by!(&:plant_date)
-  #   (past_crops.first.plant_date.year..past_crops.last.plant_date.year)
-  # end
+  def history_year_range(crops)
+    past_crops = crops - crops.where(plant_date: nil) - crops.where(planted: true)
+    past_crops.sort_by!(&:plant_date)
+    (past_crops.first.plant_date.year..past_crops.last.plant_date.year)
+  end
 
   def set_gardens
     @gardens = current_user.gardens
