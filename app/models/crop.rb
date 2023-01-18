@@ -12,7 +12,7 @@ class Crop < ApplicationRecord
     message: "%<value> is not a valid season"
   }
   validates :plant_date, comparison: { less_than_or_equal_to: Date.today }, allow_nil: true
-  validates :planted, inclusion: [true, false]
+  validates :planted, presence: true, inclusion: [true, false]
 
   def harvested?
     plant_date && !planted
