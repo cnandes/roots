@@ -5,6 +5,22 @@
         <h1>History</h1>
       </div>
 
+      <%# ------------- Form to select year and season ------------- %>
+      <%= form_with url: history_path, method: :get, class: "d-flex" do %>
+        <%= select :season,
+          params[:season],
+          ["Summer", "Autumn", "Winter", "Spring"],
+          class: "form-control",
+          placeholder: "Select a season"
+        %>
+        <%= select :year,
+          params[:year],
+          @year_range,
+          class: "form-control",
+          placeholder: "Select a season"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
       <%# ------------- Select Season from plans page but could potentially reuse ------------- %>
       <%# <div class="input-group mb-3" style="width: 240px; margin-right: 12px;">
         <div class="d-flex">
