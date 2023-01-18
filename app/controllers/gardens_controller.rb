@@ -1,5 +1,6 @@
 class GardensController < ApplicationController
   before_action :set_garden, only: %i[show edit update destroy]
+
   def edit
   end
 
@@ -23,6 +24,7 @@ class GardensController < ApplicationController
     @veggie = Veggie.new
     @season = season
     @seasonal_veggies = seasonal_veggie_lists
+    @seasonal_titles = SEASONAL_TITLES
   end
 
   def create
@@ -82,4 +84,11 @@ class GardensController < ApplicationController
     seasons = %w[Summer Autumn Winter Spring]
     seasons.map { |season| Veggie.seasonal_veggies(season) }
   end
+
+  SEASONAL_TITLES = {
+    Summer: "🌻 ~ Summer Veggies ~ 🌻",
+    Autumn: "🍁 ~ Autumn Veggies ~ 🍁",
+    Winter: "❄️ ~ Winter Veggies ~ ❄️",
+    Spring: "🌷 ~ Spring Veggies ~ 🌷"
+  }
 end

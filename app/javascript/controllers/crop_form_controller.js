@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["date", "summer", "autumn", "winter", "spring", "titleSummer", "titleAutumn", "titleWinter", "titleSpring"]
+  static targets = ["date", "summer", "autumn", "winter", "spring"]
 
   connect() {
     // console.log("Hello from the crop-form Stimulus controller")
@@ -26,19 +26,15 @@ export default class extends Controller {
     this.hideSeasonTargets()
 
     if (event.target.value == "Summer") {
-      this.titleSummerTarget.innerHTML = "🌻 ~ Summer Veggies ~ 🌻"
       this.summerTarget.classList.remove("d-none")
     }
     else if (event.target.value == "Autumn") {
-      this.titleAutumnTarget.innerHTML = "🍁 ~ Autumn Veggies ~ 🍁"
       this.autumnTarget.classList.remove("d-none")
     }
     else if (event.target.value == "Winter") {
-      this.titleWinterTarget.innerHTML = "❄️ ~ Winter Veggies ~ ❄️"
       this.winterTarget.classList.remove("d-none")
     }
     else if (event.target.value == "Spring") {
-      this.titleSpringTarget.innerHTML = "🌷 ~ Spring Veggies ~ 🌷"
       this.springTarget.classList.remove("d-none")
     }
   }
