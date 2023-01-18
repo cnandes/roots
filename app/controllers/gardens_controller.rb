@@ -46,6 +46,9 @@ class GardensController < ApplicationController
     end
   end
 
+  def upcoming
+  end
+
   private
 
   def garden_params
