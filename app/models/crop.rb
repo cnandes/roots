@@ -22,4 +22,8 @@ class Crop < ApplicationRecord
     weeks = days / 7
     return (weeks / weeks_to_harvest).to_f * 100
   end
+
+  def year
+    plant_date.year
+  end
 end

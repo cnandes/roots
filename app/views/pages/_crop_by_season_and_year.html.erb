@@ -1,0 +1,28 @@
+<%# ------------- Plot crop emojis in bed (max 12) ------------- %>
+<% filtered_crops = bed.past_crops.where(season: season).map do |crop| %>
+  <% crop if crop.year == year %>
+<% end %>
+<% filtered_crops.first(12).each do |crop| %>
+<%# ------------- If less that 4 crops in bed ------------- %>
+  <% if bed.filtered_crops.length <= 4 %>
+    <% 3.times do %>
+      <h1 data-filter-planned-crops-target="crop" id="<%= bed.id %>" class="m-2 d-none" data-toggle="tooltip" data-placement="top" title="<%= crop.veggie.name %> x <%= crop.quantity %>" value="<%= season %>">
+        <%= crop.emoji %>
+      </h1>
+    <% end %>
+
+  <%# ------------- If 5-6 crops in bed ------------- %>
+  <% elsif bed.filtered_crops.length <= 6 %>
+    <% 2.times do %>
+      <h1 data-filter-planned-crops-target="crop" id="<%= bed.id %>" class="m-2 d-none" data-toggle="tooltip" data-placement="top" title="<%= crop.veggie.name %> x <%= crop.quantity %>" value="<%= season %>">
+        <%= crop.emoji %>
+      </h1>
+    <% end %>
+
+  <%# ------------- If more than 6 crops in bed ------------- %>
+  <% else %>
+    <h1 data-filter-planned-crops-target="crop" id="<%= bed.id %>" class="m-2 d-none" data-toggle="tooltip" data-placement="top" title="<%= crop.veggie.name %> x <%= crop.quantity %>" value="<%= season %>">
+      <%= crop.emoji %>
+    </h1>
+  <% end %>
+<% end %>
