@@ -29,7 +29,11 @@ class Crop < ApplicationRecord
     days / 7
   end
 
-  # def time_left_to_harvest
-  #   percentage_weeks_left = progress / 100 * weeks
-  # end
+  def time_left_to_harvest
+    weeks_passed = (progress / 100).to_f * weeks_to_harvest
+    weeks_left = weeks_to_harvest - weeks_passed
+    return "Ready to harvest" if weeks_left <= 0
+
+    return weeks_left < 1 ? "#{(weeks_left * 7).ceil} days to harvest" : "#{weeks_left.ceil} weeks to harvest"
+  end
 end
