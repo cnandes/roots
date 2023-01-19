@@ -17,7 +17,12 @@
   <div class="card-body crop_card_body">
     <div class="card border-0 rounded">
       <div class="card-body">
-        <h5 class="card-title mb-4"><%= crop.veggie.name %></h5>
+        <h5 class="card-title mb-1"><%= crop.veggie.name %></h5>
+        <% if crop.planted? %>
+          <div class="progress mb-3">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="<%= crop.progress %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= crop.progress %>%"></div>
+          </div>
+        <% end %>
         <% if crop.comment.present? %>
           <p class="card-text">Notes: <em class="text-muted"><%= crop.comment %></em></p>
         <% end %>
@@ -26,9 +31,8 @@
         <% end %>
         <% if crop.harvested? %>
           <p class="card-text"><em class="text-muted">Harvested</em></p>
-        <% else %>
-          <p class="card-text">Weeks left until harvest: <em class="text-muted"><%= crop.weeks_to_harvest %></em></p>
         <% end %>
+        <p class="card-text">Weeks left until harvest: <em class="text-muted"><%= crop.weeks_to_harvest %></em></p>
         <p class="card-text">Quantity: <em class="text-muted"><%= crop.quantity %></em></p>
         <%# button to plant crop %>
         <% unless (crop.planted || crop.plant_date) %>
