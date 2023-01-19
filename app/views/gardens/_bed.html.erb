@@ -53,10 +53,18 @@
             <div class="container-fluid">
               <div class="row" data-controller="crop-form">
                 <%# ------- Add crop form ------- %>
+
                 <div class="col">
                   <%= simple_form_for @crop do |f| %>
+                    <%# <div data-controller='select2'> %>
+                      <%= f.input :veggie, collection: Veggie.all, input_html: {class: 'select2'} %>
+                      <%# <%= f.association :veggie, input_html: {class: 'select2'} %>
+                    <%# </div> %>
                     <div>
-                      <%= f.association :veggie, collection: Veggie.all %>
+                      <%# <%= f.select :veggie, collection: Veggie.all, input_html: { class: 'select2' }  %>
+                      <%# <%= f.association :veggie, input_html: { class: 'select2' }  %>
+                      <%# <%= select_tag "veggie", options_from_collection_for_select(Veggie.all, :id, :name),
+                                      class: 'select2' %>
                     </div>
                     <%= f.input :quantity %>
                     <%= f.input :weeks_to_harvest %>
