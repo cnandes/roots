@@ -17,13 +17,13 @@ SUMMER_VEG_ARRAY = [
 AUTUMN_VEG_ARRAY = [
   "Beetroot",
   "Broccoli",
-  "Brussels Sprouts",
+  "Brussel Sprouts",
   "Cabbages",
   "Cauliflower",
   "Kale",
   "Lettuce",
   "Onion",
-  "Spinnach"
+  "Spinach"
 ]
 
 WINTER_VEG_ARRAY = [
@@ -35,7 +35,6 @@ WINTER_VEG_ARRAY = [
   "Carrots",
   "Potatoes",
   "Pumpkins",
-  "Zucchini",
   "Asparagus"
 ]
 
@@ -47,5 +46,6 @@ SPRING_VEG_ARRAY = [
   "Leeks",
   "Zucchinis",
   "Celery",
+  "Grapes",
   "Collards"
 ]
