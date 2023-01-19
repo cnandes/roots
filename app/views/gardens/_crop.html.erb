@@ -40,8 +40,8 @@
 
         <%# progress bar %>
         <% if crop.planted? %>
-          <div class="d-flex justify-content-between">
-            <div class="progress mb-3" style="width: 204px;">
+          <div class="d-flex justify-content-between mt-2">
+            <div class="progress mb-4" style="width: 204px;">
               <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="<%= crop.progress %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= crop.progress %>%"></div>
             </div>
             <i class="fa-solid fa-circle-info text-success ml-2" data-toggle="tooltip" data-placement="top" title="<%= crop.time_left_to_harvest %>"></i>
