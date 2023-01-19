@@ -1,5 +1,5 @@
-<div class="card border-0 m-2" style="width: 18rem;">
-  <div class="card-header crop_card_header">
+<div class="card border-0 m-2 crop-card">
+  <div class="card-header crop-card-header">
     <div class="d-flex justify-content-between">
       <h3 class="text-centre"><%= crop.emoji %></h3>
       <h3>
@@ -28,10 +28,17 @@
       </h3>
     </div>
   </div>
-  <div class="card-body crop_card_body">
+  <div class="card-body crop-card-body">
     <div class="card border-0 rounded">
       <div class="card-body">
-        <h5 class="card-title mb-1"><%= crop.veggie.name %></h5>
+
+        <%# Veggie name and season badge %>
+        <div class="d-flex justify-content-between pb-2 <%= crop.season.downcase %>">
+          <h5 class="card-title mb-1"><%= crop.veggie.name %></h5>
+
+          <%# ---- added badge but currently commented out because I'm not sure about it ---%>
+          <%# <span class="badge mb-2"><%= crop.season %> <%#</span>%>
+        </div>
 
         <%# progress bar %>
         <% if crop.planted? %>
