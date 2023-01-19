@@ -21,23 +21,9 @@
         %>
         <%= f.submit "Search", class: "btn btn-primary" %>
       <% end %>
-      <%# ------------- Select Season from plans page but could potentially reuse ------------- %>
-      <%# <div class="input-group mb-3" style="width: 240px; margin-right: 12px;">
-        <div class="d-flex">
-          <div class="input-group-prepend">
-            <label class="input-group-text bg-primary border border-light" for="season">Season</label>
-          </div>
-          <select class="custom-select border border-light" id="season" data-action="change->filter-planned-crops#filterBySeason" data-filter-planned-crops-target="season">
-            <option selected>Please select a season</option>
-            <option value="Summer">Summer</option>
-            <option value="Autumn">Autumn</option>
-            <option value="Winter">Winter</option>
-            <option value="Spring">Spring</option>
-          </select>
-        </div>
-      </div> %>
-
     </div>
+
+    <%# ------------- Garden Cards ------------- %>
     <% if @gardens %>
       <% @gardens.each do |garden| %>
         <%= render "historic_garden", garden: garden, season: @season, year: @year %>
