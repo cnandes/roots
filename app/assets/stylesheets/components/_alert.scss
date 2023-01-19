@@ -4,3 +4,23 @@
   right: 16px;
   z-index: 1000;
 }
+
+.alert-info {
+  border-radius: 15px;
+  border: 4px solid #774a00;
+
+  .worm-helper {
+    position: fixed;
+    bottom: -11px;
+    right: 295px;
+    width: 150px;
+  }
+
+  .speech-tag {
+    border: 4px solid #774a00;
+    position: fixed;
+    right: 273px;
+    width: 16px;
+    transform: rotate(333deg);
+  }
+}
