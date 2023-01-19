@@ -35,7 +35,6 @@
         <% if crop.harvested? %>
           <p class="card-text"><em class="text-muted">Harvested</em></p>
         <% end %>
-        <p class="card-text">Weeks left until harvest: <em class="text-muted"><%= crop.weeks_to_harvest %></em></p>
         <p class="card-text">Quantity: <em class="text-muted"><%= crop.quantity %></em></p>
         <%# button to plant crop %>
         <% unless (crop.planted || crop.plant_date) %>
