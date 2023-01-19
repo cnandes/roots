@@ -6,7 +6,7 @@
       </div>
 
       <%# ------------- Form to select year and season ------------- %>
-      <%= form_with url: history_path, method: :get, class: "d-flex" do |f| %>
+      <%= form_with url: history_path, method: :get, class: "d-flex form-border" do |f| %>
         <%= f.select :season,
           ["Summer", "Autumn", "Winter", "Spring"],
           selected: params[:season],
