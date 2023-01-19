@@ -34,6 +34,6 @@ class Crop < ApplicationRecord
     weeks_left = weeks_to_harvest - weeks_passed
     return "Ready to harvest" if weeks_left <= 0
 
-    return weeks_left < 1 ? "#{(weeks_left * 7).ceil} days to harvest" : "#{weeks_left.ceil} weeks to harvest"
+    return weeks_left < 1 ? "#{(weeks_left * 7).ceil} days until harvest" : "#{weeks_left.ceil} weeks until harvest"
   end
 end
