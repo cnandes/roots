@@ -11,8 +11,8 @@ class PagesController < ApplicationController
   def history
     @crops = current_user.crops
     @year_range = history_year_range(@crops)
-    params[:season].present? ? @season = params[:season] : @season = nil
-    params[:year].present? ? @year = params[:year].to_i : @year = nil
+    @season = params[:season].present? ? params[:season] : nil
+    @year = params[:year].present? ? params[:year].to_i : nil
   end
 
   private

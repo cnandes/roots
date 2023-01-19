@@ -6,20 +6,20 @@
       </div>
 
       <%# ------------- Form to select year and season ------------- %>
-      <%= form_with url: history_path, method: :get, class: "d-flex" do %>
-        <%= select :season,
-          params[:season],
+      <%= form_with url: history_path, method: :get, class: "d-flex" do |f| %>
+        <%= f.select :season,
           ["Summer", "Autumn", "Winter", "Spring"],
+          selected: params[:season],
           class: "form-control",
           placeholder: "Select a season"
         %>
-        <%= select :year,
-          params[:year],
+        <%= f.select :year,
           @year_range,
+          selected: params[:year],
           class: "form-control",
-          placeholder: "Select a season"
+          placeholder: "Select a year"
         %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
+        <%= f.submit "Search", class: "btn btn-primary" %>
       <% end %>
       <%# ------------- Select Season from plans page but could potentially reuse ------------- %>
       <%# <div class="input-group mb-3" style="width: 240px; margin-right: 12px;">
@@ -40,7 +40,7 @@
     </div>
     <% if @gardens %>
       <% @gardens.each do |garden| %>
-        <%= render "historic_garden", garden: garden %>
+        <%= render "historic_garden", garden: garden, season: @season, year: @year %>
       <% end %>
     <% end %>
     <% if @gardens.empty? %>
