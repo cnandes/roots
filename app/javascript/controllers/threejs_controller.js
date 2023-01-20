@@ -20,17 +20,23 @@ export default class extends Controller {
 
     const backgroundText = new THREE.TextureLoader().load();
 
-    this.ambientlight = new THREE.AmbientLight(0xe9d66b, 3);
+    this.ambientlight = new THREE.AmbientLight(0xfae7b5, 3);
 
     this.light_main = new THREE.PointLight(0xffffff, 4000);
     this.light_main.position.set(30, 30, 20);
 
-    this.light_main2 = new THREE.PointLight(0xffffff, 5000);
+    this.light_main2 = new THREE.PointLight(0xffffff, 4000);
     this.light_main2.position.set(-30, 30, -20);
 
-    this.biglight = new THREE.PointLight(0xffffff, 5000);
-    this.biglight.position.set(0, 50, 15);
+    this.biglight = new THREE.PointLight(0xffffff, 3000);
+    this.biglight.position.set(-10, 50, 15);
+    this.biglight.castShadow = true;
     // this.biglight.power = 10000;
+
+    this.biglight.shadow.mapSize.width = 2048; // default
+    this.biglight.shadow.mapSize.height = 2048; // default
+    this.biglight.shadow.camera.near = 0.5; // default
+    this.biglight.shadow.camera.far = 500; // default
 
     this.light = new THREE.DirectionalLight(0x5ca2b4, 1);
     this.light.position.set(15, 9, -20);
@@ -79,8 +85,8 @@ export default class extends Controller {
 
     // this.scene.add(helper);
     // this.texture.encoding = THREE.sRGBEncoding;
-    this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     this.renderer.shadowMap.enabled = true;
+    this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     this.renderer.outputEncoding = THREE.sRGBEncoding;
 
     /* ------------------------------- create cube ------------------------------ */
@@ -114,6 +120,12 @@ export default class extends Controller {
         gltf.scenes; // Array<THREE.Group>
         gltf.cameras; // Array<THREE.Camera>
         gltf.asset; // Object
+        gltf.scene.traverse(function (object) {
+          if (object.isMesh) {
+            object.castShadow = true;
+            object.receiveShadow = true;
+          }
+        });
       },
       // called while loading is progressing
       function (xhr) {
