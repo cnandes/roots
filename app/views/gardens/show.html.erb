@@ -1,17 +1,17 @@
 <div class="container p-10">
 
   <!-- ------------------------------- NEW BED modal1 -------------------------------- -->
-  <div class="modal fade" id="newbedmodal1" aria-hidden="true" aria-labelledby="newbedmodal1" tabindex="-1">
+  <div class="modal fade" id="newbedmodal1" aria-hidden="true" aria-labelledby="newbedmodal1" tabindex="-1" data-controller="modal">
     <div class="modal-dialog modal-xl modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="newbedmodal1">+ New Bed</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <h1 class="modal-title fs-5">+ New Bed</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" data-modal-target="close"></button>
         </div>
         <div class="modal-body">
           <div class="container-fluid">
             <div class="row">
-              <%= render "beds/new" %>
+              <%= render "beds/new"  %>
             </div>
           </div>
         </div>
