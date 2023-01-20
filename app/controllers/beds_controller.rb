@@ -9,7 +9,7 @@ class BedsController < ApplicationController
     @bed = Bed.new(bed_params)
     @bed.garden = @garden
     if @bed.save
-      redirect_to garden_path(@garden)
+      redirect_to garden_path(@garden), notice: "🚜 #{@bed.description} was added!"
     else
       # TO DO: figure out how to get this error to work
       # render "gardens/show", status: :unprocessable_entity
@@ -21,15 +21,16 @@ class BedsController < ApplicationController
 
   def update
     if @bed.update(bed_params)
-      redirect_to garden_path(@garden), status: :see_other
+      redirect_to garden_path(@garden), status: :see_other, notice: "🚜 #{@bed.description} was updated!"
     else
       render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
+    bed_description = @bed.description
     if @bed.destroy
-      redirect_to bed_path, status: :see_other
+      redirect_to bed_path, status: :see_other, notice: "🚜 #{bed_description} was removed!"
     else
       render @bed, status: :unprocessable_entity
     end
@@ -38,7 +39,7 @@ class BedsController < ApplicationController
   private
 
   def bed_params
-    params.require(:bed).permit(:description, :length, :width)
+    params.require(:bed).permit(:description)
   end
 
   def set_bed

@@ -1,64 +1,33 @@
 <div class="container p-10">
-  <div class="card my-3">
-    <div class="card-header">
-      <h2>+ New Bed</h2>
-    </div>
-    <div class="card-body">
 
-      <!-- ------------------------------- modal1 -------------------------------- -->
-      <div class="modal fade" id="newbedmodal1" aria-hidden="true" aria-labelledby="newbedmodal1" tabindex="-1">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="newbedmodal1">+ New Bed</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <!-- ------------------------------- NEW BED modal1 -------------------------------- -->
+  <div class="modal fade" id="newbedmodal1" aria-hidden="true" aria-labelledby="newbedmodal1" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="newbedmodal1">+ New Bed</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row">
+              <%= render "beds/new" %>
             </div>
-            <div class="modal-body">
-              <div class="container-fluid">
-                <div class="row">
-                  <%= render "beds/new" %>
-                </div>
-              </div>
-            </div>
-            <!-- ------------------------------- NOT CURRENTLY IN USE -------------------------------- -->
-            <!-- ------------------------------- button to access modal2 -------------------------------- -->
-            <%# <div class="modal-footer">
-              <button class="btn btn-primary" data-bs-target="#newbedmodal2" data-bs-toggle="modal"> second
-                modal</button>
-            </div> %>
           </div>
         </div>
       </div>
-
-      <!-- ------------------------------- NOT CURRENTLY IN USE -------------------------------- -->
-      <!-- ------------------------------- modal2 -------------------------------- -->
-      <%# <div class="modal fade" id="newbedmodal2" aria-hidden="true" aria-labelledby="newbedmodal2" tabindex="-1">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="newbedmodal2">Modal 2</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <div class="container-fluid">
-                <div class="row">
-                  new bed model 2
-                </div>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button class="btn btn-primary" data-bs-target="#newbedmodal1" data-bs-toggle="modal">
-                first modal</button>
-            </div>
-          </div>
-        </div>
-      </div> %>
-
-      <!-- ------------------------------- button -------------------------------- -->
-      <a class="btn btn-primary" data-bs-toggle="modal" href="#newbedmodal1" role="button">Add bed</a>
     </div>
   </div>
 
+  <div class="d-flex justify-content-between">
+    <!-- ------------------------------- Back to Gardens button -------------------------------- -->
+    <%= link_to ('<i class="fa-regular fa-hand-point-left"></i> Back').html_safe,
+            gardens_path,
+            class: "btn btn-light"
+          %>
+  <!-- ------------------------------- New Bed button -------------------------------- -->
+    <a class="btn btn-primary" data-bs-toggle="modal" href="#newbedmodal1" role="button"><i class="fa-solid fa-plus"></i> Bed</a>
+  </div>
   <!-- ------------------------------- list all beds in garden -------------------------------- -->
   <% if @beds %>
     <% @beds.each do |bed| %>
@@ -66,4 +35,14 @@
     <% end %>
   <% end %>
 
+  <!-- ------------------------------- list all beds in garden -------------------------------- -->
+  <% if @beds.empty? %>
+    <div class="card my-3">
+      <div class="card-header">
+        <h2>You don't have any beds yet</h2>
+      </div>
+      <div class="card-body no-beds">
+      </div>
+    </div>
+  <% end %>
 </div>

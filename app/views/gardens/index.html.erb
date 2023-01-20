@@ -19,10 +19,24 @@
     </div>
   </div>
 
-  <!-- ------------------------------- button -------------------------------- -->
-  <a class="btn btn-primary" data-bs-toggle="modal" href="#newbedmodal1" role="button">+ Garden</a>
-<% @gardens.each do |garden| %>
-  <%= render "garden", garden: garden %>
-<% end %>
+  <!-- ------------------------------- New Garden Button -------------------------------- -->
+  <div class="d-flex justify-content-end">
+    <a class="btn btn-primary" data-bs-toggle="modal" href="#newbedmodal1" role="button">+ Garden</a>
+  </div>
 
+  <!-- ------------------------------- Display Garden Cards -------------------------------- -->
+  <% if @gardens %>
+    <% @gardens.each do |garden| %>
+      <%= render "garden", garden: garden %>
+    <% end %>
+  <% end %>
+  <% if @gardens.empty? %>
+    <div class="card my-3">
+      <div class="card-header">
+        <h2>You don't have any gardens yet</h2>
+      </div>
+      <div class="card-body no-gardens">
+      </div>
+    </div>
+  <% end %>
 </div>

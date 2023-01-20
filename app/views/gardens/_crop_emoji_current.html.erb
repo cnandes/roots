@@ -1,0 +1,10 @@
+<div class="d-flex row justify-content-start" style="width: 70px;">
+  <div class="d-flex justify-content-end" style="padding-right: 8px;">
+    <div class="progress crop-progress" style="width: 65%; height: 7px; opacity: .9;">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="<%= crop.progress %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= crop.progress %>%;"></div>
+    </div>
+  </div>
+  <h1 class="mx-2" style="padding-left: 0px;" data-toggle="tooltip" data-placement="top" title="<%= crop.veggie.name %> x <%= crop.quantity %>">
+    <%= crop.emoji %>
+  </h1>
+</div>

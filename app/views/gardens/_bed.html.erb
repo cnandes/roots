@@ -1,53 +1,136 @@
-<div class="card my-3">
-  <div class="card-header">
-    <h2><%= bed.description %></h2>
+<% require_relative '../../../db/crop_emojis' %>
+
+<div class="card my-3 rounded">
+  <div class="card-header bed-header">
+    <div class="d-flex justify-content-between">
+      <div>
+        <h2><%= bed.description %></h2>
+      </div>
+      <div>
+        <%# ------------- Edit Bed Button ------------- %>
+        <%= link_to ('<i class="fa-solid fa-pencil"></i>').html_safe, edit_bed_path(bed), class:"btn btn-light" %>
+
+        <%# ------------- Delete Bed Button ------------- %>
+        <%= link_to ('<i class="fa-solid fa-trash-can"></i>').html_safe,
+                bed,
+                data: {turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                class: "btn btn-light"
+              %>
+      </div>
+    </div>
   </div>
-  <div class="card-body">
-    <h5 class="card-title">Crops</h5>
 
 
-    <ul>
-      <% bed.crops.each do |crop| %>
-        <li>
-          <%= crop.veggie.name %> x <%= crop.quantity %>
-          <%= link_to "x",
-            crop,
-            data: {turbo_method: :delete, turbo_confirm: "Are you sure?" },
-            class: "btn btn-danger"
-          %>
-        </li>
-      <% end %>
-    </ul>
+  <div class="card-body bed-card">
 
-    <%# ------------- Button ------------------ %>
-    <a class="btn btn-primary" data-bs-toggle="modal" href="#addcropmodal<%= bed.id %>" role="button">add new crop</a>
+    <%# ------------- Add Crop Button ------------------ %>
+    <div class="d-flex justify-content-end">
+      <a class="btn btn-primary m-2" data-bs-toggle="modal" href="#addcropmodal<%= bed.id %>" role="button"><i class="fa-solid fa-plus"></i> Crop</a>
+    </div>
+    <%# ------------- Planted Crop Cards ------------- %>
+    <div class="d-flex justify-content-start flex-wrap flex-row">
+        <% bed.planted_crops.each do |crop| %>
+          <%= render "crop", crop: crop %>
+        <% end %>
+    </div>
+
+    <%# ------------- Unplanted Crop Cards ------------- %>
+    <div class="d-flex justify-content-start flex-wrap flex-row">
+        <% bed.future_crops.each do |crop| %>
+          <%= render "crop", crop: crop %>
+        <% end %>
+    </div>
 
     <%# ------------- Modal for adding a crop ------------------ %>
     <div class="modal fade" id="addcropmodal<%= bed.id %>" aria-hidden="true" aria-labelledby="addcropmodal<%= bed.id %>" tabindex="-1">
       <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="addcropmodal<%= bed.id %>"><%= bed.description %> - Add a crop</h1>
+            <h1 class="modal-title fs-5" id="addcropmodal<%= bed.id %>"><%= bed.description %> - Add a Crop</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <div class="container-fluid">
-              <div class="row">
-                <%= simple_form_for @crop do |f| %>
-                  <%# TODO: implement the following when TAs are available %>
-                  <%# <%= f.association :veggie, as: :select2, collection: Veggie.all %>
-                  <%= f.association :veggie %>
-                  <%= f.input :quantity %>
-                  <div class="d-none">
-                    <%= f.association :bed, label_method: :description, include_blank: false, selected: bed.id %>
-                  </div>
-                  <%= f.button :submit %>
-                <% end %>
+              <div class="row" data-controller="crop-form">
+                <%# ------- Add crop form ------- %>
+                <div class="col">
+                  <%= simple_form_for @crop do |f| %>
+                    <div>
+                      <%= f.association :veggie, collection: Veggie.all %>
+                    </div>
+                    <%= f.input :quantity %>
+                    <%= f.input :weeks_to_harvest %>
+                    <%= f.label :season %>
+                    <div class="pb-3" data-action="change->crop-form#seasonSelected">
+                      <%= f.select :season, %w[Summer Autumn Winter Spring],
+                                  selected: @season %>
+                    </div>
+                    <%= f.label :emoji %>
+                    <div class="pb-3">
+                      <%= f.select :emoji, EMOJI_ARRAY %>
+                    </div>
+                    <br>
+                    <div data-action="change->crop-form#plantedChange">
+                      <%= f.input :planted,
+                                  label: "Has the crop been planted?",
+                                  as: :radio_buttons,
+                                  collection: [['Yes', true], ['No', false]],
+                                  checked: ['No', false] %>
+                    </div>
+                    <div class="d-none" data-crop-form-target="date">
+                      <%= f.input :plant_date,
+                                  as: :date,
+                                  include_blank: true,
+                                  selected: nil,
+                                  start_year: Date.today.year - 2,
+                                  end_year: Date.today.year %>
+                    </div>
+                    <br>
+                    <%= f.input :comment,
+                                label: "Comments" %>
+                    <div class="d-none">
+                      <%= f.association :bed,
+                                        label_method: :description,
+                                        include_blank: false,
+                                        selected: bed.id %>
+                    </div>
+                    <div class="btn btn-primary">
+                      <%= f.button :submit, "Add Crop" %>
+                    </div>
+                  <% end %>
+                </div>
+                <div class="col">
+
+                  <%# ------- Seasonal suggestion Card ------- %>
+                  <% @seasonal_veggies.each do |list| %>
+                    <div class="<%= list.first.season.downcase %> <%= "d-none" unless list.first.season == @season %>"
+                         data-crop-form-target="<%= list.first.season.downcase %>">
+                      <div class="card border-0 m-2" style="max-width: 24rem;">
+                        <div class="card-header crop_card_header">
+                          <div class="d-flex justify-content-around">
+                            <h3 class="text-centre mt-2"><%= @seasonal_titles[list.first.season.to_sym] %></h3>
+                          </div>
+                        </div>
+                        <div class="card-body crop_card_body card-bg">
+                          <div class="card border-0 rounded">
+                            <div class="card-body card-fg">
+                              <ul>
+                                <% list.each do |veggie| %>
+                                  <li class="card-text"><%= veggie.name %></li>
+                                <% end %>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
               </div>
             </div>
           </div>
           <div class="modal-footer">
-            <p>Don't see the veggie you want?</p>
+            <p>Don't see the Veggie you want?</p>
             <button class="btn btn-primary" data-bs-target="#addveggiemodal" data-bs-toggle="modal">Add new Veggie</button>
           </div>
         </div>
@@ -59,14 +142,13 @@
       <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="addveggiemodal">Create new veggie</h1>
+            <h1 class="modal-title fs-5" id="addveggiemodal">Create new Veggie</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <div class="container-fluid">
               <div class="row">
-                <%# TODO: render ADD NEW VEGGIE form/partial here %>
-                <p>TODO: render ADD NEW VEGGIE form/partial here</p>
+                <%= render "veggies/veggie_form" %>
               </div>
             </div>
           </div>
@@ -77,13 +159,5 @@
         </div>
       </div>
     </div>
-
-    <%# ------------- Button ------------- %>
-    <%= link_to "Update Beds", edit_bed_path(bed), class:"btn btn-primary" %>
-    <%= link_to "Delete Bed",
-                bed,
-                data: {turbo_method: :delete, turbo_confirm: "Are you sure?" },
-                class: "btn btn-danger"
-              %>
   </div>
 </div>

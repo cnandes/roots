@@ -1,24 +1,14 @@
+<!-- ------------------------------- Garden -------------------------------- -->
 <div class="card my-3">
   <div class="card-header garden-header">
     <div class="d-flex justify-content-between">
       <div>
-        <%# ------------- Link to Garden Show ------------- %>
-        <h2><%= link_to garden.name, garden_path(garden) %></h2>
+        <h2><%= garden.name %></h2>
       </div>
       <div>
         <%# ------------- Icon link to Garden Show ------------- %>
         <%= link_to ('<i class="fa-solid fa-eye"></i>').html_safe,
                 garden_path(garden),
-                class: "btn btn-light"
-                %>
-
-        <%# ------------- Edit Button ------------- %>
-        <%= render "partials/modal_edit_garden", garden: garden %>
-
-        <%# ------------- Delete Button ------------- %>
-        <%= link_to ('<i class="fa-solid fa-trash-can"></i>').html_safe,
-                garden,
-                data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this garden?" },
                 class: "btn btn-light"
                 %>
       </div>
@@ -33,32 +23,34 @@
             <%# ------------- Bed description badge ------------- %>
             <span class="badge badge-primary mb-1"><%= bed.description %></span>
             <div class="card plot-bed">
-              <div class="card-body" style="padding-top: 20px; padding-left: 16px">
+              <div class="card-body">
                 <div class="d-flex flex-wrap justify-content-around">
+                  <%# ------------- CURRENT CROPS LOGIC ------------- %>
+                  <%  %>
                   <%# ------------- Plot crop emojis in bed (max 12) ------------- %>
-                  <% bed.planted_crops.first(12).each do |crop| %>
-
-                    <%# ------------- If 1-2 crops in bed ------------- %>
-                    <% if bed.planted_crops.length <= 2 %>
-                      <% 6.times do %>
-                        <%= render "crop_emoji_current", crop: crop %>
-                      <% end %>
+                  <% bed.past_crops.first(12).each do |crop| %>
 
                     <%# ------------- If less that 4 crops in bed ------------- %>
-                    <% elsif bed.planted_crops.length <= 4 %>
+                    <% if bed.past_crops.length <= 4 %>
                       <% 3.times do %>
-                        <%= render "crop_emoji_current", crop: crop %>
+                        <h2 class="m-2" data-toggle="tooltip" data-placement="top" title="<%= crop.veggie.name %> x <%= crop.quantity %>">
+                          <%= crop.emoji %>
+                        </h2>
                       <% end %>
 
                     <%# ------------- If 5-6 crops in bed ------------- %>
-                    <% elsif bed.planted_crops.length <= 6 %>
+                    <% elsif bed.past_crops.length <= 6 %>
                       <% 2.times do %>
-                        <%= render "crop_emoji_current", crop: crop %>
+                        <h2 class="m-2" data-toggle="tooltip" data-placement="top" title="<%= crop.veggie.name %> x <%= crop.quantity %>">
+                          <%= crop.emoji %>
+                        </h2>
                       <% end %>
 
                     <%# ------------- If more than 6 crops in bed ------------- %>
                     <% else %>
-                      <%= render "crop_emoji_current", crop: crop %>
+                      <h2 class="m-2" data-toggle="tooltip" data-placement="top" title="<%= crop.veggie.name %> x <%= crop.quantity %>">
+                        <%= crop.emoji %>
+                      </h2>
                     <% end %>
                   <% end %>
                 </div>
@@ -70,15 +62,10 @@
       <%# ------------- No Beds Display ------------- %>
       <% if garden.beds.empty? %>
         <div class="card no-plot-bed">
-
-          <div class="d-flex flex-column">
-            <div class="align-self-center">
-              <div class="card-body">
-                <p class="card-text text-center m-4"></p>
-                <div class="m-10">
-                  <%= link_to "+ Bed", garden_path(garden),
-                    class: "btn btn-secondary btn-sm" %>
-                </div>
+          <div class="card-body">
+            <div class="d-flex align-items-center flex-row">
+              <p class="card-text text-center m-4"> </p>
+              <div class="m-10">
               </div>
             </div>
           </div>

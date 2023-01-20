@@ -1,0 +1,25 @@
+.garden{
+  background-image: url(garden_background_colour_low_o.png);
+  background-repeat: repeat;
+  background-size: cover;
+  min-height: 300px;
+  span {
+    background-color: $mossgreen;
+  }
+}
+
+.no-gardens{
+  background-image: url(garden_background_greyscale.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 400px;
+  opacity: 0.4;
+}
+
+.garden-header {
+  color: $mossgreen;
+  a {
+    text-decoration: none;
+    color: $mossgreen;
+  }
+}

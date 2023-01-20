@@ -10,14 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_15_094628) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_17_082746) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "beds", force: :cascade do |t|
     t.string "description"
-    t.integer "length"
-    t.integer "width"
     t.bigint "garden_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -30,6 +28,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_15_094628) do
     t.bigint "bed_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "weeks_to_harvest"
+    t.string "emoji"
+    t.text "comment"
+    t.date "plant_date"
+    t.boolean "planted"
+    t.string "season"
     t.index ["bed_id"], name: "index_crops_on_bed_id"
     t.index ["veggie_id"], name: "index_crops_on_veggie_id"
   end
@@ -58,6 +62,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_15_094628) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "season"
   end
 
   add_foreign_key "beds", "gardens"
