@@ -15,13 +15,13 @@ export default class extends Controller {
     const white = 0xfdf5e6;
     const black = 0x000000;
     const backgroundtexture = new THREE.TextureLoader().load(
-      "/assets/grass.png"
+      "/assets/grass.jpg"
     );
 
     const backgroundText = new THREE.TextureLoader().load();
 
     /* --------------------------------- lights --------------------------------- */
-    this.ambientlight = new THREE.AmbientLight(0xfae7b5, 3);
+    this.ambientlight = new THREE.AmbientLight(0xe3dac9, 3);
 
     this.light_main = new THREE.PointLight(0xffffff, 4000);
     this.light_main.position.set(30, 30, 20);
