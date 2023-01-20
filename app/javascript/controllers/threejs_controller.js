@@ -20,12 +20,24 @@ export default class extends Controller {
 
     const backgroundText = new THREE.TextureLoader().load();
 
-    // this.ambientlight = new THREE.AmbientLight(0x5ba4a9, 0.1);
-    this.light = new THREE.DirectionalLight(0xffffff, 0.3);
-    this.light.position.set(10, 10, 10);
-    this.light2 = new THREE.DirectionalLight(0xffffff, 0.5);
-    this.light2.position.set(-15, 10, -10);
-    this.biglight = new THREE.HemisphereLight(0xffffff, 0x0c142d, 0.4);
+    this.ambientlight = new THREE.AmbientLight(0xe9d66b, 3);
+
+    this.light_main = new THREE.PointLight(0xffffff, 4000);
+    this.light_main.position.set(30, 30, 20);
+
+    this.light_main2 = new THREE.PointLight(0xffffff, 5000);
+    this.light_main2.position.set(-30, 30, -20);
+
+    this.biglight = new THREE.PointLight(0xffffff, 5000);
+    this.biglight.position.set(0, 50, 15);
+    // this.biglight.power = 10000;
+
+    this.light = new THREE.DirectionalLight(0x5ca2b4, 1);
+    this.light.position.set(15, 9, -20);
+
+    this.light2 = new THREE.DirectionalLight(0x464196, 1);
+    this.light2.position.set(-15, 9, 20);
+
     const helper = new THREE.DirectionalLightHelper(this.light2, 5);
 
     const loader = new GLTFLoader();
@@ -47,21 +59,29 @@ export default class extends Controller {
     this.camera.rotateX = -23;
     this.scene.add(this.camera);
 
-    this.renderer = new THREE.WebGLRenderer();
+    this.renderer = new THREE.WebGLRenderer({ antialias: true });
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(this.renderer.domElement);
 
     const controls = new OrbitControls(this.camera, this.renderer.domElement);
 
     /* -------------------------------- add light ------------------------------- */
-    this.scene.add(this.light);
-    this.scene.add(this.light2);
-    // this.scene.add(this.ambientlight);
+    this.renderer.physicallyCorrectLights = true;
+    // this.scene.add(this.light);
+    // this.scene.add(this.light2);
+
+    this.scene.add(this.light_main);
+    this.scene.add(this.light_main2);
+
     this.scene.add(this.biglight);
+
+    this.scene.add(this.ambientlight);
+
     // this.scene.add(helper);
-    this.renderer.shadowMap.enabled = true;
+    // this.texture.encoding = THREE.sRGBEncoding;
     this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-    // this.renderer.physicallyCorrectLights = true;
+    this.renderer.shadowMap.enabled = true;
+    this.renderer.outputEncoding = THREE.sRGBEncoding;
 
     /* ------------------------------- create cube ------------------------------ */
     this.geometry = new THREE.BoxGeometry();
@@ -84,7 +104,7 @@ export default class extends Controller {
 
     loader.load(
       // resource URL
-      "/assets/house.glb",
+      "/assets/untitled.gltf",
       // called when the resource is loaded
       function (gltf) {
         scene.add(gltf.scene);
