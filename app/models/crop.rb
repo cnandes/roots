@@ -11,23 +11,11 @@ class Crop < ApplicationRecord
     in: %w[Summer Autumn Winter Spring],
     message: "%<value> is not a valid season"
   }
-  validates :plant_date, comparison: { less_than_or_equal_to: Date.today }, allow_nil: true
+  validates :plant_date, comparison: { less_than_or_equal_to: Date.today }, presence: true, allow_nil: false, if: :planted?
+  validates :planted, inclusion: [true, false]
 
   def harvested?
     plant_date && !planted
-  end
-
-  def season_background_colour
-    case season
-    when "Summer"
-      # summer background colour
-    when "Spring"
-      # spring background colour
-    when "Autumn"
-      # autumn background colour
-    when "Winter"
-      # winter background colour
-    end
   end
 
   def progress
