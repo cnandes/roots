@@ -13,5 +13,5 @@ application.register("hello", HelloController)
 import CropForm from "./crop_form_controller"
 application.register("crop-form", CropForm)
 
-import Select2Controller from "./select2_controller"
-application.register("select2", Select2Controller)
+// import Select2Controller from "./select2_controller"
+// application.register("select2", Select2Controller)

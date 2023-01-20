@@ -86,7 +86,7 @@ class GardensController < ApplicationController
 
   def seasonal_veggie_lists
     seasons = %w[Summer Autumn Winter Spring]
-    seasons.map { |season| Veggie.seasonal_veggies(season) }
+    seasons.flat_map { |season| Veggie.seasonal_veggies(season) }
   end
 
   SEASONAL_TITLES = {
