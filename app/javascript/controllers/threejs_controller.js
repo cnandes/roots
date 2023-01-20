@@ -20,6 +20,7 @@ export default class extends Controller {
 
     const backgroundText = new THREE.TextureLoader().load();
 
+    /* --------------------------------- lights --------------------------------- */
     this.ambientlight = new THREE.AmbientLight(0xfae7b5, 3);
 
     this.light_main = new THREE.PointLight(0xffffff, 4000);
@@ -45,7 +46,7 @@ export default class extends Controller {
     this.light2.position.set(-15, 9, 20);
 
     const helper = new THREE.DirectionalLightHelper(this.light2, 5);
-
+    /* -------------------------------- load gltf ------------------------------- */
     const loader = new GLTFLoader();
     let obj = null;
 
@@ -71,7 +72,7 @@ export default class extends Controller {
 
     const controls = new OrbitControls(this.camera, this.renderer.domElement);
 
-    /* -------------------------------- add light ------------------------------- */
+    /* -------------------------------- add light to scene ------------------------------- */
     this.renderer.physicallyCorrectLights = true;
     // this.scene.add(this.light);
     // this.scene.add(this.light2);
@@ -82,6 +83,8 @@ export default class extends Controller {
     this.scene.add(this.biglight);
 
     this.scene.add(this.ambientlight);
+
+    /* ------------------------------- add shadows ------------------------------ */
 
     // this.scene.add(helper);
     // this.texture.encoding = THREE.sRGBEncoding;
