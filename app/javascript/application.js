@@ -6,9 +6,9 @@ import "bootstrap"
 
 // Turbolinks.start();
 
-// import { initSelect2 } from './components/init_select2';
+import { initSelect2 } from './components/init_select2';
 
-// document.addEventListener("turbolinks:load", function() {
-//   console.log("____________SOMETHING______________")
-//   initSelect2();
-// });
+document.addEventListener("turbolinks:load", function() {
+  console.log("____________SOMETHING______________")
+  initSelect2();
+});
