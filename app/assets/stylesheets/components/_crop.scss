@@ -1,13 +1,25 @@
-.crop_card_body {
+.crop-card {
+  border-radius: 5px;
+  min-width: 18rem;
+  max-width: 18rem;
+}
+
+.crop-card-header {
+  a {
+    color: $mossgreen;
+  }
+}
+
+.crop-card-body {
   background-color: $background;
+  border-radius: 5px;
+  border: none;
   a {
     color: black;
     text-decoration: none;
   }
 }
 
-.crop_card_header {
-  a {
-    color: $mossgreen;
-  }
+.crop-card-inner {
+  border-radius: 5px;
 }
