@@ -17,8 +17,8 @@ require_relative 'veggie_names'
 puts "Cleansing DB"
 Crop.destroy_all
 Veggie.destroy_all
-Bed.destroy_all
-Garden.destroy_all
+# Bed.destroy_all
+# Garden.destroy_all
 
 # # Add 4 Gardens
 # puts "Populating Gardens"
@@ -43,11 +43,32 @@ Garden.destroy_all
 
 # Add many Veggies
 puts "Populating Summer Veggies"
-veggie_array = VEGE_ARRAY
+veggie_array = SUMMER_VEG_ARRAY
 veggie_array.each do |vege|
   Veggie.create(name: vege, season: "Summer")
 end
-puts "Added #{Veggie.all.count} veggies to the database 🌱"
+puts "Added summer veggies to the database 🌱"
+
+puts "Populating Autumn Veggies"
+veggie_array = AUTUMN_VEG_ARRAY
+veggie_array.each do |vege|
+  Veggie.create(name: vege, season: "Autumn")
+end
+puts "Added autumn veggies to the database 🌱"
+
+puts "Populating Winter Veggies"
+veggie_array = WINTER_VEG_ARRAY
+veggie_array.each do |vege|
+  Veggie.create(name: vege, season: "Winter")
+end
+puts "Added winter veggies to the database 🌱"
+
+puts "Populating Spring Veggies"
+veggie_array = SPRING_VEG_ARRAY
+veggie_array.each do |vege|
+  Veggie.create(name: vege, season: "Spring")
+end
+puts "Added spring veggies to the database 🌱"
 
 # Add Crops to Beds
 # puts "Planting Crops in Beds"
