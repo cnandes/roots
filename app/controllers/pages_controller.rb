@@ -20,7 +20,7 @@ class PagesController < ApplicationController
   def history_year_range(crops)
     past_crops = crops - crops.where(plant_date: nil) - crops.where(planted: true)
     past_crops.sort_by!(&:plant_date)
-    (past_crops.first.plant_date.year..past_crops.last.plant_date.year)
+    return past_crops.present? ? (past_crops.first.plant_date.year..past_crops.last.plant_date.year) : [Date.today.year]
   end
 
   def set_gardens
