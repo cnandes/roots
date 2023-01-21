@@ -33,4 +33,8 @@ class Crop < ApplicationRecord
 
     return weeks_left < 1 ? "#{(weeks_left * 7).ceil} days until harvest" : "#{weeks_left.ceil} weeks until harvest"
   end
+
+  def year
+    plant_date.year
+  end
 end
