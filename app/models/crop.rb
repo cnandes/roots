@@ -19,8 +19,18 @@ class Crop < ApplicationRecord
   end
 
   def progress
+    return weeks_since_planted < weeks_to_harvest ? (weeks_since_planted / weeks_to_harvest).to_f * 100 : 100
+  end
+
+  def weeks_since_planted
     days = Date.today - Date.parse(plant_date.to_s)
-    weeks = days / 7
-    return (weeks / weeks_to_harvest).to_f * 100
+    days / 7.0
+  end
+
+  def time_left_to_harvest
+    weeks_left = weeks_to_harvest - weeks_since_planted
+    return "Ready to harvest" if weeks_left <= 0
+
+    return weeks_left < 1 ? "#{(weeks_left * 7).ceil} days until harvest" : "#{weeks_left.ceil} weeks until harvest"
   end
 end
