@@ -76,48 +76,4 @@
     </div>
   </div>
 
-  <%# ------------- Modal for editing a crop ------------------ %>
-  <div class="modal fade" id="editcropmodal<%= crop.id %>" aria-hidden="true" aria-labelledby="editcropmodal<%= crop.id %>" tabindex="-1">
-    <div class="modal-dialog modal-xl modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="editcropmodal<%= crop.id %>"><%= crop.veggie.name %> - Edit Crop</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="container-fluid">
-            <div class="row">
-            <%# THIS FORM WILL BE REPLACED - PLEASE DO NOT WORRY TO MUCH ABOUT STYLING %>
-              <%= simple_form_for crop do |f| %>
-                <%= f.association :veggie %>
-                <%= f.input :quantity %>
-                <%= f.input :weeks_to_harvest %>
-                <%= f.label :emoji %>
-                <div class="pb-3">
-                  <%= f.select :emoji, EMOJI_ARRAY %>
-                </div>
-                <%= f.input :plant_date, label: "Plant date (please note all dates must be no later than today)" %>
-                <%# input for planted will be removed from this form once crop#edit in implemented %>
-                <br>
-                <%= f.input :planted, label: "Has the crop been planted?", input_html: { checked: true } %>
-                <br>
-                <%= f.label :season %>
-                <div class="pb-3">
-                  <%= f.select :season, %w[Summer Autumn Winter Spring] %>
-                </div>
-                <%= f.input :comment %>
-                <%# <div class="d-none"> %>
-                  <%# <%= f.association :bed, label_method: :description, include_blank: false, selected: bed.id %>
-                <%# </div> %>
-                <div class="btn btn-primary">
-                  <%= f.button :submit, "Save Crop" %>
-                </div>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
 </div>

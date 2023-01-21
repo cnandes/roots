@@ -1,14 +1,18 @@
-<%= simple_form_for [@garden, @bed] do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-  <div class="form-input">
-    <%= f.input :description %>
-  </div>
-  <div class="form-input">
-    <div class="form-actions">
-      <div class="col-lg-12 mb-0">
-        <div class="d-grid"> <%= f.button :submit, "Save Bed", class: "btn btn-primary" %></div>
+<%=turbo_frame_tag dom_id(@garden, :new_bed_form) do %>
+  <%= simple_form_for [@garden, @bed], data: {controller: "turboform"} do |f| %>
+    <%= f.error_notification %>
+    <%= f.object.errors.full_messages.join(", ") if f.object.errors.any? %>
+
+    <div class="form-input">
+      <%= f.input :description %>
+    </div>
+
+    <div class="form-input">
+      <div class="form-actions">
+        <div class="col-lg-12 mb-0">
+          <div class="d-grid"> <%= f.button :button, "Save Bed", class: "btn btn-primary" %></div>
+        </div>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+<%end%>
