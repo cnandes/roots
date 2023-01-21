@@ -24,7 +24,7 @@ class GardensController < ApplicationController
     if @garden.save
       redirect_to gardens_path, notice: "🪴 #{@garden.name} was added!"
     else
-      render :new, status: :unprocessable_entity
+      render partial: "gardens/new_garden_form", status: :unprocessable_entity
     end
   end
 
