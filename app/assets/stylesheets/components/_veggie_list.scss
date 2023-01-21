@@ -10,6 +10,11 @@
   .card-fg {
     background-color: #fcffb2;
   }
+
+  span {
+    background-color: rgba(250, 214, 95, 0.9);
+    color: black;
+  }
 }
 
 .autumn {
@@ -23,6 +28,11 @@
 
   .card-fg {
     background-color: #f3e0b5;
+  }
+
+  span {
+    background-color: rgba(248, 171, 39, 0.9);
+    color: black;
   }
 }
 
@@ -38,6 +48,11 @@
   .card-fg {
     background-color: #cbf1f5;
   }
+
+  span {
+    background-color: rgba(123, 164, 146, 0.8);
+    color: black;
+  }
 }
 
 .spring {
@@ -51,5 +66,10 @@
 
   .card-fg {
     background-color: #e5ebb2;
+  }
+
+  span {
+    background-color: rgba(197, 216, 161, 0.9);
+    color: black;
   }
 }
