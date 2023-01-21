@@ -26,6 +26,8 @@
       </div>
     </div>
   </div>
+
+  <%# --- Card body --- %>
   <div class="card-body crop-card-body">
     <div class="card border-0 rounded">
       <div class="card-body">
@@ -63,16 +65,12 @@
 
         <%# button to plant crop %>
         <% unless (crop.planted || crop.plant_date) %>
-          <div class="btn btn-primary w-100">
-            <%= link_to 'Plant!', plant_crop_path(crop) %>
-          </div>
+          <%= link_to 'Plant!', plant_crop_path(crop), class: "btn btn-primary w-100" %>
         <% end %>
 
         <%# button to harvest crop %>
         <% if crop.planted %>
-          <div class="btn btn-primary w-100">
-            <%= link_to 'Harvest!', harvest_crop_path(crop) %>
-          </div>
+          <%= link_to 'Harvest!', harvest_crop_path(crop), class: "btn btn-primary w-100" %>
         <% end %>
       </div>
     </div>
