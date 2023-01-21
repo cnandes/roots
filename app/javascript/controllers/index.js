@@ -13,10 +13,8 @@ application.register("filter-planned-crops", FilterPlannedCropsController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
-import TurboformController from "./turboform_controller"
-application.register("turboform", TurboformController)
 import ThreejsController from "./threejs_controller"
 application.register("threejs", ThreejsController)
 
-import CropForm from "./crop_form_controller"
-application.register("crop-form", CropForm)
+import TurboformController from "./turboform_controller"
+application.register("turboform", TurboformController)

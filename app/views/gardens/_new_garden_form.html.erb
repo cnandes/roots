@@ -1,7 +1,6 @@
 <%=turbo_frame_tag dom_id(@garden, :new_garden_form) do %>
   <%= simple_form_for (@garden), data: {controller: "turboform"} do |f| %>
-    <%= f.error_notification %>
-    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
       <div class="form-input">
         <%= f.input :name %>
       </div>
