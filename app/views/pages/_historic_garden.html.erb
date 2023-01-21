@@ -1,0 +1,52 @@
+<!-- ------------------------------- Garden -------------------------------- -->
+<div class="card my-3">
+  <div class="card-header garden-header">
+    <div class="d-flex justify-content-between">
+      <div>
+        <h2><%= garden.name %></h2>
+      </div>
+      <div>
+        <%# ------------- Icon link to Garden Show ------------- %>
+        <%= link_to ('<i class="fa-solid fa-eye"></i>').html_safe,
+                garden_path(garden),
+                class: "btn btn-light"
+                %>
+      </div>
+    </div>
+  </div>
+  <div class="card-body garden">
+    <div class="d-flex flex-wrap justify-content-around">
+      <% if garden.beds %>
+        <%# ------------- Iterate over beds in garden ------------- %>
+        <% garden.beds.each do |bed|%>
+          <div class="m-2">
+            <%# ------------- Bed description badge ------------- %>
+            <span class="badge badge-primary mb-1"><%= bed.description %></span>
+            <div class="card plot-bed">
+              <div class="card-body">
+
+                <%# ------------- Crops by season ------------- %>
+
+                <div class="d-flex flex-wrap justify-content-around">
+                  <%= render "crop_by_season_and_year", bed: bed, season: season, year: year %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+      <%# ------------- No Beds Display ------------- %>
+      <% if garden.beds.empty? %>
+        <div class="card no-plot-bed">
+          <div class="card-body">
+            <div class="d-flex align-items-center flex-row">
+              <p class="card-text text-center m-4"> </p>
+              <div class="m-10">
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
