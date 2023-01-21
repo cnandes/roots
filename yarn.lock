@@ -755,7 +755,7 @@ three@^0.100.0:
 
 three@^0.148.0:
   version "0.148.0"
-  resolved "https://registry.npmjs.org/three/-/three-0.148.0.tgz"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.148.0.tgz#b6f62f9c84227f8d51c151bf17b67984ded8e4d7"
   integrity sha512-8uzVV+qhTPi0bOFs/3te3RW6hb3urL8jYEl6irjCWo/l6sr8MPNMcClFev/MMYeIxr0gmDcoXTy/8LXh/LXkfw==
 
 update-browserslist-db@^1.0.9:
