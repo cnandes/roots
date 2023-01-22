@@ -19,16 +19,16 @@
     </div>
   </div>
 
-  <!-- ------------------------------- Sub nav  -------------------------------- -->
-  <div class="d-flex justify-content-space-between">
-    <!-- ------------------------------- Placeholder Button -------------------------------- -->
-    <div class="btn btn-primary" style="height:45px; width:120px;">Placeholder</div>
+  <!-- ------------------------------- Sub nav -------------------------------- -->
+  <div class="d-flex justify-content-between align-items-top">
+    <!-- ------------------------------- Placeholder -------------------------------- -->
+    <div class="btn btn-primary align-self-start" style="width:120px;">Placeholder</div>
     <!-- ------------------------------- Info helper -------------------------------- -->
-    <div class="w-100">
-      <%= render "shared/page_info" %>
-    </div>
+    <%# <div class="w-60"> %>
+      <%= render "shared/page_info", empty: @gardens.empty? %>
+    <%# </div> %>
     <!-- ------------------------------- New Garden Button -------------------------------- -->
-    <a class="btn btn-primary" style="height:45px; width:120px;" data-bs-toggle="modal" href="#newbedmodal1" role="button">+ Garden</a>
+    <a class="btn btn-primary align-self-start" style="width:120px;" data-bs-toggle="modal" href="#newbedmodal1" role="button">+ Garden</a>
   </div>
 
   <!-- ------------------------------- Display Garden Cards -------------------------------- -->

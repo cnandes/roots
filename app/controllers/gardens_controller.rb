@@ -6,11 +6,11 @@ class GardensController < ApplicationController
     @garden = Garden.new
     @info = {
       title: "My Gardens",
-      brief: "This is the gardens page, where you can view all your current gardens",
+      brief: "This is the gardens page, where you will find a summary of your current gardens",
       tips: [
         "To add a new garden, click the '+ Garden' button to the right",
         "Buttons to edit and delete gardens can be found to the right of the garden name",
-        "To view the garden simply clcik the garden title",
+        "To view the garden simply click the garden title",
         "Crops will appear in your beds once planted, with a progress indicator to let you know when to harvest"
       ]
     }
