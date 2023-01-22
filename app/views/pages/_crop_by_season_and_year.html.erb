@@ -5,29 +5,17 @@
 <%# ------------- If less that 4 crops in bed ------------- %>
   <% if filtered_crops.length <= 4 %>
     <% 3.times do %>
-      <!-- ------------------------------- emoji modal button -------------------------------- -->
-      <h1 data-filter-planned-crops-target="crop" id="<%= bed.id %>" class="m-2" value="<%= season %>">
-        <a style="text-decoration: none;" data-bs-toggle="modal" href="#historiccropmodal<%= crop.id %>" role="button"><%= crop.emoji %></a>
-      </h1>
-      <%= render "crop_modal", crop: crop %>
+      <%= render "crop_modal", crop: crop, bed: bed, season: season %>
     <% end %>
 
   <%# ------------- If 5-6 crops in bed ------------- %>
   <% elsif filtered_crops.length <= 6 %>
     <% 2.times do %>
-      <!-- ------------------------------- emoji modal button -------------------------------- -->
-      <h1 data-filter-planned-crops-target="crop" id="<%= bed.id %>" class="m-2" value="<%= season %>">
-        <a style="text-decoration: none;" data-bs-toggle="modal" href="#historiccropmodal<%= crop.id %>" role="button"><%= crop.emoji %></a>
-      </h1>
-      <%= render "crop_modal", crop: crop %>
+      <%= render "crop_modal", crop: crop, bed: bed, season: season %>
     <% end %>
 
   <%# ------------- If more than 6 crops in bed ------------- %>
   <% else %>
-    <!-- ------------------------------- emoji modal button -------------------------------- -->
-    <h1 data-filter-planned-crops-target="crop" id="<%= bed.id %>" class="m-2" value="<%= season %>">
-      <a style="text-decoration: none;" data-bs-toggle="modal" href="#historiccropmodal<%= crop.id %>" role="button"><%= crop.emoji %></a>
-    </h1>
-    <%= render "crop_modal", crop: crop %>
+    <%= render "crop_modal", crop: crop, bed: bed, season: season %>
   <% end %>
 <% end %>
