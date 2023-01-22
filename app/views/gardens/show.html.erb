@@ -5,7 +5,11 @@
     <div class="modal-dialog modal-xl modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
+<<<<<<< HEAD
           <h1 class="modal-title fs-5">+ New Bed</h1>
+=======
+          <h1 class="modal-title fs-5" id="newbedmodal1">Add Bed</h1>
+>>>>>>> 490574c (udpated add bed button on garden show)
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -26,7 +30,7 @@
             class: "btn btn-light"
           %>
   <!-- ------------------------------- New Bed button -------------------------------- -->
-    <a class="btn btn-primary <%= "btn-pulse-primary" if @beds.empty? %>" data-bs-toggle="modal" href="#newbedmodal1" role="button"><i class="fa-solid fa-plus"></i> Bed</a>
+    <a class="btn btn-primary <%= "btn-pulse-primary" if @beds.empty? %>" data-bs-toggle="modal" href="#newbedmodal1" role="button">Add Bed</a>
   </div>
   <!-- ------------------------------- list all beds in garden -------------------------------- -->
   <% if @beds %>
