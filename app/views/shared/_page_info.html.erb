@@ -1,0 +1,21 @@
+<div class="page-info">
+  <div class="card text-bg-info mb-3">
+    <a data-bs-toggle="collapse" href="#collapseBody">
+      <div class="card-header h-100">
+        ✨ <%= @info[:title] %> - Helpful Hints ✨
+      </div>
+    </a>
+    <div class="collapse" id="collapseBody">
+      <div class="card-body">
+        <p class="card-text">
+          <p><%= @info[:brief] %></p>
+          <ul>
+            <% @info[:tips].each do |tip| %>
+              <li><%= tip %></li>
+            <% end %>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
