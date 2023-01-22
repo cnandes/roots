@@ -1,9 +1,13 @@
 <div class="card border-0 m-2 crop-card">
   <div class="card-header crop-card-header">
     <div class="d-flex justify-content-between">
-      <h3 class="text-centre"><%= crop.emoji %></h3>
+      <%# Name and emoji %>
+      <div class="d-flex">
+        <h5 class="text-centre mt-2 me-2"><%= crop.emoji %></h5>
+        <h5 class="text-centre mt-2"><%= crop.veggie.name %></h5>
+      </div>
       <% if crop.harvested? %>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close mt-2" data-bs-dismiss="modal" aria-label="Close"></button>
       <% else %>
         <%# Menu button %>
         <div class="btn-group dropend">
@@ -36,11 +40,8 @@
     <div class="card border-0 rounded">
       <div class="card-body">
 
-        <%# Veggie name and season badge %>
+        <%# Veggie season badge %>
         <div class="d-flex justify-content-between pb-2 <%= crop.season.downcase %>">
-          <h5 class="card-title mb-1"><%= crop.veggie.name %></h5>
-
-          <%# ---- added badge but currently commented out because I'm not sure about it ---%>
           <span class="badge mb-2"><%= crop.season %> </span>
         </div>
 
@@ -66,16 +67,58 @@
         <% if crop.comment.present? %>
           <p class="card-text">Notes: <em class="text-muted"><%= crop.comment %></em></p>
         <% end %>
-
         <%# button to plant crop %>
         <% unless (crop.planted || crop.plant_date) %>
           <%= link_to 'Plant!', plant_crop_path(crop), class: "btn btn-primary w-100" %>
         <% end %>
-
         <%# button to harvest crop %>
         <% if crop.planted %>
           <%= link_to 'Harvest!', harvest_crop_path(crop), class: "btn btn-primary w-100" %>
         <% end %>
+      </div>
+    </div>
+  </div>
+
+  <%# ------------- Modal for editing a crop ------------------ %>
+  <div class="modal fade" id="editcropmodal<%= crop.id %>" aria-hidden="true" aria-labelledby="editcropmodal<%= crop.id %>" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="editcropmodal<%= crop.id %>"><%= crop.veggie.name %> - Edit Crop</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row">
+            <%# THIS FORM WILL BE REPLACED - PLEASE DO NOT WORRY TO MUCH ABOUT STYLING %>
+              <%= simple_form_for crop do |f| %>
+                <%= f.association :veggie %>
+                <%= f.input :quantity %>
+                <%= f.input :weeks_to_harvest %>
+                <%= f.label :emoji %>
+                <div class="pb-3">
+                  <%= f.select :emoji, EMOJI_ARRAY %>
+                </div>
+                <%= f.input :plant_date, label: "Plant date (please note all dates must be no later than today)" %>
+                <%# input for planted will be removed from this form once crop#edit in implemented %>
+                <br>
+                <%= f.input :planted, label: "Has the crop been planted?", input_html: { checked: true } %>
+                <br>
+                <%= f.label :season %>
+                <div class="pb-3">
+                  <%= f.select :season, %w[Summer Autumn Winter Spring] %>
+                </div>
+                <%= f.input :comment %>
+                <%# <div class="d-none"> %>
+                  <%# <%= f.association :bed, label_method: :description, include_blank: false, selected: bed.id %>
+                <%# </div> %>
+                <div class="btn btn-primary">
+                  <%= f.button :submit, "Save Crop" %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
