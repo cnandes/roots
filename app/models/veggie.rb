@@ -6,4 +6,12 @@ class Veggie < ApplicationRecord
     in: %w[Summer Autumn Winter Spring],
     message: "%<value> is not a valid season"
   }
+
+  def seasonal_veggie?(season_string)
+    season == season_string
+  end
+
+  def self.seasonal_veggies(season_string)
+    all.select { |veggie| veggie.seasonal_veggie?(season_string) }
+  end
 end
