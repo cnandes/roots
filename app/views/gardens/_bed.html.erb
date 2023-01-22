@@ -6,20 +6,31 @@
       <div>
         <h2><%= bed.description %></h2>
       </div>
-      <div>
-        <%# ------------- Edit Bed Button ------------- %>
-        <%= link_to ('<i class="fa-solid fa-pencil"></i>').html_safe, edit_bed_path(bed), class:"btn btn-light" %>
 
-        <%# ------------- Delete Bed Button ------------- %>
-        <%= link_to ('<i class="fa-solid fa-trash-can"></i>').html_safe,
+      <%# Menu button %>
+      <div class="btn-group dropdown">
+        <button type="button" class="btn btn-light" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-bars text-success" style="font-size: 22px;"></i>
+        </button>
+        <ul class="dropdown-menu" style="min-width: 130px;">
+
+          <%# ------------- Edit Bed Button ------------- %>
+          <li>
+            <%= link_to ('<i class="fa-solid fa-pencil"></i> Edit Bed').html_safe, edit_bed_path(bed), class:"btn btn-light" %>
+          </li>
+
+          <%# ------------- Delete Bed Button ------------- %>
+          <li>
+            <%= link_to ('<i class="fa-solid fa-trash-can"></i> Delete Bed').html_safe,
                 bed,
                 data: {turbo_method: :delete, turbo_confirm: "Are you sure?" },
                 class: "btn btn-light"
               %>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
-
 
   <div class="card-body bed-card">
 
