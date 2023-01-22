@@ -25,7 +25,7 @@
 
     <%# ------------- Add Crop Button ------------------ %>
     <div class="d-flex justify-content-end">
-      <a class="btn btn-info m-2 <%= "btn-pulse-primary" if bed.planted_crops.empty? && bed.future_crops.empty? %>" data-bs-toggle="modal" href="#addcropmodal<%= bed.id %>" role="button"><i class="fa-solid fa-plus"></i> Crop</a>
+      <a class="btn btn-info m-2 <%= "btn-pulse-primary" if bed.planted_crops.empty? && bed.future_crops.empty? %>" data-bs-toggle="modal" href="#addcropmodal<%= bed.id %>" role="button">Add Crop</a>
     </div>
     <%# ------------- Planted Crop Cards ------------- %>
     <div class="d-flex justify-content-start flex-wrap flex-row">
@@ -46,7 +46,7 @@
       <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="addcropmodal<%= bed.id %>"><%= bed.description %> - Add a Crop</h1>
+            <h1 class="modal-title fs-5" id="addcropmodal<%= bed.id %>"><%= bed.description %> - Add Crop</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
@@ -54,7 +54,54 @@
               <div class="row" data-controller="crop-form">
                 <%# ------- Add crop form ------- %>
                 <div class="col">
+<<<<<<< HEAD
                   <%= render "crops/new", bed: bed, crop: @crop %>
+=======
+                  <%= simple_form_for @crop do |f| %>
+                    <div>
+                      <%= f.association :veggie, collection: Veggie.all %>
+                    </div>
+                    <%= f.input :quantity %>
+                    <%= f.input :weeks_to_harvest %>
+                    <%= f.label :season %>
+                    <div class="pb-3" data-action="change->crop-form#seasonSelected">
+                      <%= f.select :season, %w[Summer Autumn Winter Spring],
+                                  selected: @season %>
+                    </div>
+                    <%= f.label :emoji %>
+                    <div class="pb-3">
+                      <%= f.select :emoji, EMOJI_ARRAY %>
+                    </div>
+                    <br>
+                    <div data-action="change->crop-form#plantedChange">
+                      <%= f.input :planted,
+                                  label: "Has the crop been planted?",
+                                  as: :radio_buttons,
+                                  collection: [['Yes', true], ['No', false]],
+                                  checked: ['No', false] %>
+                    </div>
+                    <div class="d-none" data-crop-form-target="date">
+                      <%= f.input :plant_date,
+                                  as: :date,
+                                  include_blank: true,
+                                  selected: nil,
+                                  start_year: Date.today.year - 2,
+                                  end_year: Date.today.year %>
+                    </div>
+                    <br>
+                    <%= f.input :comment,
+                                label: "Comments" %>
+                    <div class="d-none">
+                      <%= f.association :bed,
+                                        label_method: :description,
+                                        include_blank: false,
+                                        selected: bed.id %>
+                    </div>
+                    <div class="btn btn-primary">
+                      <%= f.button :submit, "Save Crop" %>
+                    </div>
+                  <% end %>
+>>>>>>> 39746c6 (updated crop and veggie buttons)
                 </div>
                 <div class="col">
 
@@ -89,7 +136,7 @@
           </div>
           <div class="modal-footer">
             <p>Don't see the Veggie you want?</p>
-            <button class="btn btn-primary" data-bs-target="#addveggiemodal" data-bs-toggle="modal">Add new Veggie</button>
+            <button class="btn btn-primary" data-bs-target="#addveggiemodal" data-bs-toggle="modal">Add Veggie</button>
           </div>
         </div>
       </div>
@@ -100,7 +147,7 @@
       <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="addveggiemodal">Create new Veggie</h1>
+            <h1 class="modal-title fs-5" id="addveggiemodal">Add Veggie</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
