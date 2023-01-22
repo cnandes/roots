@@ -65,9 +65,6 @@
               <div class="row" data-controller="crop-form">
                 <%# ------- Add crop form ------- %>
                 <div class="col">
-<<<<<<< HEAD
-                  <%= render "crops/new", bed: bed, crop: @crop %>
-=======
                   <%= simple_form_for @crop do |f| %>
                     <div>
                       <%= f.association :veggie, collection: Veggie.all %>
@@ -112,7 +109,6 @@
                       <%= f.button :submit, "Save Crop" %>
                     </div>
                   <% end %>
->>>>>>> 39746c6 (updated crop and veggie buttons)
                 </div>
                 <div class="col">
 
