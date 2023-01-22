@@ -1,0 +1,42 @@
+<div class="container p-10">
+  <div data-controller="filter-planned-crops">
+    <div class="d-flex justify-content-between garden-header">
+      <div>
+        <h1>History</h1>
+      </div>
+
+      <%# ------------- Form to select year and season ------------- %>
+      <%= form_with url: history_path, method: :get, class: "d-flex form-border" do |f| %>
+        <%= f.select :season,
+          ["Summer", "Autumn", "Winter", "Spring"],
+          selected: params[:season],
+          class: "form-control",
+          placeholder: "Select a season"
+        %>
+        <%= f.select :year,
+          @year_range,
+          selected: params[:year],
+          class: "form-control",
+          placeholder: "Select a year"
+        %>
+        <%= f.submit "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+
+    <%# ------------- Garden Cards ------------- %>
+    <% if @gardens %>
+      <% @gardens.each do |garden| %>
+        <%= render "historic_garden", garden: garden, season: @season, year: @year %>
+      <% end %>
+    <% end %>
+    <% if @gardens.empty? %>
+      <div class="card my-3">
+        <div class="card-header">
+          <h2>You don't have any gardens yet</h2>
+        </div>
+        <div class="card-body no-gardens">
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

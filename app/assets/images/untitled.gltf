@@ -1,0 +1,253 @@
+{
+    "asset": {
+        "copyright": "(C)2023 archi",
+        "generator": "maya2glTF main fbbc95e5dc4d",
+        "version": "2.0"
+    },
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "scene": 0,
+    "nodes": [
+        {
+            "name": "plane",
+            "mesh": 0
+        }
+    ],
+    "meshes": [
+        {
+            "name": "planeShape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 1,
+                        "POSITION": 2,
+                        "TANGENT": 3,
+                        "TEXCOORD_0": 4
+                    },
+                    "indices": 0,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        }
+    ],
+    "materials": [
+        {
+            "name": "GLSLShader3",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "baseColorTexture": {
+                    "index": 0
+                },
+                "metallicFactor": 1.0,
+                "roughnessFactor": 1.0,
+                "metallicRoughnessTexture": {
+                    "index": 1
+                }
+            },
+            "emissiveFactor": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "emissiveTexture": {
+                "index": 4
+            },
+            "normalTexture": {
+                "index": 2
+            },
+            "occlusionTexture": {
+                "index": 3,
+                "strength": 0.13684210181236268
+            }
+        }
+    ],
+    "textures": [
+        {
+            "sampler": 0,
+            "source": 0
+        },
+        {
+            "sampler": 0,
+            "source": 1
+        },
+        {
+            "sampler": 0,
+            "source": 2
+        },
+        {
+            "sampler": 0,
+            "source": 3
+        },
+        {
+            "sampler": 0,
+            "source": 4
+        }
+    ],
+    "images": [
+        {
+            "uri": "Mesh_Base_Color.PNG"
+        },
+        {
+            "uri": "Mesh_Roughness-Mesh_Metallic.PNG"
+        },
+        {
+            "uri": "Mesh_Normal.PNG"
+        },
+        {
+            "uri": "Mesh_AmbientOcclusion.PNG"
+        },
+        {
+            "uri": "Mesh_Emissive.PNG"
+        }
+    ],
+    "samplers": [
+        {
+            "magFilter": 9729,
+            "minFilter": 9987,
+            "wrapS": 10497,
+            "wrapT": 10497
+        }
+    ],
+    "accessors": [
+        {
+            "name": "planeShape#0/indices",
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 1147812,
+            "max": [
+                302045
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "planeShape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 302046,
+            "max": [
+                1.0,
+                1.0,
+                0.9999993443489076
+            ],
+            "min": [
+                -0.9999999403953552,
+                -1.0,
+                -0.9999991655349731
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "planeShape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 3624552,
+            "componentType": 5126,
+            "count": 302046,
+            "max": [
+                11.999990463256836,
+                10.22219181060791,
+                12.00038242340088
+            ],
+            "min": [
+                -11.999990463256836,
+                -0.02082321979105473,
+                -11.999176979064942
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "planeShape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 302046,
+            "max": [
+                1.0,
+                1.0,
+                0.9999998211860656,
+                1.0
+            ],
+            "min": [
+                -0.9999959468841552,
+                -1.0,
+                -1.0,
+                -1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "planeShape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 302046,
+            "max": [
+                0.9993820190429688,
+                0.99951171875
+            ],
+            "min": [
+                0.0004882809880655259,
+                0.0004882809880655259
+            ],
+            "type": "VEC2"
+        }
+    ],
+    "bufferViews": [
+        {
+            "name": "untitled/data/indices-4",
+            "buffer": 0,
+            "byteOffset": 14498208,
+            "byteLength": 4591248,
+            "target": 34963
+        },
+        {
+            "name": "untitled/data/vertices-12",
+            "buffer": 0,
+            "byteOffset": 4832736,
+            "byteLength": 7249104,
+            "byteStride": 12,
+            "target": 34962
+        },
+        {
+            "name": "untitled/data/vertices-16",
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 4832736,
+            "byteStride": 16,
+            "target": 34962
+        },
+        {
+            "name": "untitled/data/vertices-8",
+            "buffer": 0,
+            "byteOffset": 12081840,
+            "byteLength": 2416368,
+            "byteStride": 8,
+            "target": 34962
+        }
+    ],
+    "buffers": [
+        {
+            "name": "untitled/data",
+            "byteLength": 19089456,
+            "uri": "untitled0.bin"
+        }
+    ]
+}
