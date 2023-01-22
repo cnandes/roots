@@ -1,3 +1,8 @@
+<!-- ------------------------------- emoji modal button -------------------------------- -->
+<h1 data-filter-planned-crops-target="crop" id="<%= bed.id %>" class="m-2" value="<%= season %>">
+  <a style="text-decoration: none;" data-bs-toggle="modal" href="#historiccropmodal<%= crop.id %>" role="button"><%= crop.emoji %></a>
+</h1>
+
 <!-- ------------------------------- modal1 -------------------------------- -->
 <div class="modal fade" id="historiccropmodal<%= crop.id %>" aria-hidden="true" aria-labelledby="historiccropmodal<%= crop.id %>" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
