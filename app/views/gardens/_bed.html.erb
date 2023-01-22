@@ -25,7 +25,7 @@
 
     <%# ------------- Add Crop Button ------------------ %>
     <div class="d-flex justify-content-end">
-      <a class="btn btn-primary m-2" data-bs-toggle="modal" href="#addcropmodal<%= bed.id %>" role="button"><i class="fa-solid fa-plus"></i> Crop</a>
+      <a class="btn btn-primary m-2" data-bs-toggle="modal" href="#addcropmodal<%= bed.id %>" role="button">Add Crop</a>
     </div>
     <%# ------------- Planted Crop Cards ------------- %>
     <div class="d-flex justify-content-start flex-wrap flex-row">
@@ -46,7 +46,7 @@
       <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="addcropmodal<%= bed.id %>"><%= bed.description %> - Add a Crop</h1>
+            <h1 class="modal-title fs-5" id="addcropmodal<%= bed.id %>"><%= bed.description %> - Add Crop</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
@@ -95,7 +95,7 @@
                                         selected: bed.id %>
                     </div>
                     <div class="btn btn-primary">
-                      <%= f.button :submit, "Add Crop" %>
+                      <%= f.button :submit, "Save Crop" %>
                     </div>
                   <% end %>
                 </div>
@@ -131,7 +131,7 @@
           </div>
           <div class="modal-footer">
             <p>Don't see the Veggie you want?</p>
-            <button class="btn btn-primary" data-bs-target="#addveggiemodal" data-bs-toggle="modal">Add new Veggie</button>
+            <button class="btn btn-primary" data-bs-target="#addveggiemodal" data-bs-toggle="modal">Add Veggie</button>
           </div>
         </div>
       </div>
@@ -142,7 +142,7 @@
       <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="addveggiemodal">Create new Veggie</h1>
+            <h1 class="modal-title fs-5" id="addveggiemodal">Add Veggie</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
