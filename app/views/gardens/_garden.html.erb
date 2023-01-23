@@ -5,22 +5,36 @@
         <%# ------------- Link to Garden Show ------------- %>
         <h2><%= link_to garden.name, garden_path(garden) %></h2>
       </div>
-      <div>
-        <%# ------------- Icon link to Garden Show ------------- %>
-        <%= link_to ('<i class="fa-solid fa-eye"></i>').html_safe,
+
+      <%# Menu button %>
+      <div class="btn-group dropdown">
+        <button type="button" class="btn btn-light" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-bars text-success" style="font-size: 22px;"></i>
+        </button>
+        <ul class="dropdown-menu" style="min-width: 153px;">
+
+          <%# ------------- Icon link to Garden Show ------------- %>
+          <li>
+            <%= link_to ('<i class="fa-solid fa-binoculars"></i>').html_safe + " View Garden",
                 garden_path(garden),
                 class: "btn btn-light"
                 %>
+          </li>
 
-        <%# ------------- Edit Button ------------- %>
-        <%= render "partials/modal_edit_garden", garden: garden %>
+          <%# ------------- Edit Button (Currently doesn't do anything) ------------- %>
+          <li>
+            <%= render "partials/modal_edit_garden", garden: garden %>
+          </li>
 
-        <%# ------------- Delete Button ------------- %>
-        <%= link_to ('<i class="fa-solid fa-trash-can"></i>').html_safe,
+          <%# ------------- Delete Garden Button ------------- %>
+          <li>
+            <%= link_to ('<i class="fa-solid fa-trash-can"></i>').html_safe + " Delete Garden",
                 garden,
                 data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this garden?" },
                 class: "btn btn-light"
                 %>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -76,7 +90,7 @@
               <div class="card-body">
                 <p class="card-text text-center m-4"></p>
                 <div class="m-10">
-                  <%= link_to "+ Bed", garden_path(garden),
+                  <%= link_to "Add Bed", garden_path(garden),
                     class: "btn btn-secondary btn-sm" %>
                 </div>
               </div>
