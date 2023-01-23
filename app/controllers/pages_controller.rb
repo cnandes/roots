@@ -31,7 +31,7 @@ class PagesController < ApplicationController
 
   PLANS_INFO = {
     title: "Plans",
-    brief: "This is the planning page, where you will find info about upcoming crops",
+    brief: "This is the planning page, where you will find info about upcoming crops.",
     tips: [
       "To view upcoming crops, select the upcoming season from the drop down menu",
       "You can add future crops from the garden page, simply click the garden and you will be redirected"
@@ -40,7 +40,7 @@ class PagesController < ApplicationController
 
   HISTORY_INFO = {
     title: "History",
-    brief: "This is the history page, where you can find info about past crops",
+    brief: "This is the history page, where you can find info about past crops.",
     tips: [
       "To view past crops, select the year and season from the drop down menu",
       "Historic crops will automatically show up here once they have been harvested"

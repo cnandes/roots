@@ -100,7 +100,7 @@ class GardensController < ApplicationController
 
   INDEX_INFO = {
     title: "My Gardens",
-    brief: "This is the gardens page, where you will find a summary of your current gardens",
+    brief: "This is the gardens page, where you will find a summary of your current gardens.",
     tips: [
       "To add a new garden, click the 'Add Garden' button in the top right",
       "Buttons to edit and delete gardens can be found to the right of the garden name",
@@ -111,7 +111,7 @@ class GardensController < ApplicationController
 
   SHOW_INFO = {
     title: "Garden Beds",
-    brief: "This is the garden page, where you will find info about beds in this garden",
+    brief: "This is the garden page, where you will find info about beds in this garden.",
     tips: [
       "To add a new garden bed, click the 'Add bed' button in the top right",
       "To add a crop of Veggies to your garden bed, click the 'Add Crop' button in the top right corner of the bed card",
