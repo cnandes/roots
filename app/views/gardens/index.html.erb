@@ -24,9 +24,7 @@
     <!-- ------------------------------- Placeholder -------------------------------- -->
     <div class="btn btn-primary align-self-start" style="width:120px;">Placeholder</div>
     <!-- ------------------------------- Info helper -------------------------------- -->
-    <%# <div class="w-60"> %>
-      <%= render "shared/page_info", empty: @gardens.empty? %>
-    <%# </div> %>
+    <%= render "shared/page_info", empty: @gardens.empty? %>
     <!-- ------------------------------- New Garden Button -------------------------------- -->
     <a class="btn btn-primary align-self-start" style="width:120px;" data-bs-toggle="modal" href="#newbedmodal1" role="button">+ Garden</a>
   </div>
