@@ -30,7 +30,7 @@
   <!-- ------------------------------- Info helper -------------------------------- -->
   <%= render "shared/page_info", empty: @beds.empty? %>
   <!-- ------------------------------- New Bed button -------------------------------- -->
-    <a class="btn btn-primary <%= "btn-pulse-primary" if @beds.empty? %> align-self-start" style="width:120px;" data-bs-toggle="modal" href="#newbedmodal1" role="button"><i class="fa-solid fa-plus"></i> Add Bed</a>
+    <a class="btn btn-primary <%= "btn-pulse-primary" if @beds.empty? %> align-self-start" style="width:120px;" data-bs-toggle="modal" href="#newbedmodal1" role="button">Add Bed</a>
   </div>
   <!-- ------------------------------- list all beds in garden -------------------------------- -->
   <% if @beds %>
