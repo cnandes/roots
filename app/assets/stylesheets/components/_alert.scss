@@ -4,3 +4,49 @@
   right: 16px;
   z-index: 1000;
 }
+
+.alert-info {
+  .worm-helper {
+    position: fixed;
+    bottom: -7px;
+    right: 295px;
+    width: 150px;
+  }
+}
+
+.talkbubble {
+  width: 246px;
+  height: 59px;
+
+  padding: 10px;
+  border-radius: 5px;
+  border: solid $light-gray;
+  background: $light-gray;
+  box-shadow: 7px 5px 6px #848273;
+}
+
+.talkbubble:before {
+  content:"";
+  position: absolute;
+  right: 100%;
+  top: 26px;
+  width: 0;
+  height: 0;
+
+  border-top: 13px solid transparent;
+  border-right: 26px solid $light-gray;
+  border-bottom: 13px solid transparent;
+}
+
+.talkbubble textarea {
+  position: inherit;
+  width: 190px;
+  height: inherit;
+  background: inherit;
+
+  margin: 0 48px 0 0;
+  padding: 0;
+
+  border: none;
+  resize: none;
+}
