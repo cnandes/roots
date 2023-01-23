@@ -1,8 +1,11 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  // background: white;
   z-index: 1;
-
+  background-image: url(cloud_nav_bar_2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100px;
 }
 
 .navbar-lewagon .navbar-collapse {
