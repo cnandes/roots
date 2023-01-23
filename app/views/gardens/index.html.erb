@@ -4,7 +4,7 @@
     <div class="modal-dialog modal-xl modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="newbedmodal1">+ Garden</h1>
+          <h1 class="modal-title fs-5" id="newbedmodal1">Add Garden</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -26,7 +26,7 @@
     <!-- ------------------------------- Info helper -------------------------------- -->
     <%= render "shared/page_info", empty: @gardens.empty? %>
     <!-- ------------------------------- New Garden Button -------------------------------- -->
-    <a class="btn btn-primary align-self-start" style="width:120px;" data-bs-toggle="modal" href="#newbedmodal1" role="button">+ Garden</a>
+    <a class="btn btn-primary <%= "btn-pulse-primary" if @gardens.empty? %> align-self-start" style="width:120px;" data-bs-toggle="modal" href="#newbedmodal1" role="button">Add Garden</a>
   </div>
 
   <!-- ------------------------------- Display Garden Cards -------------------------------- -->
