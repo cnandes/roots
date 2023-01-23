@@ -21,7 +21,7 @@
 
   <!-- ------------------------------- New Garden Button -------------------------------- -->
   <div class="d-flex justify-content-end">
-    <a class="btn btn-primary" data-bs-toggle="modal" href="#newbedmodal1" role="button">+ Garden</a>
+    <a class="btn btn-primary <%= "btn-pulse-primary" if @gardens.empty? %>" data-bs-toggle="modal" href="#newbedmodal1" role="button">+ Garden</a>
   </div>
 
   <!-- ------------------------------- Display Garden Cards -------------------------------- -->
