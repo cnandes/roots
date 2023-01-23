@@ -1,5 +1,5 @@
 <div class="page-info w-100 px-4">
-  <div class="card text-bg-info">
+  <div class="card rounded-4">
     <a data-bs-toggle="collapse" href="#collapseBody" aria-expanded="<%= empty %>">
       <div class="card-header w-100">
         <div class="d-flex justify-content-start align-items-center">
@@ -14,15 +14,23 @@
     </a>
     <% collapse = empty ? "collapse.show collapse show" : "collapse.show collapse" %>
     <div class="<%= collapse %>" id="collapseBody">
-      <div class="card-body mx-3">
-        <p class="card-text">
-          <p><%= @info[:brief] %></p>
-          <ul>
-            <% @info[:tips].each do |tip| %>
-              <li><p>🐝 <%= tip %></p></li>
-            <% end %>
-          </ul>
-        </p>
+      <div class="card-body px-3">
+        <div class="card-text rounded-4 m-3 py-3 px-5">
+          <div class="brief py-2">
+            <p><%= @info[:brief] %></p>
+          </div>
+          <%# <ul class="list-group opacity-50"> %>
+          <div class="tip-list">
+            <ul>
+              <% @info[:tips].each do |tip| %>
+                <!--
+                <li class="list-group-item opacity-100"><p>🐝 <%= tip %></p></li>
+                -->
+                <li><p>🐝 <%= tip %></p></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>

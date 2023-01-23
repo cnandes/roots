@@ -1,6 +1,14 @@
 .page-info {
   margin: 0 20px;
 
+  p {
+    color: black;
+  }
+
+  .card{
+    overflow: hidden;
+  }
+
   ul {
     list-style: none;
   }
@@ -12,5 +20,18 @@
 
   .card-header {
     text-align: center;
+    background-color: #abd0e2;
+  }
+
+  .card-body {
+    background-image: url(clouds_less_blurred_low_o.png);
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    background-color: rgb(173, 216, 230);
+  }
+
+  .card-text {
+    background-color: rgba(255, 255, 255, 0.5);
   }
 }
