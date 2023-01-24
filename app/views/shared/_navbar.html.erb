@@ -10,17 +10,17 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
 
-          <li class="nav-item">
+          <li class="nav-item cloud">
             <%= link_to "My Gardens", gardens_path, class: "nav-link" %>
           </li>
-          <li class="nav-item">
+          <li class="nav-item cloud">
             <%= link_to "Plans", plans_path, class: "nav-link" %>
           </li>
-          <li class="nav-item">
+          <li class="nav-item cloud">
             <%= link_to "History", history_path, class: "nav-link" %>
           </li>
           <div class="m-2">
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown sun">
               <%= image_tag "veg_avatar.jpg", class: "avatar dropdown-toggle ml-2",style: "height:42px",
                   id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
