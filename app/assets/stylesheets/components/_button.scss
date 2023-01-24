@@ -66,3 +66,7 @@
 		box-shadow: 0 0 0 0 rgba(232, 226, 149, 0);
 	}
 }
+
+.btn-primary:focus {
+  background-color: red !important;
+}
