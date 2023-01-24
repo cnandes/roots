@@ -1,29 +1,39 @@
 <div class="card border-0 m-2 crop-card">
   <div class="card-header crop-card-header">
     <div class="d-flex justify-content-between">
-      <h3 class="text-centre"><%= crop.emoji %></h3>
-      <%# Menu button %>
-      <div class="btn-group dropend">
-        <button type="button" class="btn btn-light" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="fa-solid fa-bars text-success" style="font-size: 22px;"></i>
-        </button>
-        <ul class="dropdown-menu" style="min-width: 130px;">
 
-          <%# Button for editing crop %>
-          <li>
-            <a class="dropdown-item btn btn-light" data-bs-toggle="modal" href="#editcropmodal<%= crop.id %>"><i class="fa-solid fa-pencil h-60"></i> Edit Crop</a>
-          </li>
-
-          <%# Button for deleting crop %>
-          <li>
-            <%= link_to ('<i class="fa-solid fa-trash-can"></i> Delete Crop').html_safe,
-              crop,
-              data: {turbo_method: :delete, turbo_confirm: "Are you sure?" },
-              class: "dropdown-item btn btn-light"
-            %>
-          </li>
-        </ul>
+      <%# Name and emoji %>
+      <div class="d-flex">
+      <%# <div class="mr-2">
+        <h3 class="text-centre mt-2"></h3>
+      </div> %>
+      <h5 class="text-centre mt-2 me-2"><%= crop.emoji %></h5>
+      <h5 class="text-centre mt-2"><%= crop.veggie.name %></h5>
       </div>
+      <%# Menu button - won't display for harvested crops %>
+      <% unless crop.harvested? %>
+        <div class="btn-group dropend">
+          <button type="button" class="btn btn-light" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-bars text-success" style="font-size: 22px;"></i>
+          </button>
+          <ul class="dropdown-menu" style="min-width: 130px;">
+
+            <%# Button for editing crop %>
+            <li>
+              <a class="dropdown-item btn btn-light" data-bs-toggle="modal" href="#editcropmodal<%= crop.id %>"><i class="fa-solid fa-pencil h-60"></i> Edit crop</a>
+            </li>
+
+            <%# Button for deleting crop %>
+            <li>
+              <%= link_to ('<i class="fa-solid fa-trash-can"></i> Delete crop').html_safe,
+                crop,
+                data: {turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                class: "dropdown-item btn btn-light"
+              %>
+            </li>
+          </ul>
+        </div>
+      <% end %>
     </div>
   </div>
 
@@ -32,11 +42,8 @@
     <div class="card border-0 rounded">
       <div class="card-body">
 
-        <%# Veggie name and season badge %>
+        <%# Veggie season badge %>
         <div class="d-flex justify-content-between pb-2 <%= crop.season.downcase %>">
-          <h5 class="card-title mb-1"><%= crop.veggie.name %></h5>
-
-          <%# ---- added badge but currently commented out because I'm not sure about it ---%>
           <span class="badge mb-2"><%= crop.season %> </span>
         </div>
 
