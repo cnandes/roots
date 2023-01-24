@@ -9,18 +9,20 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
+          <div class="dropdown cloud">
+            <li class="nav-item">
+              <button class="btn btn-light nav-link dropdown-toggle" id="navbarDropdown1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                My Gardens
+              </button>
 
-          <li class="nav-item cloud dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              My Gardens
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-              <%= link_to "Gardens Overview", gardens_path, class: "dropdown-item" %>
-              <% current_user.gardens.each do |garden| %>
-                <%= link_to garden.name, garden_path(garden), class: "dropdown-item" %>
-              <% end %>
-            </div>
-          </li>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                <%= link_to "Gardens Overview", gardens_path, class: "dropdown-item" %>
+                <% current_user.gardens.each do |garden| %>
+                  <%= link_to garden.name, garden_path(garden), class: "dropdown-item" %>
+                <% end %>
+              </div>
+            </li>
+          </div>
           <li class="nav-item cloud">
             <%= link_to "Plans", plans_path, class: "nav-link" %>
           </li>
