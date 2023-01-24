@@ -19,14 +19,18 @@
     </div>
   </div>
 
-  <div class="d-flex justify-content-between">
+  <!-- --------------- sub nav ------------------- -->
+  <div class="d-flex justify-content-between align-items-top">
     <!-- ------------------------------- Back to Gardens button -------------------------------- -->
     <%= link_to ('<i class="fa-regular fa-hand-point-left"></i> Back').html_safe,
             gardens_path,
-            class: "btn btn-light border"
+            class: "btn btn-light border align-self-start",
+            style: "width:120px;"
           %>
+  <!-- ------------------------------- Info helper -------------------------------- -->
+  <%= render "shared/page_info", empty: @beds.empty? %>
   <!-- ------------------------------- New Bed button -------------------------------- -->
-    <a class="btn btn-primary <%= "btn-pulse-primary" if @beds.empty? %>" data-bs-toggle="modal" href="#newbedmodal1" role="button">Add Bed</a>
+    <a class="btn btn-primary <%= "btn-pulse-primary" if @beds.empty? %> align-self-start" style="width:120px;" data-bs-toggle="modal" href="#newbedmodal1" role="button">Add Bed</a>
   </div>
   <!-- ------------------------------- list all beds in garden -------------------------------- -->
   <% if @beds %>

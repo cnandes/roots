@@ -19,9 +19,14 @@
     </div>
   </div>
 
-  <!-- ------------------------------- New Garden Button -------------------------------- -->
-  <div class="d-flex justify-content-end">
-    <a class="btn btn-primary <%= "btn-pulse-primary" if @gardens.empty? %>" data-bs-toggle="modal" href="#newbedmodal1" role="button">Add Garden</a>
+  <!-- ------------------------------- Sub nav -------------------------------- -->
+  <div class="d-flex justify-content-between align-items-top">
+    <!-- ------------------------------- Placeholder -------------------------------- -->
+    <div class="btn btn-primary align-self-start" style="width:120px;">Placeholder</div>
+    <!-- ------------------------------- Info helper -------------------------------- -->
+    <%= render "shared/page_info", empty: @gardens.empty? %>
+    <!-- ------------------------------- New Garden Button -------------------------------- -->
+    <a class="btn btn-primary <%= "btn-pulse-primary" if @gardens.empty? %> align-self-start" style="width:160px;" data-bs-toggle="modal" href="#newbedmodal1" role="button">Add Garden</a>
   </div>
 
   <!-- ------------------------------- Display Garden Cards -------------------------------- -->
