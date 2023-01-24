@@ -14,7 +14,7 @@ class VeggiesController < ApplicationController
       redirect_to garden_path(Garden.find(id)), notice: "#{@veggie.name} has been added successfully!"
     else
       # TODO: same as the others - won't render in modal
-      # render :new, status: :unprocessable_entity
+      render partial: "veggies/veggie_form", status: :unprocessable_entity
     end
   end
 

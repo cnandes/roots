@@ -1,11 +1,13 @@
-<%= simple_form_for @veggie do |f| %>
-  <%= f.input :name, label: "Veggie name (please use plural)" %>
-  <div class="mb-1">
-    <%= f.label :season %>
-    <%= f.select :season, %w[Summer Autumn Winter Spring] %>
-  </div>
-  <br>
-  <div class="btn btn-success">
+<%=turbo_frame_tag dom_id(@veggie, :new_veggie_form) do %>
+  <%= simple_form_for @veggie, data: {controller: "turboform"}  do |f| %>
+    <%= f.input :name, label: "Veggie name (please use plural)" %>
+    <div class="mb-1">
+      <%= f.label :season %>
+      <%= f.select :season, %w[Summer Autumn Winter Spring] %>
+    </div>
+    <br>
+    <div class="btn btn-success">
     <%= f.button :submit, "Save Veggie", class: "text-light" %>
   </div>
-<% end %>
+  <% end %>
+<%end%>
