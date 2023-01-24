@@ -1,17 +1,15 @@
 <div class="card border-0 m-2 crop-card">
   <div class="card-header crop-card-header">
     <div class="d-flex justify-content-between">
-
       <%# Name and emoji %>
       <div class="d-flex">
-      <%# <div class="mr-2">
-        <h3 class="text-centre mt-2"></h3>
-      </div> %>
-      <h5 class="text-centre mt-2 me-2"><%= crop.emoji %></h5>
-      <h5 class="text-centre mt-2"><%= crop.veggie.name %></h5>
+        <h5 class="text-centre mt-2 me-2"><%= crop.emoji %></h5>
+        <h5 class="text-centre mt-2"><%= crop.veggie.name %></h5>
       </div>
-      <%# Menu button - won't display for harvested crops %>
-      <% unless crop.harvested? %>
+      <% if crop.harvested? %>
+        <button type="button" class="btn-close mt-2" data-bs-dismiss="modal" aria-label="Close"></button>
+      <% else %>
+        <%# Menu button %>
         <div class="btn-group dropend">
           <button type="button" class="btn btn-light" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fa-solid fa-bars text-success" style="font-size: 22px;"></i>
@@ -20,12 +18,12 @@
 
             <%# Button for editing crop %>
             <li>
-              <a class="dropdown-item btn btn-light" data-bs-toggle="modal" href="#editcropmodal<%= crop.id %>"><i class="fa-solid fa-pencil h-60"></i> Edit crop</a>
+              <a class="dropdown-item btn btn-light" data-bs-toggle="modal" href="#editcropmodal<%= crop.id %>"><i class="fa-solid fa-pencil h-60"></i> Edit Crop</a>
             </li>
 
             <%# Button for deleting crop %>
             <li>
-              <%= link_to ('<i class="fa-solid fa-trash-can"></i> Delete crop').html_safe,
+              <%= link_to ('<i class="fa-solid fa-trash-can"></i> Delete Crop').html_safe,
                 crop,
                 data: {turbo_method: :delete, turbo_confirm: "Are you sure?" },
                 class: "dropdown-item btn btn-light"
@@ -58,13 +56,13 @@
         <% else %>
           <div class="mb-3"></div>
         <% end %>
+        <% if crop.harvested? %>
+          <p class="card-text"><em class="text-muted">Harvested</em></p>
+        <% end %>
 
         <p class="card-text">Quantity: <em class="text-muted"><%= crop.quantity %></em></p>
         <% if crop.plant_date %>
           <p class="card-text">Date planted: <em class="text-muted"><%= crop.plant_date.to_fs(:long_ordinal) %></em></p>
-        <% end %>
-        <% if crop.harvested? %>
-          <p class="card-text"><em class="text-muted">Harvested</em></p>
         <% end %>
         <% if crop.comment.present? %>
           <p class="card-text">Notes: <em class="text-muted"><%= crop.comment %></em></p>
