@@ -84,7 +84,7 @@ export default class extends Controller {
     const scene = this.scene;
     loader.load(
       // resource URL
-      "/assets/untitled.gltf",
+      "https://roots-house.s3.ap-southeast-2.amazonaws.com/house/untitled.gltf",
       // called when the resource is loaded
       function (gltf) {
         scene.add(gltf.scene);
