@@ -9,7 +9,7 @@ class BedsController < ApplicationController
     @bed = Bed.new(bed_params)
     @bed.garden = @garden
     if @bed.save
-      redirect_to garden_path(@garden), notice: " #{@bed.description} was added!"
+      redirect_to garden_path(@garden), notice: "🚜 #{@bed.description} was added!"
 
     else
       # TO DO: figure out how to get this error to work
