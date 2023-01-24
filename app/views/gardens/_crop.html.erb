@@ -1,7 +1,11 @@
 <div class="card border-0 m-2 crop-card">
   <div class="card-header crop-card-header">
     <div class="d-flex justify-content-between">
-      <h3 class="text-centre"><%= crop.emoji %></h3>
+      <%# Name and emoji %>
+      <div class="d-flex">
+        <h5 class="text-centre mt-2 me-2"><%= crop.emoji %></h5>
+        <h5 class="text-centre mt-2"><%= crop.veggie.name %></h5>
+      </div>
       <% if crop.harvested? %>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       <% else %>
@@ -36,11 +40,8 @@
     <div class="card border-0 rounded">
       <div class="card-body">
 
-        <%# Veggie name and season badge %>
+        <%# Veggie season badge %>
         <div class="d-flex justify-content-between pb-2 <%= crop.season.downcase %>">
-          <h5 class="card-title mb-1"><%= crop.veggie.name %></h5>
-
-          <%# ---- added badge but currently commented out because I'm not sure about it ---%>
           <span class="badge mb-2"><%= crop.season %> </span>
         </div>
 
