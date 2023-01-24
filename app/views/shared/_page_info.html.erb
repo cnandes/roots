@@ -19,13 +19,9 @@
           <div class="brief py-2">
             <p><%= @info[:brief] %></p>
           </div>
-          <%# <ul class="list-group opacity-50"> %>
           <div class="tip-list">
             <ul>
               <% @info[:tips].each do |tip| %>
-                <!--
-                <li class="list-group-item opacity-100"><p>🐝 <%= tip %></p></li>
-                -->
                 <li><p>🐝 <%= tip %></p></li>
               <% end %>
             </ul>
