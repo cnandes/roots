@@ -36,7 +36,7 @@
 
     <%# ------------- Add Crop Button ------------------ %>
     <div class="d-flex justify-content-end">
-      <a class="btn btn-info m-2 <%= "btn-pulse-primary" if bed.planted_crops.empty? && bed.future_crops.empty? %>" data-bs-toggle="modal" href="#addcropmodal<%= bed.id %>" role="button"><i class="fa-solid fa-plus"></i> Add Crop</a>
+      <a class="btn btn-info m-2 <%= "btn-pulse-primary" if bed.planted_crops.empty? && bed.future_crops.empty? %>" data-bs-toggle="modal" href="#addcropmodal<%= bed.id %>" role="button">Add Crop</a>
     </div>
     <%# ------------- Planted Crop Cards ------------- %>
     <div class="d-flex justify-content-start flex-wrap flex-row">
@@ -65,6 +65,7 @@
               <div class="row" data-controller="crop-form">
                 <%# ------- Add crop form ------- %>
                 <div class="col">
+<<<<<<< HEAD
 
                   <%= render "crops/new", bed: bed, crop: @crop %>
 
@@ -72,6 +73,9 @@
                   <%
 =begin%>
  <%= simple_form_for @crop do |f| %>
+=======
+                  <%= simple_form_for @crop do |f| %>
+>>>>>>> master
                     <div>
                       <%= f.association :veggie, collection: Veggie.all %>
                     </div>
@@ -115,9 +119,12 @@
                       <%= f.button :submit, "Save Crop", class: "text-light" %>
                     </div>
                   <% end %>
+<<<<<<< HEAD
 <%
 =end%>
 
+=======
+>>>>>>> master
                 </div>
                 <div class="col">
 

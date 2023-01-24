@@ -67,12 +67,10 @@
         <% if crop.comment.present? %>
           <p class="card-text">Notes: <em class="text-muted"><%= crop.comment %></em></p>
         <% end %>
-
         <%# button to plant crop %>
         <% unless (crop.planted || crop.plant_date) %>
           <%= link_to 'Plant!', plant_crop_path(crop), class: "btn btn-primary w-100" %>
         <% end %>
-
         <%# button to harvest crop %>
         <% if crop.planted %>
           <%= link_to 'Harvest!', harvest_crop_path(crop), class: "btn btn-primary w-100" %>
