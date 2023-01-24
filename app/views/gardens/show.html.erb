@@ -5,7 +5,7 @@
     <div class="modal-dialog modal-xl modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5">+ New Bed</h1>
+          <h1 class="modal-title fs-5">Add Bed</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -23,10 +23,10 @@
     <!-- ------------------------------- Back to Gardens button -------------------------------- -->
     <%= link_to ('<i class="fa-regular fa-hand-point-left"></i> Back').html_safe,
             gardens_path,
-            class: "btn btn-light"
+            class: "btn btn-light border"
           %>
   <!-- ------------------------------- New Bed button -------------------------------- -->
-    <a class="btn btn-primary" data-bs-toggle="modal" href="#newbedmodal1" role="button"><i class="fa-solid fa-plus"></i> Bed</a>
+    <a class="btn btn-primary <%= "btn-pulse-primary" if @beds.empty? %>" data-bs-toggle="modal" href="#newbedmodal1" role="button"><i class="fa-solid fa-plus"></i> Add Bed</a>
   </div>
   <!-- ------------------------------- list all beds in garden -------------------------------- -->
   <% if @beds %>
