@@ -1,46 +1,81 @@
-<div class="card border-0 m-2" style="max-width: 18rem;">
-  <div class="card-header crop_card_header">
+<div class="card border-0 m-2 crop-card">
+  <div class="card-header crop-card-header">
     <div class="d-flex justify-content-between">
-      <h3 class="text-centre"><%= crop.emoji %></h3>
-      <h3>
-        <%# Button for editing crop %>
-        <a class="btn btn-light" data-bs-toggle="modal" href="#editcropmodal<%= crop.id %>"><i class="fa-solid fa-pencil h-60"></i></a>
-        <%# Button for deleting crop %>
-        <%= link_to ('<i class="fa-solid fa-trash-can"></i>').html_safe,
-          crop,
-          data: {turbo_method: :delete, turbo_confirm: "Are you sure?" },
-          class: "btn btn-light"
-        %>
-      </h3>
+      <%# Name and emoji %>
+      <div class="d-flex">
+        <h5 class="text-centre mt-2 me-2"><%= crop.emoji %></h5>
+        <h5 class="text-centre mt-2"><%= crop.veggie.name %></h5>
+      </div>
+      <% if crop.harvested? %>
+        <button type="button" class="btn-close mt-2" data-bs-dismiss="modal" aria-label="Close"></button>
+      <% else %>
+        <%# Menu button %>
+        <div class="btn-group dropend">
+          <button type="button" class="btn btn-light" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-bars text-success" style="font-size: 22px;"></i>
+          </button>
+          <ul class="dropdown-menu" style="min-width: 130px;">
+
+            <%# Button for editing crop %>
+            <li>
+              <a class="dropdown-item btn btn-light" data-bs-toggle="modal" href="#editcropmodal<%= crop.id %>"><i class="fa-solid fa-pencil h-60"></i> Edit Crop</a>
+            </li>
+
+            <%# Button for deleting crop %>
+            <li>
+              <%= link_to ('<i class="fa-solid fa-trash-can"></i> Delete Crop').html_safe,
+                crop,
+                data: {turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                class: "dropdown-item btn btn-light"
+              %>
+            </li>
+          </ul>
+        </div>
+      <% end %>
     </div>
   </div>
-  <div class="card-body crop_card_body">
+
+  <%# --- Card body --- %>
+  <div class="card-body crop-card-body">
     <div class="card border-0 rounded">
       <div class="card-body">
-        <h5 class="card-title mb-4"><%= crop.veggie.name %></h5>
-        <% if crop.comment.present? %>
-          <p class="card-text">Notes: <em class="text-muted"><%= crop.comment %></em></p>
-        <% end %>
-        <% if crop.plant_date %>
-          <p class="card-text">Date planted: <em class="text-muted"><%= crop.plant_date.to_fs(:long_ordinal) %></em></p>
+
+        <%# Veggie season badge %>
+        <div class="d-flex justify-content-between pb-2 <%= crop.season.downcase %>">
+          <span class="badge mb-2"><%= crop.season %> </span>
+        </div>
+
+        <%# progress bar %>
+        <% if crop.planted? %>
+          <div class="d-flex justify-content-between mt-2">
+            <div class="progress mb-4" style="width: 204px;">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="<%= crop.progress %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= crop.progress %>%"></div>
+            </div>
+            <i class="fa-solid fa-circle-info text-success ml-2" data-toggle="tooltip" data-placement="top" title="<%= crop.time_left_to_harvest %>"></i>
+          </div>
+        <% else %>
+          <div class="mb-3"></div>
         <% end %>
         <% if crop.harvested? %>
           <p class="card-text"><em class="text-muted">Harvested</em></p>
-        <% else %>
-          <p class="card-text">Weeks left until harvest: <em class="text-muted"><%= crop.weeks_to_harvest %></em></p>
         <% end %>
+
         <p class="card-text">Quantity: <em class="text-muted"><%= crop.quantity %></em></p>
+        <% if crop.plant_date %>
+          <p class="card-text">Date planted: <em class="text-muted"><%= crop.plant_date.to_fs(:long_ordinal) %></em></p>
+        <% end %>
+        <% if crop.comment.present? %>
+          <p class="card-text">Notes: <em class="text-muted"><%= crop.comment %></em></p>
+        <% end %>
+
         <%# button to plant crop %>
         <% unless (crop.planted || crop.plant_date) %>
-          <div class="btn btn-primary">
-            <%= link_to 'Plant!', plant_crop_path(crop) %>
-          </div>
+          <%= link_to 'Plant!', plant_crop_path(crop), class: "btn btn-primary w-100" %>
         <% end %>
+
         <%# button to harvest crop %>
         <% if crop.planted %>
-          <div class="btn btn-primary">
-            <%= link_to 'Harvest!', harvest_crop_path(crop) %>
-          </div>
+          <%= link_to 'Harvest!', harvest_crop_path(crop), class: "btn btn-primary w-100" %>
         <% end %>
       </div>
     </div>
