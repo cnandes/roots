@@ -6,9 +6,12 @@
         <h5 class="text-centre mt-2 me-2"><%= crop.emoji %></h5>
         <h5 class="text-centre mt-2"><%= crop.veggie.name %></h5>
       </div>
+
+      <%# Modal exit button %>
       <% if crop.harvested? || request.original_url.match(/gardens$/)[0] == "gardens" %>
         <button type="button" class="btn-close mt-2" data-bs-dismiss="modal" aria-label="Close"></button>
       <% else %>
+
         <%# Menu button %>
         <div class="btn-group dropend">
           <button type="button" class="btn btn-light" data-bs-toggle="dropdown" aria-expanded="false">
