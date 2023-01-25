@@ -65,34 +65,53 @@
               <div class="row" data-controller="crop-form">
                 <%# ------- Add crop form ------- %>
                 <div class="col">
-                  <%= render "crops/new", bed: bed, crop: @crop %>
+                  <div style="max-width: 30rem;">
+                    <%= render "crops/new", bed: bed, crop: @crop %>
+                  </div>
                 </div>
                 <div class="col">
 
-                  <%# ------- Seasonal suggestion Card ------- %>
-                  <% @seasonal_veggies.each do |list| %>
-                    <div class="<%= list.first.season.downcase %> <%= "d-none" unless list.first.season == @season %>"
-                         data-crop-form-target="<%= list.first.season.downcase %>">
-                      <div class="card border-0 m-2" style="max-width: 24rem;">
-                        <div class="card-header crop_card_header">
-                          <div class="d-flex justify-content-around">
-                            <h3 class="text-centre mt-2"><%= @seasonal_titles[list.first.season.to_sym] %></h3>
-                          </div>
-                        </div>
-                        <div class="card-body crop_card_body card-bg">
-                          <div class="card border-0 rounded">
-                            <div class="card-body card-fg">
-                              <ul>
-                                <% list.each do |veggie| %>
-                                  <li class="card-text"><%= veggie.name %></li>
-                                <% end %>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
+                  <%# -------- Seasonal Recomendation ------- %>
+                  <!--
+                  <div class="card border-0 m-2" style="max-width: 25rem;">
+                    <div class="card-header crop_card_header">
+                      <div class="d-flex justify-content-around">
+                        <h3 class="text-centre mt-2">Seasonal Recomendations</h3>
                       </div>
                     </div>
-                  <% end %>
+                    <div class="card-body crop_card_body card-bg">
+                      <div class="card border-0 rounded">
+                        <div class="card-body card-fg">
+                        -->
+
+                          <%# ------- Seasonal suggestion Card ------- %>
+                          <% @seasonal_veggies.each do |list| %>
+                            <div class="<%= list.first.season.downcase %> <%= "d-none" unless list.first.season == @season %>"
+                                data-crop-form-target="<%= list.first.season.downcase %>">
+                              <div class="card rounded-4 m-2 overflow-hidden border-0" style="max-width: 22rem;">
+                                <div class="card-header crop_card_header border-0">
+                                  <div class="d-flex justify-content-around">
+                                    <h3 class="text-centre mt-2"><%= @seasonal_titles[list.first.season.to_sym] %></h3>
+                                  </div>
+                                </div>
+                                <div class="card-body crop_card_body card-bg">
+                                  <div class="border-0">
+                                    <div class="rounded-4 card-body card-fg">
+                                      <ul>
+                                        <% list.each do |veggie| %>
+                                          <li class="card-text"><%= veggie.name %></li>
+                                        <% end %>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          <% end %>
+                        <%# </div>
+                      </div>
+                    </div>
+                  </div> %>
                 </div>
               </div>
             </div>
