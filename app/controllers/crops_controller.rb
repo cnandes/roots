@@ -52,7 +52,11 @@ class CropsController < ApplicationController
 
     @crop.planted = false
     if @crop.save
-      redirect_to garden_path(@garden), notice: "#{@crop.emoji} #{@crop.veggie.name} have been harvested!"
+      if request.path == gardens_path
+        redirect_to gardens_path, notice: "#{@crop.emoji} #{@crop.veggie.name} have been harvested!"
+      else
+        redirect_to garden_path(@garden), notice: "#{@crop.emoji} #{@crop.veggie.name} have been harvested!"
+      end
     else
         # TODO: Validation failures in modals
     end
