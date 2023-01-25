@@ -1,26 +1,31 @@
 <div class="container p-10">
   <div data-controller="filter-planned-crops">
-    <div class="d-flex justify-content-between garden-header">
-      <div>
+    <!-- --------------- sub nav ------------------- -->
+    <div class="d-flex justify-content-between align-items-top garden-header">
+      <!-- --------------- title ------------------- -->
+      <div class="align-self-start">
         <h1>History</h1>
       </div>
-
+      <!-- --------------- Info Helper ------------------- -->
+      <%= render "shared/page_info", empty: @gardens.empty? %>
       <%# ------------- Form to select year and season ------------- %>
-      <%= form_with url: history_path, method: :get, class: "d-flex form-border" do |f| %>
-        <%= f.select :season,
-          ["Summer", "Autumn", "Winter", "Spring"],
-          selected: params[:season],
-          class: "form-control",
-          placeholder: "Select a season"
-        %>
-        <%= f.select :year,
-          @year_range,
-          selected: params[:year],
-          class: "form-control",
-          placeholder: "Select a year"
-        %>
-        <%= f.submit "View History", class: "btn btn-danger text-light" %>
-      <% end %>
+      <div class="align-self-start">
+        <%= form_with url: history_path, method: :get, class: "d-flex form-border" do |f| %>
+          <%= f.select :season,
+            ["Summer", "Autumn", "Winter", "Spring"],
+            selected: params[:season],
+            class: "form-control align-self-start",
+            placeholder: "Select a season"
+          %>
+          <%= f.select :year,
+            @year_range,
+            selected: params[:year],
+            class: "form-control align-self-start",
+            placeholder: "Select a year"
+          %>
+          <%= f.submit "Search", class: "btn btn-danger text-light" %>
+        <% end %>
+      </div>
     </div>
 
     <%# ------------- Garden Cards ------------- %>
