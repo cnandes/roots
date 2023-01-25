@@ -1,3 +1,5 @@
+<% require_relative '../../../db/veggie_info' %>
+
 <div class="card border-0 m-2 crop-card">
   <div class="card-header crop-card-header">
     <div class="d-flex justify-content-between">
@@ -46,7 +48,7 @@
         <%# Veggie season badge %>
         <div class="d-flex justify-content-between pb-2 <%= crop.season.downcase %>">
           <span class="badge mb-3"><%= crop.season %> </span>
-          <button type="button" class="btn btn-light" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="<%= crop.time_left_to_harvest if crop.planted %>">
+          <button type="button" class="btn btn-light" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="<%= VEGGIE_INFO[crop.veggie.name.to_sym] if VEGGIE_INFO[crop.veggie.name.to_sym] %>">
             <h5><i class="fa-solid fa-circle-info text-success"></i></h5>
           </button>
         </div>
