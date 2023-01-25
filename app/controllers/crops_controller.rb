@@ -39,7 +39,11 @@ class CropsController < ApplicationController
     @crop.planted = true
     @crop.plant_date = Date.today
     if @crop.save
-      redirect_to garden_path(@garden), notice: "#{@crop.emoji} #{@crop.veggie.name} have been planted!"
+      if "/#{request.referrer.split('/').last}" == plans_path
+        redirect_to plans_path, notice: "#{@crop.emoji} #{@crop.veggie.name} have been planted!"
+      else
+        redirect_to garden_path(@garden), notice: "#{@crop.emoji} #{@crop.veggie.name} have been planted!"
+      end
     else
         # TODO: Validation failures in modals
     end
@@ -52,7 +56,7 @@ class CropsController < ApplicationController
 
     @crop.planted = false
     if @crop.save
-      if request.path == gardens_path
+      if "/#{request.referrer.split('/').last}" == gardens_path
         redirect_to gardens_path, notice: "#{@crop.emoji} #{@crop.veggie.name} have been harvested!"
       else
         redirect_to garden_path(@garden), notice: "#{@crop.emoji} #{@crop.veggie.name} have been harvested!"
