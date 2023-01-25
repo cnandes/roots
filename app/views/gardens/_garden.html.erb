@@ -47,7 +47,7 @@
             <%# ------------- Bed description badge ------------- %>
             <span class="badge badge-primary mb-1"><%= bed.description %></span>
             <div class="card plot-bed">
-              <div class="card-body" style="padding-top: 20px; padding-left: 16px">
+              <div class="card-body current-crop-body">
                 <div class="d-flex flex-wrap justify-content-around">
                   <%# ------------- Plot crop emojis in bed (max 12) ------------- %>
                   <% bed.planted_crops.first(12).each do |crop| %>

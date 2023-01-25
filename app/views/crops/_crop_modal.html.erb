@@ -9,22 +9,24 @@
     </div>
 </div>
 
+
 <%# ------  overview page behaviour -------- %>
 <% if crop.planted? %>
+<div class="mx-2">
   <!-- ------------------------------- progress bar  -------------------------------- -->
   <div class="d-flex row justify-content-start" style="width: 70px;">
-    <div class="d-flex justify-content-end" style="padding-right: 8px;">
+    <div class="d-flex justify-content-end" style="padding-right: 1px;">
       <div class="progress crop-progress" style="width: 65%; height: 7px; opacity: .9;">
         <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="<%= crop.progress %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= crop.progress %>%;"></div>
       </div>
     </div>
 
     <!-- ------------------------------- emoji modal button  -------------------------------- -->
-    <h1 data-filter-planned-crops-target="crop" id="<%= bed.id %>" class="m-2" value="<%= season %>">
+    <h1 data-filter-planned-crops-target="crop" id="<%= bed.id %>" class="mb-3 ps-10" value="<%= season %>">
       <a style="text-decoration: none;" data-bs-toggle="modal" href="#cropmodal<%= crop.id %>" role="button"><%= crop.emoji %></a>
     </h1>
   </div>
-
+</div>
 <%# ------  history page behaviour -------- %>
 <% else %>
   <!-- ------------------------------- emoji modal button  -------------------------------- -->
