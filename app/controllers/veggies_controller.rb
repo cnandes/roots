@@ -11,7 +11,7 @@ class VeggiesController < ApplicationController
     id = /\d+$/.match(request.referer)[0].to_i
 
     if @veggie.save
-      redirect_to garden_path(Garden.find(id)), notice: "#{@veggie.name} has been added successfully!"
+      redirect_to garden_path(Garden.find(id)), notice: "#{@veggie.name} added to Veggies"
     else
       # TODO: same as the others - won't render in modal
       render partial: "veggies/veggie_form", status: :unprocessable_entity
