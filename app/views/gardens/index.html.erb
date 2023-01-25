@@ -31,7 +31,7 @@
 
   <!-- ------------------------------- Display Garden Cards -------------------------------- -->
   <% if @gardens %>
-    <% @gardens.reverse.each do |garden| %>
+    <% @gardens.each do |garden| %>
       <%= render "garden", garden: garden %>
     <% end %>
   <% end %>
