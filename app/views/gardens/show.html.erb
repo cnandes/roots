@@ -34,7 +34,7 @@
   </div>
   <!-- ------------------------------- list all beds in garden -------------------------------- -->
   <% if @beds %>
-    <% @beds.each do |bed| %>
+    <% @beds.reverse.each do |bed| %>
       <%= render "bed", bed: bed %>
     <% end %>
   <% end %>
