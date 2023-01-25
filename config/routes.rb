@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     member do
       get :plant
       get :harvest
+      get :harvest_from_index
     end
   end
 

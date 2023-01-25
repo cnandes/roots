@@ -58,6 +58,19 @@ class CropsController < ApplicationController
     end
   end
 
+    # This method "harvests" crops which have been planted.
+    def harvest_from_index
+      return unless @crop.planted
+      return unless @crop.plant_date
+
+      @crop.planted = false
+      if @crop.save
+        redirect_to gardens_path, notice: "#{@crop.emoji} #{@crop.veggie.name} have been harvested!"
+      else
+          # TODO: Validation failures in modals
+      end
+    end
+
   def crop_params
     params.require(:crop).permit(:veggie_id, :bed_id, :quantity, :weeks_to_harvest, :emoji, :comment, :plant_date, :planted, :season)
   end
