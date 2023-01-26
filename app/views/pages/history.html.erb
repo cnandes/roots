@@ -14,8 +14,9 @@
           <%= f.select :season,
             ["Summer", "Autumn", "Winter", "Spring"],
             selected: params[:season],
-            class: "form-control align-self-start",
-            placeholder: "Select a season"
+            class: "form-control align-self-start border-0",
+            placeholder: "Select a season",
+            style: "border-radius: 1rem;"
           %>
           <%= f.select :year,
             @year_range,
@@ -23,7 +24,7 @@
             class: "form-control align-self-start",
             placeholder: "Select a year"
           %>
-          <%= f.submit "Search", class: "btn btn-danger text-light" %>
+          <%= f.submit "Search", class: "btn btn-danger text-light shadow" %>
         <% end %>
       </div>
     </div>

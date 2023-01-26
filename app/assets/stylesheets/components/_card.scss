@@ -1,0 +1,58 @@
+.card {
+  border-radius: 1rem;
+  overflow: hidden;
+  border: none;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+  .bed-card {
+    background-image: url(bed-background-colour-low-o.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 400px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+  .no-beds{
+    background-image: url(bed-background-greyscale.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 400px;
+    opacity: 0.4;
+  }
+}
+
+.card-body {
+  border-radius: 0rem 0rem 1rem 1rem;
+  .plot-bed {
+    background-image: url(bed-background-colour-lower-clarity.jpg);
+    background-size: cover;
+    height: 308px;
+    width: 238px;
+    border-style: ridge;
+    border-color: $darkbrown;
+    border-width: medium;
+
+    .current-crop-body {
+      padding: 24px 8px 0px 14px;
+    }
+  }
+  .no-plot-bed {
+    background-image: url(bed-background-greyscale.jpeg);
+    background-size: cover;
+    opacity: 1;
+    height: 308px;
+    width: 238px;
+    padding: 50px;
+    border-style: ridge;
+    border-color: grey;
+    border-width: medium;
+    color: rgb(66, 65, 65);
+  }
+}
+ .card-header {
+  border-radius: 1rem;
+  border: none;
+
+  a {
+    color: $mossgreen;
+  }
+ }
