@@ -1,6 +1,12 @@
 .seasonal-card {
   color: $gray
+}
 
+.season-title {
+  color: $gray;
+}
+
+.card-fg {
   ul {
     list-style: none;
     color: $darkgray
@@ -82,4 +88,8 @@
     background-color: rgba(197, 216, 161, 0.9);
     color: black;
   }
+}
+
+.add-veggie {
+  background-color: $background;
 }

@@ -54,8 +54,8 @@
 
     <%# ------------- Modal for adding a crop ------------------ %>
     <div class="modal fade" id="addcropmodal<%= bed.id %>" aria-hidden="true" aria-labelledby="addcropmodal<%= bed.id %>" tabindex="-1">
-      <div class="modal-dialog modal-xl modal-dialog-centered">
-        <div class="modal-content">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content rounded-4">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="addcropmodal<%= bed.id %>"><%= bed.description %> - Add Crop</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -69,50 +69,63 @@
                     <%= render "crops/new", bed: bed, crop: @crop %>
                   </div>
                 </div>
-                <div class="col">
+
+                <div class="col seasonal-container d-flex flex-column justify-content-between">
 
                   <%# -------- Seasonal Recomendation ------- %>
+                  <%# <div class=""> %>
 
-                  <div class="d-flex justify-content-center align-items-center">
-                    <%# ------- Seasonal suggestion Card ------- %>
-                    <% @veggie_lists_by_season.each do |list| %>
-                      <div class="seasonal-card <%= list.first.season.downcase %> <%= "d-none" unless list.first.season == @season %>"
-                          data-crop-form-target="<%= list.first.season.downcase %>">
-                        <div class="card shadow rounded-4 m-2 overflow-hidden border-0" style="max-width: 22rem;">
-                          <div class="card-header crop_card_header border-0">
-                            <div class="d-flex justify-content-around">
-                              <h3 class="season-title text-centre mt-2 mb-0"><%= @seasonal_titles[list.first.season.to_sym] %></h3>
+                    <%# <div class="d-flex justify-content-center align-items-center"> %>
+                      <%# ------- Seasonal suggestion Card ------- %>
+                      <% @veggie_lists_by_season.each do |list| %>
+                        <div class="seasonal-card <%= list.first.season.downcase %> <%= "d-none" unless list.first.season == @season %>"
+                            data-crop-form-target="<%= list.first.season.downcase %>">
+                          <div class="card shadow rounded-4 mx-2 overflow-hidden border-0" style="max-width: 22rem;">
+                            <div class="card-header crop_card_header border-0">
+                              <div class="d-flex justify-content-around">
+                                <h3 class="season-title text-centre mt-2 mb-0"><%= @seasonal_titles[list.first.season.to_sym] %></h3>
+                              </div>
                             </div>
-                          </div>
-                          <div class="card-body crop_card_body card-bg">
-                            <div class="border-0">
-                              <div class="rounded-4 card-body card-fg">
-                                <div class="copy-bubble rounded-4 m-2 p-3">
-                                  <em><p class="mb-0">In the month of <%= list.first.season %>, we suggest planting the following:</p></em>
+                            <div class="card-body crop_card_body card-bg">
+                              <div class="border-0">
+                                <div class="rounded-4 card-body card-fg">
+                                  <div class="copy-bubble rounded-4 m-2 p-3">
+                                    <em><p class="mb-0">In the month of <%= list.first.season %>, we suggest planting the following:</p></em>
+                                  </div>
+                                  <ul>
+                                    <% list.each do |veggie| %>
+                                      <li class="card-text"><i class="fa-regular fa-circle-small"></i>- <%= veggie.name %></li>
+                                    <% end %>
+                                  </ul>
                                 </div>
-                                <ul>
-                                  <% list.each do |veggie| %>
-                                    <li class="card-text"><i class="fa-regular fa-circle-small"></i>- <%= veggie.name %></li>
-                                  <% end %>
-                                </ul>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    <% end %>
-                  </div>
-                </div>
+                      <% end %>
+                    <%# </div> %>
 
+                    <div class="add-veggie rounded-4 shadow mt-auto mx-2 p-2">
+                      <div class="d-flex flex-row justify-content-between align-items-center">
+                        <div>
+                          <p class="m-0">Don't see the Veggie you want?</p>
+                        </div>
+                        <button class="btn btn-primary rounded-4" data-bs-target="#addveggiemodal" data-bs-toggle="modal">Add Veggie</button>
+                      </div>
+                    </div>
+                  <%# </div> %>
+                </div>
               </div>
             </div>
           </div>
+          <!--
           <div class="modal-footer">
             <%# <div class="d-flex flex-row justify-content-end"> %>
               <p>Don't see the Veggie you want?</p>
               <button class="btn btn-primary rounded-4" data-bs-target="#addveggiemodal" data-bs-toggle="modal">Add Veggie</button>
             <%# </div> %>
           </div>
+          -->
         </div>
       </div>
     </div>
