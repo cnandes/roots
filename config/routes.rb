@@ -8,8 +8,10 @@ Rails.application.routes.draw do
     resources :beds, only: %i[new create show]
   end
 
-  resources :beds, only: %i[edit update destroy]
-  resources :crops, only: %i[create update destroy] do
+  resources :beds, only: %i[edit update destroy] do
+    resources :crops, only: %i[create]
+  end
+  resources :crops, only: %i[update destroy] do
     member do
       get :plant
       get :harvest

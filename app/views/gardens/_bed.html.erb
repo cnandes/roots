@@ -1,7 +1,7 @@
 <% require_relative '../../../db/crop_emojis' %>
 
-<div class="card my-3 rounded">
-  <div class="card-header bed-header">
+<div class="card my-3">
+  <div class="card-header">
     <div class="d-flex justify-content-between">
       <div>
         <h2><%= bed.description %></h2>
@@ -36,7 +36,7 @@
 
     <%# ------------- Add Crop Button ------------------ %>
     <div class="d-flex justify-content-end">
-      <a class="btn btn-info m-2 <%= "btn-pulse-primary" if bed.planted_crops.empty? && bed.future_crops.empty? %>" data-bs-toggle="modal" href="#addcropmodal<%= bed.id %>" role="button"><i class="fa-solid fa-plus"></i> Add Crop</a>
+      <a class="btn btn-info shadow-sm m-2 <%= "btn-pulse-primary" if bed.planted_crops.empty? && bed.future_crops.empty? %>" data-bs-toggle="modal" href="#addcropmodal<%= bed.id %>" role="button">Add Crop</a>
     </div>
     <%# ------------- Planted Crop Cards ------------- %>
     <div class="d-flex justify-content-start flex-wrap flex-row">
@@ -48,14 +48,14 @@
     <%# ------------- Unplanted Crop Cards ------------- %>
     <div class="d-flex justify-content-start flex-wrap flex-row">
         <% bed.future_crops.each do |crop| %>
-          <%= render "crop", crop: crop %>
+          <%= render "crop", crop: crop, bed: bed %>
         <% end %>
     </div>
 
     <%# ------------- Modal for adding a crop ------------------ %>
     <div class="modal fade" id="addcropmodal<%= bed.id %>" aria-hidden="true" aria-labelledby="addcropmodal<%= bed.id %>" tabindex="-1">
-      <div class="modal-dialog modal-xl modal-dialog-centered">
-        <div class="modal-content">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content rounded-4">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="addcropmodal<%= bed.id %>"><%= bed.description %> - Add Crop</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -63,86 +63,55 @@
           <div class="modal-body">
             <div class="container-fluid">
               <div class="row" data-controller="crop-form">
-                <%# ------- Add crop form ------- %>
 
-                <div id="select2parent" class="col">
-                  <%= simple_form_for @crop do |f| %>
-                    <div data-controller="select2">
-                      <%= f.input :veggie_id, collection: Veggie.all, input_html: { class: "select2" } %>
-                    </div>
-                    <%= f.input :quantity %>
-                    <%= f.input :weeks_to_harvest %>
-                    <%= f.label :season %>
-                    <div class="pb-3" data-action="change->crop-form#seasonSelected">
-                      <%= f.select :season, %w[Summer Autumn Winter Spring],
-                                  selected: @season %>
-                    </div>
-                    <%= f.label :emoji %>
-                    <div class="pb-3">
-                      <%= f.select :emoji, EMOJI_ARRAY %>
-                    </div>
-                    <br>
-                    <div data-action="change->crop-form#plantedChange">
-                      <%= f.input :planted,
-                                  label: "Has the crop been planted?",
-                                  as: :radio_buttons,
-                                  collection: [['Yes', true], ['No', false]],
-                                  checked: ['No', false] %>
-                    </div>
-                    <div class="d-none" data-crop-form-target="date">
-                      <%= f.input :plant_date,
-                                  as: :date,
-                                  include_blank: true,
-                                  selected: nil,
-                                  start_year: Date.today.year - 2,
-                                  end_year: Date.today.year %>
-                    </div>
-                    <br>
-                    <%= f.input :comment,
-                                label: "Comments" %>
-                    <div class="d-none">
-                      <%= f.association :bed,
-                                        label_method: :description,
-                                        include_blank: false,
-                                        selected: bed.id %>
-                    </div>
-                    <div class="btn btn-success">
-                      <%= f.button :submit, "Save Crop", class: "text-light" %>
-                    </div>
-                  <% end %>
-                </div>
+                <%# ------- Add crop form ------- %>
                 <div class="col">
-                <%# ------- Seasonal suggestion Card ------- %>
-                <% @seasonal_veggies.each do |list| %>
-                  <div class="<%= list.first.season.downcase %> <%= "d-none" unless list.first.season == @season %>"
-                       data-crop-form-target="<%= list.first.season.downcase %>">
-                    <div class="card border-0 m-2" style="max-width: 24rem;">
-                      <div class="card-header crop_card_header">
-                        <div class="d-flex justify-content-around">
-                          <h3 class="text-centre mt-2"><%= @seasonal_titles[list.first.season.to_sym] %></h3>
+                  <div class="rounded-4 shadow p-3" style="max-width: 30rem;">
+                    <%= render "crops/new", bed: bed, crop: @crop %>
+                  </div>
+                </div>
+
+                <%# -------- Seasonal Recomendation ------- %>
+                <div class="col seasonal-container d-flex flex-column justify-content-between">
+                  <% @veggie_lists_by_season.each do |list| %>
+                    <div class="seasonal-card <%= list.first.season.downcase %> <%= "d-none" unless list.first.season == @season %>"
+                        data-crop-form-target="<%= list.first.season.downcase %>">
+                      <div class="card shadow rounded-4 mx-2 overflow-hidden border-0" style="max-width: 22rem;">
+                        <div class="card-header crop_card_header border-0">
+                          <div class="d-flex justify-content-around">
+                            <h3 class="season-title text-centre mt-2 mb-0"><%= @seasonal_titles[list.first.season.to_sym] %></h3>
+                          </div>
                         </div>
-                      </div>
-                      <div class="card-body crop_card_body card-bg">
-                        <div class="card border-0 rounded">
-                          <div class="card-body card-fg">
-                            <ul>
-                              <% list.each do |veggie| %>
-                                <li class="card-text"><%= veggie.name %></li>
-                              <% end %>
-                            </ul>
+                        <div class="card-body crop_card_body card-bg">
+                          <div class="border-0">
+                            <div class="rounded-4 card-body card-fg">
+                              <div class="copy-bubble rounded-4 m-2 p-3">
+                                <em><p class="mb-0">In the month of <%= list.first.season %>, we suggest planting the following:</p></em>
+                              </div>
+                              <ul>
+                                <% list.each do |veggie| %>
+                                  <li class="card-text"><i class="fa-regular fa-circle-small"></i>- <%= veggie.name %></li>
+                                <% end %>
+                              </ul>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
+                  <% end %>
+
+                  <%# ------- Add a new Veggie -------- %>
+                  <div class="add-veggie rounded-4 shadow mt-auto mx-2 p-2">
+                    <div class="d-flex flex-row justify-content-between align-items-center my-1">
+                      <div>
+                        <em><p class="m-0 px-2">Can't find the Veggie you're looking for?</p></em>
+                      </div>
+                      <button class="btn btn-primary rounded-4" data-bs-target="#addveggiemodal" data-bs-toggle="modal">Add Veggie</button>
+                    </div>
                   </div>
-                <% end %>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="modal-footer">
-            <p>Don't see the Veggie you want?</p>
-            <button class="btn btn-primary" data-bs-target="#addveggiemodal" data-bs-toggle="modal">Add Veggie</button>
           </div>
         </div>
       </div>

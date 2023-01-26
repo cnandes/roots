@@ -6,9 +6,12 @@
         <h5 class="text-centre mt-2 me-2"><%= crop.emoji %></h5>
         <h5 class="text-centre mt-2"><%= crop.veggie.name %></h5>
       </div>
-      <% if crop.harvested? %>
+
+      <%# Modal exit button %>
+      <% if crop.harvested? || current_page?(gardens_path) || current_page?(plans_path)%>
         <button type="button" class="btn-close mt-2" data-bs-dismiss="modal" aria-label="Close"></button>
       <% else %>
+
         <%# Menu button %>
         <div class="btn-group dropend">
           <button type="button" class="btn btn-light" data-bs-toggle="dropdown" aria-expanded="false">
@@ -42,7 +45,7 @@
 
         <%# Veggie season badge %>
         <div class="d-flex justify-content-between pb-2 <%= crop.season.downcase %>">
-          <span class="badge mb-2"><%= crop.season %> </span>
+          <span class="badge rounded-4 mb-2"><%= crop.season %> </span>
         </div>
 
         <%# progress bar %>
@@ -67,12 +70,10 @@
         <% if crop.comment.present? %>
           <p class="card-text">Notes: <em class="text-muted"><%= crop.comment %></em></p>
         <% end %>
-
         <%# button to plant crop %>
         <% unless (crop.planted || crop.plant_date) %>
           <%= link_to 'Plant!', plant_crop_path(crop), class: "btn btn-primary w-100" %>
         <% end %>
-
         <%# button to harvest crop %>
         <% if crop.planted %>
           <%= link_to 'Harvest!', harvest_crop_path(crop), class: "btn btn-primary w-100" %>

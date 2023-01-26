@@ -1,15 +1,20 @@
 <div class="container p-10">
   <div data-controller="filter-planned-crops">
-    <div class="d-flex justify-content-between garden-header">
+    <!-- --------------- sub nav ------------------- -->
+    <div class="d-flex justify-content-between align-items-top garden-header">
+      <!-- --------------- title ------------------- -->
       <div>
         <h1>Plans</h1>
       </div>
-      <div class="input-group mb-3" style="width: 240px; margin-right: 12px;">
+      <!-- --------------- Info Helper ------------------- -->
+      <%= render "shared/page_info", empty: @gardens.empty? %>
+      <!-- --------------- Filter form ------------------- -->
+      <div class="input-group align-self-start mb-3" style="width: 240px; margin-right: 12px;">
         <div class="d-flex">
           <div class="input-group-prepend">
-            <label class="input-group-text bg-danger border text-light" for="season">Season</label>
+            <label class="input-group-text bg-danger text-light rounded-4 shadow" style="margin-right: 6px;" for="season">Season</label>
           </div>
-          <select class="custom-select border" id="season" data-action="change->filter-planned-crops#filterBySeason" data-filter-planned-crops-target="season">
+          <select class="custom-select xs shadow border-0 rounded-4" id="season" data-action="change->filter-planned-crops#filterBySeason" data-filter-planned-crops-target="season">
             <option selected>Please select a season</option>
             <option value="Summer">Summer</option>
             <option value="Autumn">Autumn</option>

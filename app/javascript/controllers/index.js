@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import CropFormController from "./crop_form_controller"
+application.register("crop-form", CropFormController)
+
 import FilterPlannedCropsController from "./filter_planned_crops_controller"
 application.register("filter-planned-crops", FilterPlannedCropsController)
 
@@ -13,8 +16,8 @@ application.register("hello", HelloController)
 import ThreejsController from "./threejs_controller"
 application.register("threejs", ThreejsController)
 
-import CropForm from "./crop_form_controller"
-application.register("crop-form", CropForm)
-
 import Select2Controller from "./select2_controller"
 application.register("select2", Select2Controller)
+
+import TurboformController from "./turboform_controller"
+application.register("turboform", TurboformController)

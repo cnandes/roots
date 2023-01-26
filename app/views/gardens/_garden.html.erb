@@ -38,16 +38,16 @@
       </div>
     </div>
   </div>
-  <div class="card-body garden">
-    <div class="d-flex flex-wrap justify-content-around">
+  <div class="card-body garden current">
+    <div class="d-flex flex-wrap justify-content-start">
       <% if garden.beds %>
         <%# ------------- Iterate over beds in garden ------------- %>
         <% garden.beds.each do |bed|%>
-          <div class="m-2">
+          <div class="mt-2 mx-4">
             <%# ------------- Bed description badge ------------- %>
-            <span class="badge badge-primary mb-1"><%= bed.description %></span>
+            <span class="badge rounded-4 badge-primary ms-1 mb-2"><%= bed.description %></span>
             <div class="card plot-bed">
-              <div class="card-body" style="padding-top: 20px; padding-left: 16px">
+              <div class="card-body current-crop-body">
                 <div class="d-flex flex-wrap justify-content-around">
                   <%# ------------- Plot crop emojis in bed (max 12) ------------- %>
                   <% bed.planted_crops.first(12).each do |crop| %>
@@ -55,24 +55,24 @@
                     <%# ------------- If 1-2 crops in bed ------------- %>
                     <% if bed.planted_crops.length <= 2 %>
                       <% 6.times do %>
-                        <%= render "crop_emoji_current", crop: crop %>
+                        <%= render "crops/crop_modal", crop: crop, bed: bed, season: crop.season %>
                       <% end %>
 
                     <%# ------------- If less that 4 crops in bed ------------- %>
                     <% elsif bed.planted_crops.length <= 4 %>
                       <% 3.times do %>
-                        <%= render "crop_emoji_current", crop: crop %>
+                        <%= render "crops/crop_modal", crop: crop, bed: bed, season: crop.season %>
                       <% end %>
 
                     <%# ------------- If 5-6 crops in bed ------------- %>
                     <% elsif bed.planted_crops.length <= 6 %>
                       <% 2.times do %>
-                        <%= render "crop_emoji_current", crop: crop %>
+                        <%= render "crops/crop_modal", crop: crop, bed: bed, season: crop.season %>
                       <% end %>
 
                     <%# ------------- If more than 6 crops in bed ------------- %>
                     <% else %>
-                      <%= render "crop_emoji_current", crop: crop %>
+                      <%= render "crops/crop_modal", crop: crop, bed: bed, season: crop.season %>
                     <% end %>
                   <% end %>
                 </div>
@@ -83,18 +83,10 @@
       <% end %>
       <%# ------------- No Beds Display ------------- %>
       <% if garden.beds.empty? %>
-        <div class="card no-plot-bed">
-
-          <div class="d-flex flex-column">
-            <div class="align-self-center">
-              <div class="card-body">
-                <p class="card-text text-center m-4"></p>
-                <div class="m-10">
-                  <%= link_to "Add Bed", garden_path(garden),
-                    class: "btn btn-secondary btn-sm btn-pulse-secondary" %>
-                </div>
-              </div>
-            </div>
+        <div class="card no-plot-bed" style="padding: 120px 30px;">
+          <div class="align-self-center">
+            <%= link_to "Get Started", garden_path(garden),
+                class: "btn btn-secondary btn-sm btn-pulse-secondary" %>
           </div>
         </div>
       <% end %>
