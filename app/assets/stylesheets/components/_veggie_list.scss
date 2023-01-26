@@ -1,14 +1,24 @@
+.seasonal-card {
+  color: $gray
+
+  ul {
+    list-style: none;
+    color: $darkgray
+  }
+}
+
 .summer {
   .card-header {
     background-color: #e1ffb1;
   }
 
   .card-bg {
-    background-color: #b6e388;
+    background-color: #e1ffb1;
+
   }
 
   .card-fg {
-    background-color: #fcffb2;
+    background-color: rgba(252, 255, 178, 0.5);
   }
 
   span {
