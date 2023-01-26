@@ -14,14 +14,15 @@
       </div>
     </div>
   </div>
-  <div class="card-body garden">
-    <div class="d-flex flex-wrap justify-content-around">
+  <div class="card-body planned-garden">
+    <div class="d-flex flex-wrap justify-content-start">
       <% if garden.beds %>
         <%# ------------- Iterate over beds in garden ------------- %>
         <% garden.beds.each do |bed|%>
-          <div class="m-2">
+          <div class="mt-2 mx-4">
+
             <%# ------------- Bed description badge ------------- %>
-            <span class="badge badge-primary mb-1"><%= bed.description %></span>
+            <span class="badge badge-primary"><%= bed.description %></span>
             <div class="card plot-bed">
               <div class="card-body">
 
