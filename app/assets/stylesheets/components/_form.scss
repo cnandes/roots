@@ -1,7 +1,10 @@
 .form-border {
   select {
-    border-width: 1px;
-    border-color: rgba(0, 0, 0, 0.175);;
-    border-radius: 2px;
+    border: none;
+    border-radius: 1rem;
+    min-width: 110px;
+    text-align: center;
+    margin-right: 6px;
+    box-shadow: $box-shadow;
   }
 }
