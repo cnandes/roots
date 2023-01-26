@@ -15,8 +15,8 @@
     </div>
   </div>
   <div class="card-body historic-garden">
-    <div class="d-flex flex-wrap justify-content-start">
-      <% if garden.beds %>
+    <% if garden.beds %>
+      <div class="d-flex flex-wrap justify-content-start">
         <%# ------------- Iterate over beds in garden ------------- %>
         <% garden.beds.each do |bed|%>
           <div class="mt-2 mx-4">
@@ -32,16 +32,16 @@
                 </div>
               </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       <% end %>
       <%# ------------- No Beds Display ------------- %>
       <% if garden.beds.empty? %>
-        <div class="card no-plot-bed">
-          <div class="card-body">
-            <div class="d-flex align-items-center flex-row">
-              <p class="card-text text-center m-4"> </p>
-              <div class="m-10">
+        <div class="d-flex flex-wrap justify-content-center">
+          <div class="card no-plot-bed m-4">
+            <div class="card-body">
+              <div class="d-flex align-items-center flex-row">
+                <p class="card-text text-center m-4"> </p>
               </div>
             </div>
           </div>

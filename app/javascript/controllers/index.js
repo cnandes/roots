@@ -16,8 +16,8 @@ application.register("hello", HelloController)
 import ThreejsController from "./threejs_controller"
 application.register("threejs", ThreejsController)
 
-import Select2Controller from "./select2_controller"
-application.register("select2", Select2Controller)
-
 import TurboformController from "./turboform_controller"
 application.register("turboform", TurboformController)
+
+import Select2Controller from "./select2_controller"
+application.register("select2", Select2Controller)
