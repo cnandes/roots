@@ -1,11 +1,8 @@
 .navbar-lewagon {
   justify-content: space-between;
-  // background: white;
   z-index: 1;
-  // background-image: url(cloud_nav_bar_2.png);
-  // background-size: cover;
-  // background-repeat: no-repeat;
-  min-height: 116px;
+  height: 85px;
+  padding-bottom: none;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -15,39 +12,35 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
-
+.container-flud {
+  height: 85px;
+}
 body {
   padding: 25px;
 }
 
 .cloud {
-  margin-left: 10px;
+  margin-left: 18px;
   width: 120px;
-  height: 100px;
-  background-image: url(cloud-small.png);
+  height: 85px;
+  background-image: url(cloud-cropped.png);
   background-size: cover;
   text-align: center;
 
   a {
-    margin-top: 30px;
-  }
-  button {
-    // margin-top: 30px;
-    border: none;
-    background-color: none;
-    align-items: center;
+    margin-top: 24px;
   }
 }
 
 .sun {
   margin-left: 18px;
-  width: 100px;
-  height: 100px;
-  background-image: url(sun_lower_o.png);
+  width: 85px;
+  height: 85px;
+  background-image: url(sun_shadow_low_o.png);
   background-size: cover;
 
   img {
-    margin-top: 29px;
-    margin-left: 30px;
+    margin-top: 21px;
+    margin-left: 22px;
   }
 }

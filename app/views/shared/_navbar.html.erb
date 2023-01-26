@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon mb-3">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon mb-5" style="paddig-bottom: none;">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "logo.png" %> Roots
@@ -9,14 +9,21 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <div class="dropdown cloud">
+          <div class="dropdown" style="height: 85px">
             <li class="nav-item">
-              <button class="btn btn-light nav-link dropdown-toggle" id="navbarDropdown1" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                My Gardens
-              </button>
+              <a class="nav-link dropdown-toggle cloud"
+                      style = "padding: none;"
+                      id="navbarDropdown1"
+                      href="#"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false">
+                <div style="margin-top: 24px;">My Gardens</div>
+              </a>
 
               <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                <%= link_to "Gardens Overview", gardens_path, class: "dropdown-item" %>
+                <%= link_to current_user.gardens.length == 1 ? "Garden Overview" : "Gardens Overview", gardens_path, class: "dropdown-item" %>
                 <% current_user.gardens.each do |garden| %>
                   <%= link_to garden.name, garden_path(garden), class: "dropdown-item" %>
                 <% end %>
@@ -31,7 +38,7 @@
           </li>
           <div class="m-2">
             <li class="nav-item dropdown sun">
-              <%= image_tag "veg_avatar.jpg", class: "avatar dropdown-toggle ml-2",style: "height:42px",
+              <%= image_tag "root-st.png", class: "avatar dropdown-toggle ml-2",style: "height:42px",
                   id: "navbarDropdown2", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown2">
                 <%= link_to "Gardening News", "https://www.abc.net.au/gardening", class: "dropdown-item" %>
