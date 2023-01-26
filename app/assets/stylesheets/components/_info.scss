@@ -1,0 +1,37 @@
+.page-info {
+  margin: 0 20px;
+
+  p {
+    color: black;
+  }
+
+  .card{
+    overflow: hidden;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+  .card-header {
+    text-align: center;
+    background-color: rgba(173, 216, 230, 0.6);
+  }
+
+  .card-body {
+    background-image: url(clouds_less_blurred_low_o.png);
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    background-color: rgba(173, 216, 230,0.3);
+  }
+
+  .card-text {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+}

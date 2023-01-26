@@ -10,9 +10,12 @@ class BedsController < ApplicationController
     @bed.garden = @garden
     if @bed.save
       redirect_to garden_path(@garden), notice: "🚜 #{@bed.description} was added!"
+
     else
       # TO DO: figure out how to get this error to work
       # render "gardens/show", status: :unprocessable_entity
+      # flash.now[:danger] = @bed.errors.full_messages
+      render partial: "beds/new", status: :unprocessable_entity
     end
   end
 

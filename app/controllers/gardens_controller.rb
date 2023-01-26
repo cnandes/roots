@@ -4,6 +4,7 @@ class GardensController < ApplicationController
   def index
     @gardens = current_user.gardens
     @garden = Garden.new
+    @info = INDEX_INFO
   end
 
   def show
@@ -12,8 +13,9 @@ class GardensController < ApplicationController
     @crop = Crop.new
     @veggie = Veggie.new
     @season = season
-    @seasonal_veggies = seasonal_veggie_lists
+    @veggie_lists_by_season = seasonal_veggie_lists
     @seasonal_titles = SEASONAL_TITLES
+    @info = SHOW_INFO
   end
 
   def create
@@ -24,7 +26,7 @@ class GardensController < ApplicationController
     if @garden.save
       redirect_to gardens_path, notice: "🪴 #{@garden.name} was added!"
     else
-      render :new, status: :unprocessable_entity
+      render partial: "gardens/new_garden_form", status: :unprocessable_entity
     end
   end
 
@@ -90,9 +92,31 @@ class GardensController < ApplicationController
   end
 
   SEASONAL_TITLES = {
-    Summer: "🌻 ~ Summer Veggies ~ 🌻",
-    Autumn: "🍁 ~ Autumn Veggies ~ 🍁",
-    Winter: "❄️ ~ Winter Veggies ~ ❄️",
-    Spring: "🌷 ~ Spring Veggies ~ 🌷"
+    Summer: "🌻 Summer 🌻",
+    Autumn: "🍁 Autumn 🍁",
+    Winter: "❄️ Winter ❄️",
+    Spring: "🌷 Spring 🌷"
+  }
+
+  INDEX_INFO = {
+    title: "My Gardens",
+    brief: "This is the gardens page, where you will find a summary of your current gardens.",
+    tips: [
+      "To add a new garden, click the 'Add Garden' button in the top right",
+      "Buttons to edit and delete gardens can be found to the right of the garden name",
+      "To view the garden simply click the garden title",
+      "Crops will appear in your beds once planted, with a progress indicator to let you know when to harvest"
+    ]
+  }
+
+  SHOW_INFO = {
+    title: "Garden Beds",
+    brief: "This is the garden page, where you will find info about beds in this garden.",
+    tips: [
+      "To add a new garden bed, click the 'Add bed' button in the top right",
+      "To add a crop of Veggies to your garden bed, click the 'Add Crop' button in the top right corner of the bed card",
+      "When adding a new crop, select the season for relavant recommendations",
+      "You can plan for future crops by selecting 'No' when prompted by 'Has the crop been planted?'"
+    ]
   }
 end

@@ -4,11 +4,12 @@ class CropsController < ApplicationController
 
   def create
     @crop = Crop.new(crop_params)
-
+    @bed = Bed.find(params[:bed_id])
+    @crop.bed = @bed
     if @crop.save
-      redirect_to garden_path(@crop.bed.garden), notice: "#{@crop.emoji} #{@crop.veggie.name} have been added!"
+      redirect_to garden_path(@bed.garden), status: :see_other, notice: "#{@crop.emoji} #{@crop.veggie.name} have been added!"
     else
-      # TODO: Validation failures in modals
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -38,7 +39,11 @@ class CropsController < ApplicationController
     @crop.planted = true
     @crop.plant_date = Date.today
     if @crop.save
-      redirect_to garden_path(@garden), notice: "#{@crop.emoji} #{@crop.veggie.name} have been planted!"
+      if "/#{request.referrer.split('/').last}" == plans_path
+        redirect_to plans_path, notice: "#{@crop.emoji} #{@crop.veggie.name} have been planted!"
+      else
+        redirect_to garden_path(@garden), notice: "#{@crop.emoji} #{@crop.veggie.name} have been planted!"
+      end
     else
         # TODO: Validation failures in modals
     end
@@ -51,7 +56,11 @@ class CropsController < ApplicationController
 
     @crop.planted = false
     if @crop.save
-      redirect_to garden_path(@garden), notice: "#{@crop.emoji} #{@crop.veggie.name} have been harvested!"
+      if "/#{request.referrer.split('/').last}" == gardens_path
+        redirect_to gardens_path, notice: "#{@crop.emoji} #{@crop.veggie.name} have been harvested!"
+      else
+        redirect_to garden_path(@garden), notice: "#{@crop.emoji} #{@crop.veggie.name} have been harvested!"
+      end
     else
         # TODO: Validation failures in modals
     end

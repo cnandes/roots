@@ -3,19 +3,25 @@
 <% return if filtered_crops.empty? %>
 <% filtered_crops.first(12).each do |crop| %>
 <%# ------------- If less that 4 crops in bed ------------- %>
-  <% if filtered_crops.length <= 4 %>
+  <% if filtered_crops.length <= 2 %>
+    <% 6.times do %>
+      <%= render "crops/crop_modal", crop: crop, bed: bed, season: season %>
+    <% end %>
+
+<%# ------------- If less that 4 crops in bed ------------- %>
+  <% elsif filtered_crops.length <= 4 %>
     <% 3.times do %>
-      <%= render "crop_modal", crop: crop, bed: bed, season: season %>
+      <%= render "crops/crop_modal", crop: crop, bed: bed, season: season %>
     <% end %>
 
   <%# ------------- If 5-6 crops in bed ------------- %>
   <% elsif filtered_crops.length <= 6 %>
     <% 2.times do %>
-      <%= render "crop_modal", crop: crop, bed: bed, season: season %>
+      <%= render "crops/crop_modal", crop: crop, bed: bed, season: season %>
     <% end %>
 
   <%# ------------- If more than 6 crops in bed ------------- %>
   <% else %>
-    <%= render "crop_modal", crop: crop, bed: bed, season: season %>
+    <%= render "crops/crop_modal", crop: crop, bed: bed, season: season %>
   <% end %>
 <% end %>

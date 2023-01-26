@@ -2,7 +2,7 @@
   background-image: url(garden_background_colour_low_o.png);
   background-repeat: repeat;
   background-size: cover;
-  min-height: 300px;
+  min-height: 400px;
   span {
     background-color: $mossgreen;
   }
@@ -21,5 +21,24 @@
   a {
     text-decoration: none;
     color: $mossgreen;
+  }
+}
+.historic-garden {
+  background-image: url(compost_background_low_o.png);
+  background-repeat: repeat;
+  background-size: cover;
+  min-height: 400px;
+  span {
+    background-color: $mossgreen;
+  }
+}
+
+.planned-garden {
+  background-image: url(seeds_background_light_blur_low_o.png);
+  background-repeat: repeat;
+  background-size: cover;
+  min-height: 400px;
+  span {
+    background-color: $mossgreen;
   }
 }
