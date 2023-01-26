@@ -1,7 +1,13 @@
 .card {
   border-radius: 1rem;
+  overflow: hidden;
+  border: none;
 }
 
 .card-body {
   border-radius: 0rem 0rem 1rem 1rem;
 }
+ .card-header {
+  border-radius: 1rem;
+  border: none;
+ }
