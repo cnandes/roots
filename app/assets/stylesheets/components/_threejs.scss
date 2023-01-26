@@ -9,33 +9,90 @@ main {
   position: absolute;
   color: black;
   z-index: 1;
-  padding: 40px;
+  // padding: 40px;
+
 }
 
-* {
-  margin: 0;
-  padding: 0;
+.blob {
+  /* From https://css.glass */
+
+  background: rgba(255, 255, 255, 0.37);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.2px);
+  -webkit-backdrop-filter: blur(3.2px);
+  border: 1px solid rgba(255, 255, 255, 0.29);
+  // width: 80%;
+  font-size: 20px;
+
+
+  h1,
+  h2,
+  h3,
+  p {
+
+    font-family: 'Gaegu', cursive;
+    text-align: center;
+
+  }
 }
 
-html {
-  background: #1e1a20;
+
+
+
+.problem {
+  text-align: center;
+  font-size: 28px;
+}
+
+.submit {
+  text-align: right;
+  font-size: 25px;
+
+}
+
+.enclose {
+  position: fixed;
+  bottom: 0px;
+  width: 98%;
+}
+
+.signbtn {
+  background: rgba(158, 213, 47, 0.37);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.2px);
+  -webkit-backdrop-filter: blur(3.2px);
+  border: 1px solid rgba(158, 213, 47, 0.29);
+  margin-right: 6px;
+  font-family: 'Gaegu', cursive;
+  text-align: center;
+}
+
+.cardpad {
+  margin-top: 600px;
+}
+
+.cardpad2 {
+  margin-top: 1200px;
 }
 
 
-
-.section {
-  display: flex;
-  align-items: center;
-  height: 100vh;
-  position: relative;
-  font-family: "Cabin", sans-serif;
-  color: #ffeded;
-  text-transform: uppercase;
-  font-size: 7vmin;
-  padding-left: 10%;
-  padding-right: 10%;
+.cmn-t-pulse {
+  animation: pulse 1s ease infinite;
+  /* transition: transform 0.2s; */
 }
 
-section:nth-child(odd) {
-  justify-content: flex-end;
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }

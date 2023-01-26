@@ -50,20 +50,14 @@ export default class extends Controller {
       0.1,
       1000
     );
-    this.camera.position.set(25, 18, 20);
-    this.camera.rotateX = -23;
+    this.camera.position.set(25, 20, 15);
+    // this.camera.rotateX = -23;
     this.scene.add(this.camera);
 
     this.renderer = new THREE.WebGLRenderer({ antialias: true });
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(this.renderer.domElement);
-    window.addEventListener("resize", onWindowResize, false);
-    function onWindowResize() {
-      this.camera.aspect = window.innerWidth / window.innerHeight;
-      this.camera.updateProjectionMatrix();
-      this.renderer.setSize(window.innerWidth, window.innerHeight);
-      render();
-    }
+
     /* -------------------------------- add light to scene ------------------------------- */
     this.renderer.physicallyCorrectLights = true;
     // this.scene.add(this.light);
@@ -96,9 +90,9 @@ export default class extends Controller {
       // resource URL
       "https://roots-house.s3.ap-southeast-2.amazonaws.com/house/untitled.gltf",
       // called when the resource is loaded
-      function (gltf) {
-        that.model = gltf.scene;
-        scene.add(that.model);
+      (gltf) => {
+        this.model = gltf.scene;
+        scene.add(this.model);
         gltf.animations; // Array<THREE.AnimationClip>
         gltf.scene; // THREE.Group
         gltf.scenes; // Array<THREE.Group>
@@ -123,7 +117,7 @@ export default class extends Controller {
     document.body.onscroll = () => {
       const t = document.body.getBoundingClientRect().top;
 
-      if (this.model) this.model.rotation.y += 0.01;
+      if (this.model) this.model.rotation.y += 0.03;
       // this.camera.position.y = t * -0.01;
     };
 
