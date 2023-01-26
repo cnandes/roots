@@ -18,7 +18,7 @@
   width: 246px;
   height: 59px;
 
-  padding: 10px;
+  padding: 3px;
   border-radius: 5px;
   border: solid $light-gray;
   background: $light-gray;
@@ -41,12 +41,20 @@
 .talkbubble textarea {
   position: inherit;
   width: 190px;
-  height: inherit;
+  height: auto;
   background: inherit;
 
-  margin: 0 48px 0 0;
-  padding: 0;
+  margin: 0 0 0 0;
+  // padding: 3px;
 
   border: none;
   resize: none;
+}
+.textarea {
+  p {
+    width: 190px;
+    height: fit-content;
+    margin: 0;
+    padding-left: 5px;
+  }
 }
