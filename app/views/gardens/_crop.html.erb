@@ -48,17 +48,17 @@
         <%# Veggie season badge %>
         <div class="d-flex justify-content-between pb-2 <%= crop.season.downcase %>">
           <span class="badge mb-3"><%= crop.season %> </span>
-          <button type="button" class="btn btn-light" data-bs-container="body" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="right" data-bs-content="hello">
+          <button type="button"
+                  class="btn btn-light"
+                  style="all: unset; cursor: pointer;"
+                  data-bs-container="body"
+                  data-bs-toggle="popover"
+                  data-bs-trigger="focus"
+                  data-bs-placement="right"
+                  title="Handy <%= crop.veggie.name.downcase %> info"
+                  data-bs-content="<%= VEGGIE_INFO[crop.veggie.name.to_sym] ? VEGGIE_INFO[crop.veggie.name.to_sym].sample : 'Very Yummy 😋'  %>">
             <h5><i class="fa-solid fa-circle-info text-success"></i></h5>
           </button>
-          <button type="button"
-                  class="btn btn-lg btn-danger"
-                  data-bs-toggle="popover"
-                  title="Popover title"
-                  data-bs-content="Amazing content, right ?">
-                  Click to toggle popover
-          </button>
-
         </div>
 
         <%# progress bar %>
@@ -136,5 +136,4 @@
       </div>
     </div>
   </div>
-
 </div>
