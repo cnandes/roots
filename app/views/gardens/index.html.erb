@@ -29,14 +29,12 @@
     <!-- ------------------------------- New Garden Button -------------------------------- -->
     <a class="btn btn-primary shadow-sm <%= "btn-pulse-primary" if @gardens.empty? %> align-self-start" style="width:160px;" data-bs-toggle="modal" href="#newbedmodal1" role="button">Add Garden</a>
   </div>
-
-  <!-- ------------------------------- Display Garden Cards -------------------------------- -->
   <% if @gardens %>
+  <!-- ------------------------------- Display Garden Cards -------------------------------- -->
     <% @gardens.each do |garden| %>
       <%= render "garden", garden: garden %>
     <% end %>
-  <% end %>
-  <% if @gardens.empty? %>
+  <% else %>
     <div class="card my-3">
       <div class="card-header">
         <h2>You don't have any gardens yet</h2>
