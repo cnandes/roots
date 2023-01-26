@@ -1,4 +1,5 @@
 // Entry point for the build script in your package.json
+window.bootstrap = require('bootstrap/dist/js/bootstrap.bundle.js')
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
