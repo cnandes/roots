@@ -6,9 +6,10 @@ canvas {
 }
 
 main {
-  position: fixed;
+  position: absolute;
   color: black;
   z-index: 1;
+  padding: 40px;
 }
 
 * {
