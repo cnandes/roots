@@ -5,17 +5,21 @@
     </div>
     <%= f.input :quantity %>
     <%= f.input :weeks_to_harvest %>
-    <%= f.label :season %>
-    <div class="pb-3" data-action="change->crop-form#seasonSelected">
+    <div class="mb-1">
+      <%= f.label :season %>
+    </div>
+    <div class="mb-3" data-action="change->crop-form#seasonSelected">
       <%= f.select :season, %w[Summer Autumn Winter Spring],
                   selected: @season %>
     </div>
-    <%= f.label :emoji %>
-    <div class="pb-3">
+    <div class="mb-1">
+      <%= f.label :emoji %>
+    </div>
+    <div class="">
       <%= f.select :emoji, EMOJI_ARRAY %>
     </div>
     <br>
-    <div data-action="change->crop-form#plantedChange">
+    <div style="margin: bottom 0;" data-action="change->crop-form#plantedChange">
       <%= f.input :planted,
                   label: "Has the crop been planted?",
                   as: :radio_buttons,
@@ -39,7 +43,7 @@
                         include_blank: false,
                         selected: bed.id %>
     </div>
-    <div class="btn btn-success">
+    <div class="btn btn-success rounded-4">
       <%= f.button :submit, "Save Crop", class: "text-light" %>
     </div>
   <% end %>

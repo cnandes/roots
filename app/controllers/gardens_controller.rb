@@ -13,7 +13,7 @@ class GardensController < ApplicationController
     @crop = Crop.new
     @veggie = Veggie.new
     @season = season
-    @seasonal_veggies = seasonal_veggie_lists
+    @veggie_lists_by_season = seasonal_veggie_lists
     @seasonal_titles = SEASONAL_TITLES
     @info = SHOW_INFO
   end
@@ -92,10 +92,10 @@ class GardensController < ApplicationController
   end
 
   SEASONAL_TITLES = {
-    Summer: "🌻 ~ Summer Veggies ~ 🌻",
-    Autumn: "🍁 ~ Autumn Veggies ~ 🍁",
-    Winter: "❄️ ~ Winter Veggies ~ ❄️",
-    Spring: "🌷 ~ Spring Veggies ~ 🌷"
+    Summer: "🌻 Summer 🌻",
+    Autumn: "🍁 Autumn 🍁",
+    Winter: "❄️ Winter ❄️",
+    Spring: "🌷 Spring 🌷"
   }
 
   INDEX_INFO = {
