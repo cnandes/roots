@@ -15,8 +15,8 @@
     </div>
   </div>
   <div class="card-body planned-garden">
-    <div class="d-flex flex-wrap justify-content-start">
-      <% if garden.beds %>
+    <% if garden.beds %>
+      <div class="d-flex flex-wrap justify-content-start">
         <%# ------------- Iterate over beds in garden ------------- %>
         <% garden.beds.each do |bed|%>
           <div class="mt-2 mx-4">
@@ -42,15 +42,17 @@
                 </div>
               </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       <% end %>
       <%# ------------- No Beds Display ------------- %>
       <% if garden.beds.empty? %>
-        <div class="card no-plot-bed" style="padding: 120px 30px;">
-          <div class="align-self-center">
-            <%= link_to "Get Started", garden_path(garden),
-                class: "btn btn-secondary btn-sm btn-pulse-secondary" %>
+        <div class="d-flex flex-wrap justify-content-center">
+          <div class="card no-plot-bed mt-4" style="padding: 120px 30px;">
+            <div class="align-self-center">
+              <%= link_to "Get Started", garden_path(garden),
+                  class: "btn btn-secondary btn-sm btn-pulse-secondary" %>
+            </div>
           </div>
         </div>
       <% end %>
