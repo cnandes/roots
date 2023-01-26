@@ -27,7 +27,7 @@
     <!-- ------------------------------- Info helper -------------------------------- -->
     <%= render "shared/page_info", empty: @gardens.empty? %>
     <!-- ------------------------------- New Garden Button -------------------------------- -->
-    <a class="btn btn-primary <%= "btn-pulse-primary" if @gardens.empty? %> align-self-start" style="width:160px;" data-bs-toggle="modal" href="#newbedmodal1" role="button">Add Garden</a>
+    <a class="btn btn-primary shadow-sm <%= "btn-pulse-primary" if @gardens.empty? %> align-self-start" style="width:160px;" data-bs-toggle="modal" href="#newbedmodal1" role="button">Add Garden</a>
   </div>
 
   <!-- ------------------------------- Display Garden Cards -------------------------------- -->
