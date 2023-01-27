@@ -1,6 +1,6 @@
 <% require_relative '../../../db/crop_emojis' %>
 
-<div class="card my-3">
+<div class="card my-4">
   <div class="card-header">
     <div class="d-flex justify-content-between">
       <div>
@@ -38,7 +38,7 @@
     <div class="d-flex justify-content-end">
       <a class="btn btn-info shadow-sm m-2 <%= "btn-pulse-primary" if bed.planted_crops.empty? && bed.future_crops.empty? %>" data-bs-toggle="modal" href="#addcropmodal<%= bed.id %>" role="button">Add Crop</a>
     </div>
-    <div class="main-card-container">
+    <%# <div class="secondary-card-container"> %>
     <%# ------------- Planted Crop Cards ------------- %>
     <div class="d-flex justify-content-start flex-wrap flex-row">
         <% bed.planted_crops.order(:season).each do |crop| %>
@@ -52,7 +52,7 @@
           <%= render "crop", crop: crop, bed: bed %>
         <% end %>
     </div>
-    </div>
+    <%# </div> %>
     <%# ------------- Modal for adding a crop ------------------ %>
     <div class="modal fade" id="addcropmodal<%= bed.id %>" aria-hidden="true" aria-labelledby="addcropmodal<%= bed.id %>" tabindex="-1">
       <div class="modal-dialog modal-lg modal-dialog-centered">

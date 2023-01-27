@@ -1,4 +1,4 @@
-<div class="card my-3">
+<div class="card my-4">
   <div class="card-header garden-header">
     <div class="d-flex justify-content-between">
       <div>
@@ -39,49 +39,51 @@
     </div>
   </div>
   <div class="card-body garden current">
-    <% if garden.beds %>
-      <div class="d-flex flex-wrap justify-content-start">
-        <%# ------------- Iterate over beds in garden ------------- %>
-        <% garden.beds.each do |bed|%>
-          <div class="mt-2 mx-4">
-            <%# ------------- Bed description badge ------------- %>
-            <span class="badge rounded-4 badge-primary ms-1 mb-2"><%= bed.description %></span>
-            <div class="card plot-bed">
-              <div class="card-body current-crop-body">
-                <div class="d-flex flex-wrap justify-content-around">
-                  <%# ------------- Plot crop emojis in bed (max 12) ------------- %>
-                  <% bed.planted_crops.first(12).each do |crop| %>
+    <div class="secondary-card-container">
+      <% if garden.beds %>
+        <div class="d-flex flex-wrap justify-content-start">
+          <%# ------------- Iterate over beds in garden ------------- %>
+          <% garden.beds.each do |bed|%>
+            <div class="mt-2 mx-4">
+              <%# ------------- Bed description badge ------------- %>
+              <span class="badge rounded-4 badge-primary ms-1 mb-2"><%= bed.description %></span>
+              <div class="card plot-bed mb-2">
+                <div class="card-body current-crop-body">
+                  <div class="d-flex flex-wrap justify-content-around">
+                    <%# ------------- Plot crop emojis in bed (max 12) ------------- %>
+                    <% bed.planted_crops.first(12).each do |crop| %>
 
-                    <%# ------------- If 1-2 crops in bed ------------- %>
-                    <% if bed.planted_crops.length <= 2 %>
-                      <% 6.times do %>
+                      <%# ------------- If 1-2 crops in bed ------------- %>
+                      <% if bed.planted_crops.length <= 2 %>
+                        <% 6.times do %>
+                          <%= render "crops/crop_modal", crop: crop, bed: bed, season: crop.season %>
+                        <% end %>
+
+                      <%# ------------- If less that 4 crops in bed ------------- %>
+                      <% elsif bed.planted_crops.length <= 4 %>
+                        <% 3.times do %>
+                          <%= render "crops/crop_modal", crop: crop, bed: bed, season: crop.season %>
+                        <% end %>
+
+                      <%# ------------- If 5-6 crops in bed ------------- %>
+                      <% elsif bed.planted_crops.length <= 6 %>
+                        <% 2.times do %>
+                          <%= render "crops/crop_modal", crop: crop, bed: bed, season: crop.season %>
+                        <% end %>
+
+                      <%# ------------- If more than 6 crops in bed ------------- %>
+                      <% else %>
                         <%= render "crops/crop_modal", crop: crop, bed: bed, season: crop.season %>
                       <% end %>
-
-                    <%# ------------- If less that 4 crops in bed ------------- %>
-                    <% elsif bed.planted_crops.length <= 4 %>
-                      <% 3.times do %>
-                        <%= render "crops/crop_modal", crop: crop, bed: bed, season: crop.season %>
-                      <% end %>
-
-                    <%# ------------- If 5-6 crops in bed ------------- %>
-                    <% elsif bed.planted_crops.length <= 6 %>
-                      <% 2.times do %>
-                        <%= render "crops/crop_modal", crop: crop, bed: bed, season: crop.season %>
-                      <% end %>
-
-                    <%# ------------- If more than 6 crops in bed ------------- %>
-                    <% else %>
-                      <%= render "crops/crop_modal", crop: crop, bed: bed, season: crop.season %>
                     <% end %>
-                  <% end %>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   <%# ------------- No Beds Display ------------- %>
     <% if garden.beds.empty? %>
       <div class="d-flex justify-content-center">
