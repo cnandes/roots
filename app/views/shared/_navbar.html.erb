@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon mb-3">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon mb-5" style="paddig-bottom: none;">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "logo.png" %> Roots
@@ -9,25 +9,45 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
+          <div class="dropdown" style="height: 85px">
+            <li class="nav-item">
+              <a class="nav-link dropdown-toggle cloud"
+                      style = "padding: none;"
+                      id="navbarDropdown1"
+                      href="#"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false">
+                <div style="margin-top: 24px;">My Gardens</div>
+              </a>
 
-          <li class="nav-item">
-            <%= link_to "My Gardens", gardens_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
+              <div class="dropdown-menu rounded-4 shadow border-0" aria-labelledby="navbarDropdown1">
+                <%= link_to current_user.gardens.length == 1 ? "Garden Overview" : "Gardens Overview", gardens_path, class: "dropdown-item" %>
+                <hr class="dropdown-divider">
+                <% current_user.gardens.each do |garden| %>
+                  <%= link_to garden.name, garden_path(garden), class: "dropdown-item" %>
+                <% end %>
+              </div>
+            </li>
+          </div>
+          <li class="nav-item cloud">
             <%= link_to "Plans", plans_path, class: "nav-link" %>
           </li>
-          <li class="nav-item">
+          <li class="nav-item cloud">
             <%= link_to "History", history_path, class: "nav-link" %>
           </li>
-          <li class="nav-item dropdown">
-            <%= image_tag "veg_avatar.jpg", class: "avatar dropdown-toggle",style: "height:42px",
- id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Gardening News", "https://www.abc.net.au/gardening", class: "dropdown-item" %>
-              <%= link_to "Vegetable Info", "https://en.wikipedia.org/wiki/Vegetable", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            </div>
-          </li>
+          <div class="m-2">
+            <li class="nav-item dropdown sun">
+              <%= image_tag "root-st.png", class: "avatar dropdown-toggle ml-2",style: "height:42px",
+                  id: "navbarDropdown2", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu rounded-4 dropdown-menu-end shadow border-0" aria-labelledby="navbarDropdown2">
+                <%= link_to "Gardening News", "https://www.abc.net.au/gardening", class: "dropdown-item" %>
+                <%= link_to "Vegetable Info", "https://en.wikipedia.org/wiki/Vegetable", class: "dropdown-item" %>
+                <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+              </div>
+            </li>
+          </div>
         <% else %>
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
