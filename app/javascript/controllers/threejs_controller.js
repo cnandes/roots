@@ -16,7 +16,7 @@ export default class extends Controller {
     const white = 0xfdf5e6;
     const black = 0x000000;
     const backgroundtexture = new THREE.TextureLoader().load(
-      "/assets/grass.jpg"
+      "https://roots-house.s3.ap-southeast-2.amazonaws.com/house/grass.jpg"
     );
     const backgroundText = new THREE.TextureLoader().load();
     /* --------------------------------- lights --------------------------------- */
