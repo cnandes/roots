@@ -1,22 +1,23 @@
 <%=turbo_frame_tag dom_id(bed, :new_crop_form) do %>
   <%= simple_form_for [bed, crop], data: { controller: "turboform" } do |f| %>
     <div>
-      <%= f.association :veggie, collection: Veggie.all.order(:name) %>
+      <%= f.association :veggie, collection: Veggie.all.order(:name), input_html: { class: "rounded-4" } %>
     </div>
-    <%= f.input :quantity %>
-    <%= f.input :weeks_to_harvest %>
+    <%= f.input :quantity, input_html: { class: "rounded-4" } %>
+    <%= f.input :weeks_to_harvest, input_html: { class: "rounded-4" } %>
     <div class="mb-1">
       <%= f.label :season %>
     </div>
     <div class="mb-3" data-action="change->crop-form#seasonSelected">
       <%= f.select :season, %w[Summer Autumn Winter Spring],
-                  selected: @season %>
+                  selected: @season,
+                  input_html: { class: "rounded-4" } %>
     </div>
     <div class="mb-1">
       <%= f.label :emoji %>
     </div>
     <div class="">
-      <%= f.select :emoji, EMOJI_ARRAY %>
+      <%= f.select :emoji, EMOJI_ARRAY, input_html: { class: "rounded-4" } %>
     </div>
     <br>
     <div style="margin: bottom 0;" data-action="change->crop-form#plantedChange">
@@ -24,7 +25,8 @@
                   label: "Has the crop been planted?",
                   as: :radio_buttons,
                   collection: [['Yes', true], ['No', false]],
-                  checked: ['No', false] %>
+                  checked: ['No', false],
+                  input_html: { class: "rounded-4" } %>
     </div>
     <div class="d-none" data-crop-form-target="date">
       <%= f.input :plant_date,
@@ -32,11 +34,13 @@
                   include_blank: true,
                   selected: nil,
                   start_year: Date.today.year - 2,
-                  end_year: Date.today.year %>
+                  end_year: Date.today.year,
+                  input_html: { class: "rounded-4" } %>
     </div>
     <br>
     <%= f.input :comment,
-                label: "Comments" %>
+                label: "Comments",
+                input_html: { class: "rounded-4" } %>
     <div class="d-none">
       <%= f.association :bed,
                         label_method: :description,

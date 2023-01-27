@@ -1,7 +1,7 @@
 <%=turbo_frame_tag dom_id(@garden, :new_bed_form) do %>
   <%= simple_form_for [@garden, @bed], data: {controller: "turboform"} do |f| %>
     <div class="form-input">
-      <%= f.input :description %>
+      <%= f.input :description, input_html: { class: "rounded-4" } %>
     </div>
     <div class="form-input">
       <div class="form-actions">
