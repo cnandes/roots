@@ -72,11 +72,14 @@
 }
 
 
-.btn-primary:focus {
+.btn-check:focus+.btn-primary, .btn-primary:focus {
   background-color: $yellowgreen !important;
+  border-color: $yellowgreen;
   color: black;
 }
 
 .btn-check:focus+.btn-info, .btn-info:focus {
   background-color: $yellowcream !important;
+  border-color: $yellowcream;
+  color: black;
 }
