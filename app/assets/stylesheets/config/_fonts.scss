@@ -1,9 +1,20 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Inconsolata:wght@300;400&family=Lobster&family=Oi&family=Playfair+Display:wght@400;700&family=Unbounded:wght@300;400&display=swap');
 
 // Define fonts for body and headers
-$body-font: Lato-Regular,"Trebuchet MS",sans-serif;
-$headers-font: Lato-Regular,"Trebuchet MS",sans-serif;
+$body-font:'DM Serif Text', serif;
+$headers-font:'DM Serif Text', serif;
+
+@font-face {
+  font-family: "Hairage";
+  src: font-url('Hairage.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Molen";
+  src: font-url('Molen_Surplus.ttf') format('truetype');
+}
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
