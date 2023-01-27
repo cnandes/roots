@@ -41,14 +41,14 @@
     <div class="main-card-container">
     <%# ------------- Planted Crop Cards ------------- %>
     <div class="d-flex justify-content-start flex-wrap flex-row">
-        <% bed.planted_crops.each do |crop| %>
+        <% bed.planted_crops.order(:season).each do |crop| %>
           <%= render "crop", crop: crop %>
         <% end %>
     </div>
 
     <%# ------------- Unplanted Crop Cards ------------- %>
     <div class="d-flex justify-content-start flex-wrap flex-row">
-        <% bed.future_crops.each do |crop| %>
+        <% bed.future_crops.order(:season).each do |crop| %>
           <%= render "crop", crop: crop, bed: bed %>
         <% end %>
     </div>
