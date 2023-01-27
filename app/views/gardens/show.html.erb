@@ -33,20 +33,22 @@
     <a class="btn btn-primary shadow-sm <%= "btn-pulse-primary" if @beds.empty? %> align-self-start" style="width:120px;" data-bs-toggle="modal" href="#newbedmodal1" role="button">Add Bed</a>
   </div>
   <!-- ------------------------------- list all beds in garden -------------------------------- -->
-  <% if @beds %>
-    <% @beds.reverse.each do |bed| %>
-      <%= render "bed", bed: bed %>
+  <div class="main-card-container">
+    <% if @beds %>
+      <% @beds.reverse.each do |bed| %>
+        <%= render "bed", bed: bed %>
+      <% end %>
     <% end %>
-  <% end %>
 
-  <!-- ------------------------------- list all beds in garden -------------------------------- -->
-  <% if @beds.empty? %>
-    <div class="card my-3">
-      <div class="card-header">
-        <h2>You don't have any beds yet</h2>
+    <!-- ------------------------------- list all beds in garden -------------------------------- -->
+    <% if @beds.empty? %>
+      <div class="card my-3">
+        <div class="card-header">
+          <h2>You don't have any beds yet</h2>
+        </div>
+        <div class="card-body no-beds">
+        </div>
       </div>
-      <div class="card-body no-beds">
-      </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

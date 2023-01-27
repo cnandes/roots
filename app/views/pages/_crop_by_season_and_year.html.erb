@@ -2,7 +2,7 @@
 <% filtered_crops = bed.past_crops.where(season: season).where('extract(year from plant_date) = ?', year) %>
 <% return if filtered_crops.empty? %>
 <% filtered_crops.first(12).each do |crop| %>
-<%# ------------- If less that 4 crops in bed ------------- %>
+<%# ------------- If less that 2 crops in bed ------------- %>
   <% if filtered_crops.length <= 2 %>
     <% 6.times do %>
       <%= render "crops/crop_modal", crop: crop, bed: bed, season: season %>

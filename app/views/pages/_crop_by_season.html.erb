@@ -1,14 +1,20 @@
+
 <%# ------------- Plot crop emojis in bed (max 12) ------------- %>
 <% bed.future_crops.where(season: season).first(12).each do |crop| %>
+<%# ------------- If less that 2 crops in bed ------------- %>
+  <% if bed.future_crops.where(season: season).length <= 2 %>
+    <% 6.times do %>
+      <%= render "crops/crop_modal", crop: crop, bed: bed, season: season %>
+    <% end %>
 
 <%# ------------- If less that 4 crops in bed ------------- %>
-  <% if bed.future_crops.length <= 4 %>
+  <% elsif bed.future_crops.where(season: season).length <= 4 %>
     <% 3.times do %>
       <%= render "crops/crop_modal", crop: crop, bed: bed, season: season %>
     <% end %>
 
   <%# ------------- If 5-6 crops in bed ------------- %>
-  <% elsif bed.future_crops.length <= 6 %>
+  <% elsif bed.future_crops.where(season: season).length <= 6 %>
     <% 2.times do %>
       <%= render "crops/crop_modal", crop: crop, bed: bed, season: season %>
     <% end %>
