@@ -1,7 +1,7 @@
 <%=turbo_frame_tag dom_id(bed, :new_crop_form) do %>
   <%= simple_form_for [bed, crop], data: { controller: "turboform" } do |f| %>
     <div>
-      <%= f.association :veggie, collection: Veggie.all %>
+      <%= f.association :veggie, collection: Veggie.all.order(:name) %>
     </div>
     <%= f.input :quantity %>
     <%= f.input :weeks_to_harvest %>

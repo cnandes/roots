@@ -90,7 +90,7 @@
                                 <em><p class="mb-0">In the month of <%= list.first.season %>, we suggest planting the following:</p></em>
                               </div>
                               <ul>
-                                <% list.each do |veggie| %>
+                                <% list.sort.each do |veggie| %>
                                   <li class="card-text"><i class="fa-regular fa-circle-small"></i>- <%= veggie.name %></li>
                                 <% end %>
                               </ul>

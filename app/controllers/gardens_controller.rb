@@ -95,7 +95,7 @@ class GardensController < ApplicationController
     Summer: "🌻 Summer 🌻",
     Autumn: "🍁 Autumn 🍁",
     Winter: "❄️ Winter ❄️",
-    Spring: "🌷 Spring 🌷"
+    Spring: "🌸 Spring 🌸"
   }
 
   INDEX_INFO = {
