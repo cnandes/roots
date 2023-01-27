@@ -1,7 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
   z-index: 1;
+  height: 85px;
+  padding-bottom: none;
+
   .navbar-brand {
   font-family: "Molen Surplus";
   font-size: 45px;
@@ -15,7 +17,35 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
-
+.container-flud {
+  height: 85px;
+}
 body {
   padding: 25px;
+}
+
+.cloud {
+  margin-left: 18px;
+  width: 120px;
+  height: 85px;
+  background-image: url(cloud-cropped.png);
+  background-size: cover;
+  text-align: center;
+
+  a {
+    margin-top: 24px;
+  }
+}
+
+.sun {
+  margin-left: 18px;
+  width: 85px;
+  height: 85px;
+  background-image: url(sun_shadow_low_o.png);
+  background-size: cover;
+
+  img {
+    margin-top: 21px;
+    margin-left: 22px;
+  }
 }
