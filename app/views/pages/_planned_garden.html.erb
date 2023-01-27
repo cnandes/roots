@@ -1,5 +1,5 @@
 <!-- ------------------------------- Garden -------------------------------- -->
-<div class="card my-3">
+<div class="card my-4">
   <div class="card-header garden-header">
     <div class="d-flex justify-content-between">
       <div>
@@ -15,37 +15,39 @@
     </div>
   </div>
   <div class="card-body planned-garden">
-    <% if garden.beds %>
-      <div class="d-flex flex-wrap justify-content-start">
-        <%# ------------- Iterate over beds in garden ------------- %>
-        <% garden.beds.each do |bed|%>
-          <div class="mt-2 mx-4">
+    <div class="secondary-card-container">
+      <% if garden.beds %>
+        <div class="d-flex flex-wrap justify-content-start">
+          <%# ------------- Iterate over beds in garden ------------- %>
+          <% garden.beds.each do |bed|%>
+            <div class="mt-2 mx-4">
 
-            <%# ------------- Bed description badge ------------- %>
-            <span class="badge rounded-4 badge-primary ms-1 mb-2"><%= bed.description %></span>
-            <div class="card plot-bed">
-              <div class="card-body">
+              <%# ------------- Bed description badge ------------- %>
+              <span class="badge rounded-4 badge-primary ms-1 mb-2"><%= bed.description %></span>
+              <div class="card mb-2 plot-bed">
+                <div class="card-body">
 
-                <%# ------------- Crops by season ------------- %>
+                  <%# ------------- Crops by season ------------- %>
 
-                <div class="d-flex flex-wrap justify-content-around">
-                  <%= render "crop_by_season", bed: bed, season: "Summer" %>
-                </div>
-                <div class="d-flex flex-wrap justify-content-around">
-                  <%= render "crop_by_season", bed: bed, season: "Autumn" %>
-                </div>
-                <div class="d-flex flex-wrap justify-content-around">
-                  <%= render "crop_by_season", bed: bed, season: "Winter" %>
-                </div>
-                <div class="d-flex flex-wrap justify-content-around">
-                  <%= render "crop_by_season", bed: bed, season: "Spring" %>
+                  <div class="d-flex flex-wrap justify-content-around">
+                    <%= render "crop_by_season", bed: bed, season: "Summer" %>
+                  </div>
+                  <div class="d-flex flex-wrap justify-content-around">
+                    <%= render "crop_by_season", bed: bed, season: "Autumn" %>
+                  </div>
+                  <div class="d-flex flex-wrap justify-content-around">
+                    <%= render "crop_by_season", bed: bed, season: "Winter" %>
+                  </div>
+                  <div class="d-flex flex-wrap justify-content-around">
+                    <%= render "crop_by_season", bed: bed, season: "Spring" %>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
       <%# ------------- No Beds Display ------------- %>
     <% if garden.beds.empty? %>
       <div class="d-flex flex-wrap justify-content-center">

@@ -30,19 +30,21 @@
     </div>
 
     <%# ------------- Garden Cards ------------- %>
-    <% if @gardens %>
-      <% @gardens.each do |garden| %>
-        <%= render "historic_garden", garden: garden, season: @season, year: @year %>
+    <div class="main-card-container">
+      <% if @gardens %>
+        <% @gardens.each do |garden| %>
+          <%= render "historic_garden", garden: garden, season: @season, year: @year %>
+        <% end %>
       <% end %>
-    <% end %>
-    <% if @gardens.empty? %>
-      <div class="card my-3">
-        <div class="card-header">
-          <h2>You don't have any gardens yet</h2>
+      <% if @gardens.empty? %>
+        <div class="card my-3">
+          <div class="card-header">
+            <h2>You don't have any gardens yet</h2>
+          </div>
+          <div class="card-body no-gardens">
+          </div>
         </div>
-        <div class="card-body no-gardens">
-        </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
