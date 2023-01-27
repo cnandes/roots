@@ -91,7 +91,7 @@
                               </div>
                               <ul>
                                 <% list.sort.each do |veggie| %>
-                                  <li class="card-text"><i class="fa-regular fa-circle-small"></i>- <%= veggie.name %></li>
+                                  <li class="card-text"><i class="fa-regular fa-circle-small"></i><%= veggie.name %></li>
                                 <% end %>
                               </ul>
                             </div>
@@ -120,8 +120,8 @@
 
     <%# ------------- Modal for adding a veggie ------------------ %>
     <div class="modal fade" id="addveggiemodal" aria-hidden="true" aria-labelledby="addveggiemodal" tabindex="-1">
-      <div class="modal-dialog modal-xl modal-dialog-centered">
-        <div class="modal-content">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content rounded-4">
           <div class="modal-header">
             <h2 class="modal-title fs-5" id="addveggiemodal">Add Veggie</h2>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

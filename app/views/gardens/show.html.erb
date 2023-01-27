@@ -1,9 +1,9 @@
-<div class="container p-10">
+<div class="container main-card-container">
 
   <!-- ------------------------------- NEW BED modal1 -------------------------------- -->
   <div class="modal fade" id="newbedmodal1" aria-hidden="true" aria-labelledby="newbedmodal1" tabindex="-1">
-    <div class="modal-dialog modal-xl modal-dialog-centered">
-      <div class="modal-content">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content rounded-4">
         <div class="modal-header">
           <h2 class="modal-title fs-5">Add Bed</h2>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -19,10 +19,13 @@
     </div>
   </div>
 
+  <!-- ------------------------------- Title -------------------------------- -->
+  <div class="align-self-start mb-3"><h1><%= @garden.name %></h1></div>
+
   <!-- --------------- sub nav ------------------- -->
   <div class="d-flex justify-content-between align-items-top">
     <!-- ------------------------------- Back to Gardens button -------------------------------- -->
-    <%= link_to ('<i class="fa-regular fa-hand-point-left"></i> Back').html_safe,
+    <%# <%= link_to ('<i class="fa-regular fa-hand-point-left"></i> Back').html_safe,
             gardens_path,
             class: "btn btn-light align-self-start shadow-sm",
             style: "width:120px;"
@@ -33,7 +36,7 @@
     <a class="btn btn-primary <%= "btn-pulse-primary" if @beds.empty? %> align-self-start" style="width:120px;" data-bs-toggle="modal" href="#newbedmodal1" role="button">Add Bed</a>
   </div>
   <!-- ------------------------------- list all beds in garden -------------------------------- -->
-  <div class="main-card-container">
+  <%# <div class="main-card-container"> %>
     <% if @beds %>
       <% @beds.reverse.each do |bed| %>
         <%= render "bed", bed: bed %>
@@ -50,5 +53,5 @@
         </div>
       </div>
     <% end %>
-  </div>
+  <%# </div> %>
 </div>
