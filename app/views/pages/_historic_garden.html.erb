@@ -26,27 +26,26 @@
               <div class="card-body">
 
                 <%# ------------- Crops by season ------------- %>
-
                 <div class="d-flex flex-wrap justify-content-around">
                   <%= render "crop_by_season_and_year", bed: bed, season: season, year: year %>
                 </div>
               </div>
             </div>
-          <% end %>
-        </div>
-      <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
       <%# ------------- No Beds Display ------------- %>
-      <% if garden.beds.empty? %>
-        <div class="d-flex flex-wrap justify-content-center">
-          <div class="card no-plot-bed m-4">
-            <div class="card-body">
-              <div class="d-flex align-items-center flex-row">
-                <p class="card-text text-center m-4"> </p>
-              </div>
+    <% if garden.beds.empty? %>
+      <div class="d-flex flex-wrap justify-content-center">
+        <div class="card no-plot-bed m-4">
+          <div class="card-body">
+            <div class="d-flex align-items-center flex-row">
+              <p class="card-text text-center m-4"> </p>
             </div>
           </div>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>
