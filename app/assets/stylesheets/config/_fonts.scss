@@ -1,10 +1,10 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oi&family=Sniglet:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Inconsolata:wght@300;400&family=Lobster&family=Oi&family=Playfair+Display:wght@400;700&family=Unbounded:wght@300;400&display=swap');
 
 // Define fonts for body and headers
-$body-font: "Sniglet";
-$headers-font: "Molen Surplus";
+$body-font:'DM Serif Text', serif;
+$headers-font:'DM Serif Text', serif;
 
 @font-face {
   font-family: "Hairage";
@@ -12,7 +12,7 @@ $headers-font: "Molen Surplus";
 }
 
 @font-face {
-  font-family: "Molen Surplus";
+  font-family: "Molen";
   src: font-url('Molen_Surplus.ttf') format('truetype');
 }
 
