@@ -1,11 +1,12 @@
-<div class="container p-10">
+<div class="container main-card-container">
   <div data-controller="filter-planned-crops">
+
+    <!-- --------------- title ------------------- -->
+    <div class="mb-3"><h1>History</h1></div>
+
     <!-- --------------- sub nav ------------------- -->
     <div class="d-flex justify-content-between align-items-top garden-header">
-      <!-- --------------- title ------------------- -->
-      <div class="align-self-start">
-        <h1>History</h1>
-      </div>
+
       <!-- --------------- Info Helper ------------------- -->
       <%= render "shared/page_info", empty: @gardens.empty? %>
       <%# ------------- Form to select year and season ------------- %>
@@ -30,7 +31,7 @@
     </div>
 
     <%# ------------- Garden Cards ------------- %>
-    <div class="main-card-container">
+    <%# <div class="main-card-container"> %>
       <% if @gardens %>
         <% @gardens.each do |garden| %>
           <%= render "historic_garden", garden: garden, season: @season, year: @year %>
@@ -45,6 +46,6 @@
           </div>
         </div>
       <% end %>
-    </div>
+    <%# </div> %>
   </div>
 </div>

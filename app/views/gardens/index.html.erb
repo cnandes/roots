@@ -1,4 +1,4 @@
-<div class="container p-10">
+<div class="container main-card-container">
   <!-- ------------------------------- modal1 -------------------------------- -->
   <div class="modal fade" id="newbedmodal1" aria-hidden="true" aria-labelledby="newbedmodal1" tabindex="-1">
     <div class="modal-dialog modal-xl modal-dialog-centered">
@@ -18,18 +18,18 @@
       </div>
     </div>
   </div>
+   <!-- ------------------------------- Title -------------------------------- -->
+    <% title = @gardens.length <=1 ? "Garden Overview" : "Gardens Overview" %>
+    <div class="align-self-start mb-3"><h1><%= title %></h1></div>
 
   <!-- ------------------------------- Sub nav -------------------------------- -->
   <div class="d-flex justify-content-between align-items-top">
-    <!-- ------------------------------- Title -------------------------------- -->
-    <% title = @gardens.length <=1 ? "Garden Overview" : "Gardens Overview" %>
-    <div class="align-self-start"><h1 style="color:#5a8231;"><%= title %></h1></div>
     <!-- ------------------------------- Info helper -------------------------------- -->
     <%= render "shared/page_info", empty: @gardens.empty? %>
     <!-- ------------------------------- New Garden Button -------------------------------- -->
     <a class="btn btn-primary <%= "btn-pulse-primary" if @gardens.empty? %> align-self-start" style="width:160px;" data-bs-toggle="modal" href="#newbedmodal1" role="button">Add Garden</a>
   </div>
-  <div class="main-card-container">
+  <%# <div class="main-card-container"> %>
     <% if @gardens %>
     <!-- ------------------------------- Display Garden Cards -------------------------------- -->
       <% @gardens.each do |garden| %>
@@ -44,5 +44,5 @@
         </div>
       </div>
     <% end %>
-  </div>
+  <%# </div> %>
 </div>
