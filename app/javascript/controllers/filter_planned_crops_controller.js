@@ -4,6 +4,9 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["season", "crop"]
   connect() {
+    this.cropTargets.forEach((target) => {
+      target.classList.add("d-none")
+    });
   };
 
   filterBySeason(event) {
