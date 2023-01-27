@@ -70,3 +70,16 @@
     box-shadow: 0 0 0 0 rgba(232, 226, 149, 0);
   }
 }
+.btn-check:focus+.btn-primary, .btn-primary:focus {
+  background-color: $yellowgreen !important;
+  border-color: $yellowgreen;
+  box-shadow: none;
+  color: black;
+}
+
+.btn-check:focus+.btn-info, .btn-info:focus {
+  background-color: $yellowcream !important;
+  border-color: $yellowcream;
+  box-shadow: none;
+  color: black;
+}
