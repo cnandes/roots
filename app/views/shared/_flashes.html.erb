@@ -1,12 +1,12 @@
 <% if notice %>
   <div class="alert alert-info alert-dismissible fade show m-1 talkbubble" role="alert">
     <%= image_tag "notice_worm.png", class: "worm-helper" %>
-    <div class="textarea">
-      <p class="m-0" style="width:190px;">
+      <div style="height: 50px;" class="textarea d-flex justify-content-between align-items-center">
+      <p style="<%= "font-size:0.7rem;" if notice.length > 48  %>">
         <%= notice %>
       </p>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 <% end %>
 
