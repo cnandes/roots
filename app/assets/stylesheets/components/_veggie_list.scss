@@ -15,77 +15,103 @@
 
 .summer {
   .card-header {
-    background-color: #e1ffb1;
+    // background-color: #e1ffb1;
+    background-color: rgba(250, 214, 95, 0.9);
   }
 
   .card-bg {
-    background-color: #e1ffb1;
-
+    // background-color: #e1ffb1;
+    background-color: rgba(250, 214, 95, 0.5);
   }
 
   .card-fg {
-    background-color: rgba(252, 255, 178, 0.5);
+    // background-color: rgba(252, 255, 178, 0.5);
+    background-color: rgba(250, 214, 95, 0.5);
   }
 
   span {
-    background-color: rgba(250, 214, 95, 0.9);
+    background-color: rgba(250, 214, 95, 0.85);
     color: black;
   }
 }
 
 .autumn {
   .card-header {
-    background-color: #fecd70;
+    // background-color: #fecd70;
+    background-color: rgba(248, 171, 39, 0.75);
   }
 
   .card-bg {
-    background-color: #ffae6d;
+    // background-color: #ffae6d;
+    background-color: rgba(248, 171, 39, 0.45);
   }
 
   .card-fg {
-    background-color: #f3e0b5;
+    // background-color: #f3e0b5;
+    background-color: rgba(248, 171, 39, 0.4);
   }
 
   span {
-    background-color: rgba(248, 171, 39, 0.9);
+    background-color: rgba(248, 171, 39, 0.95);
     color: black;
   }
 }
 
 .winter {
   .card-header {
-    background-color: #a6e3e9;
+    // background-color: #a6e3e9;
+    // background-color: rgba(123, 164, 146, 0.7);
+    background-color: rgba(112,195,219,0.6);
+    // background-color: rgba(90,137,192, 0.6);
   }
 
   .card-bg {
-    background-color: #72c9ce;
+    // background-color: #72c9ce;
+    // background-color: rgba(123, 164, 146, 0.4);
+    background-color: rgba(112,195,219,0.3);
+    // background-color: rgba(90,137,192, 0.4);
   }
 
   .card-fg {
-    background-color: #cbf1f5;
+    // background-color: #cbf1f5;
+    // background-color: rgba(123, 164, 146, 0.3);
+    background-color: rgba(112,195,219,0.2);
+    // background-color: rgba(90,137,192, 0.2);
   }
 
   span {
-    background-color: rgba(123, 164, 146, 0.8);
+    // background-color: rgba(123, 164, 146, 0.8);
+    background-color: rgba(112,195,219,0.6);
     color: black;
   }
 }
 
 .spring {
   .card-header {
-    background-color: #bce29e;
+    // background-color: #bce29e;
+    // background-color: rgba(197, 216, 161, 0.9);
+    // background-color: rgba(255,160,178, 0.6);
+    background-color: rgba(254,174,174, 0.7);
   }
 
   .card-bg {
-    background-color: #ff8787;
+    // background-color: #ff8787;
+    // background-color: rgba(197, 216, 161, 0.5);
+    // background-color: rgba(255,160,178, 0.3);
+    background-color: rgba(254,174,174, 0.35)
   }
 
   .card-fg {
-    background-color: #e5ebb2;
+    // background-color: #e5ebb2;
+    // background-color: rgba(197, 216, 161, 0.5);
+    // background-color: rgba(255,160,178, 0.2);
+    background-color: rgba(254,174,174, 0.3)
   }
 
   span {
-    background-color: rgba(197, 216, 161, 0.9);
+    // background-color: rgba(197, 216, 161, 0.9);
+    background-color: rgba(254,174,174, 0.65);
+
     color: black;
   }
 }
