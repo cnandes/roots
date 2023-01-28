@@ -47,7 +47,7 @@
 
         <%# Veggie season badge %>
         <div class="d-flex justify-content-between pb-2 <%= crop.season.downcase %>">
-          <span class="badge rounded-4" style="height:fit-content;"><%= crop.season %> </span>
+          <span class="badge rounded-4 mb-3"><%= crop.season %></span>
           <% unless current_page?(gardens_path) %>
             <%# Info button %>
             <div class="btn-group dropend">
