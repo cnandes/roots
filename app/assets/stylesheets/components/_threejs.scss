@@ -3,12 +3,14 @@ canvas {
   top: 0;
   left: 0;
   outline: none;
+
 }
 
 main {
   position: absolute;
   color: black;
   z-index: 1;
+
   // padding: 40px;
 
 }
@@ -23,7 +25,7 @@ main {
   -webkit-backdrop-filter: blur(3.2px);
   border: 1px solid rgba(255, 255, 255, 0.29);
   // width: 80%;
-  font-size: 20px;
+  font-size: 16px;
 
 
   h1,
@@ -31,7 +33,7 @@ main {
   h3,
   p {
 
-    font-family: 'Gaegu', cursive;
+    font-family: 'Nunito', sans-serif;
     text-align: center;
 
   }
@@ -47,25 +49,37 @@ main {
 
 .submit {
   text-align: right;
-  font-size: 28px;
+  font-size: 30px;
 
 }
 
 .enclose {
   position: fixed;
   bottom: 0px;
-  width: 98%;
+
+  width: -webkit-calc(100% - 250px);
+  width: -moz-calc(100% - 250px);
+  width: calc(100% - 250px);
+}
+
+.enclose2 {
+  position: fixed;
+  top: 100px;
+  text-align: center;
+
+  width: -webkit-calc(100% - 250px);
+  width: -moz-calc(100% - 250px);
+  width: calc(100% - 250px);
 }
 
 .signbtn {
-  background: rgba(158, 213, 47, 0.37);
+  background: rgba(158, 213, 47, 0.7);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(3.2px);
   -webkit-backdrop-filter: blur(3.2px);
-  border: 1px solid rgba(158, 213, 47, 0.29);
-  margin-right: 6px;
-  font-family: 'Gaegu', cursive;
+  border: 1px solid rgba(158, 213, 47, 0.7);
+  // margin-right: 6px;
   text-align: center;
 }
 

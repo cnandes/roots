@@ -117,7 +117,7 @@ export default class extends Controller {
     document.body.onscroll = () => {
       const t = document.body.getBoundingClientRect().top;
 
-      if (this.model) this.model.rotation.y += 0.04;
+      if (this.model) this.model.rotation.y += 0.045;
       // this.camera.position.y = t * -0.01;
     };
 
