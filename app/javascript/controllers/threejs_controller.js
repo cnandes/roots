@@ -8,12 +8,15 @@ export default class extends Controller {
   connect() {
     console.log("hello stimulus", this.element);
     /* -------------------------------- constants ------------------------------- */
+    var model;
+    var that = this;
+    this.onScrollRunning = true;
     const red = 0xdc143c;
     const blue = 0x4169e1;
     const white = 0xfdf5e6;
     const black = 0x000000;
     const backgroundtexture = new THREE.TextureLoader().load(
-      "/assets/grass.jpg"
+      "https://roots-house.s3.ap-southeast-2.amazonaws.com/house/grass.jpg"
     );
     const backgroundText = new THREE.TextureLoader().load();
     /* --------------------------------- lights --------------------------------- */
@@ -47,13 +50,14 @@ export default class extends Controller {
       0.1,
       1000
     );
-    this.camera.position.set(25, 18, 20);
-    this.camera.rotateX = -23;
+    this.camera.position.set(25, 20, 15);
+    // this.camera.rotateX = -23;
     this.scene.add(this.camera);
+
     this.renderer = new THREE.WebGLRenderer({ antialias: true });
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(this.renderer.domElement);
-    const controls = new OrbitControls(this.camera, this.renderer.domElement);
+
     /* -------------------------------- add light to scene ------------------------------- */
     this.renderer.physicallyCorrectLights = true;
     // this.scene.add(this.light);
@@ -75,19 +79,20 @@ export default class extends Controller {
       wireframe: false,
     });
     // this.cube = this.createCube(0, 0, 0);
-    this.offsetcube = this.createCube(1, 1, -2);
+    // this.offsetcube = this.createCube(1, 1, -2);
     /* -------------------------------- add cube -------------------------------- */
     // this.scene.add(this.cube);
-    this.scene.add(this.offsetcube);
-    this.animate();
+    // this.scene.add(this.offsetcube)
     /* --------------------------------- add obj -------------------------------- */
     const scene = this.scene;
+    var model;
     loader.load(
       // resource URL
       "https://roots-house.s3.ap-southeast-2.amazonaws.com/house/untitled.gltf",
       // called when the resource is loaded
-      function (gltf) {
-        scene.add(gltf.scene);
+      (gltf) => {
+        this.model = gltf.scene;
+        scene.add(this.model);
         gltf.animations; // Array<THREE.AnimationClip>
         gltf.scene; // THREE.Group
         gltf.scenes; // Array<THREE.Group>
@@ -109,23 +114,43 @@ export default class extends Controller {
         console.log("An error happened");
       }
     );
+    document.body.onscroll = () => {
+      const t = document.body.getBoundingClientRect().top;
+
+      if (this.model) this.model.rotation.y += 0.045;
+      // this.camera.position.y = t * -0.01;
+    };
+
+    const controls = new OrbitControls(this.camera, this.renderer.domElement);
+    controls.enabled = false;
+    this.animate();
   }
-  /* -------------------------------- functions ------------------------------- */
+  // onScroll(event) {
+  //   if (!this.onScrollRunning) {
+  //     this.onScrollRunning = true;
+  //     if (window.requestAnimationFrame) {
+  //       window.requestAnimationFrame(this.moveCamera.bind(this));
+  //     } else {
+  //       setTimeout(this.scrollTableHeader.bind(this), 66);
+  //     }
+  //   }
+  // }
+  // moveCamera() {
+  //   if (window.requestAnimationFrame) {
+  //     window.requestAnimationFrame(this.moveCamera.bind(this));
+  //   } else {
+  //     setTimeout(this.scrollTableHeader.bind(this), 66);
+  //   }
+  //   const t = document.body.getBoundingClientRect().top;
+
+  //   if (this.model) this.model.rotation.y += 0.01;
+  //   this.camera.position.y = t * -0.01;
+  // }
+
   animate() {
     requestAnimationFrame(this.animate.bind(this));
-    /* --------------------------------- cube 1 --------------------------------- */
-    // this.cube.rotation.x += 0.01;
-    // this.cube.rotation.y += 0.01;
-    /* --------------------------------- cube 2 --------------------------------- */
-    this.offsetcube.rotation.x -= 0.01;
-    this.offsetcube.rotation.y -= 0.01;
-    /* --------------------------------- render --------------------------------- */
+
     this.renderer.render(this.scene, this.camera);
   }
-  createCube(x, y, z) {
-    const cube = new THREE.Mesh(this.geometry, this.material);
-    cube.position.set(x, y, z);
-    this.scene.add(cube);
-    return cube;
-  }
+  /* -------------------------------- functions ------------------------------- */
 }

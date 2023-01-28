@@ -1,5 +1,71 @@
-<main>
-  <%= content_tag(:canvas, "",data: {controller: "threejs"}) %>
-  <br>
-  <h1>Welcome to Roots</h1>
-</main>
+<div class="container">
+  <main>
+    <%= content_tag(:canvas, "",data: {controller: "threejs"}) %>
+    <br>
+    <div class="container">
+      <div class="row justify-content-between">
+        <section class="blob p-4 mw-4 col-md-12 col-lg-12 ">
+          <h2 class=""> <i class="fa-solid fa-seedling"></i> Welcome to Roots </h2>
+        </section>
+        <div class="col-md-4 col-lg-4 ">
+          <section class="blob p-4 my-4 cardpad2">
+            <p> The gamified, garden management helper for greenthumbs!</p>
+          </section>
+        </div>
+        <div class="col-md-4 offset-md-4 col-lg-4 offset-lg-4 cardpad">
+          <section class="blob p-4 my-4"
+  >
+            <p > It's time to ditch your confusing, monochrome spreadsheets and folders of paper garden plans and get started with our intuitive and lively interface.
+            </p>
+          </div>
+        </section>
+        <div class="col-md-4 col-lg-4">
+          <section class="blob p-4 cardpad">
+            <h2>🥦 It's cute</h2>
+            <p>
+              Our app features a wide variety of cute plant icons, so you can easily identify and track your garden’s progress.
+            </p>
+          </section>
+        </div>
+        <div class="col-md-4 offset-md-4 col-lg-4 offset-lg-4">
+          <section class="blob p-4 cardpad2">
+            <h2>🍓 It's effective</h2>
+            <p>
+              You can also view a full history of your past crops and plan for the season ahead.
+            </p>
+          </section>
+        </div>
+        <div class="col-md-4 col-lg-4">
+          <section class="blob p-4 cardpad">
+            <h2>🥕It's helpful</h2>
+            <p>
+              We’ll even give you seasonal planting recommendations!
+            </p>
+          </section>
+        </div>
+        <div class="col-md-4 offset-md-4 col-lg-4 offset-lg-4">
+          <section class="blob p-4 cardpad2">
+            <h2>👩🏼‍🌾 It's for everyone</h2>
+            <p>
+              Whether you’re a seasoned gardener or just starting out, Roots is the perfect tool to help you create and maintain a beautiful and thriving garden.
+            </p>
+          </section>
+        </div>
+        <div class="col-md-4 col-lg-4 ">
+          <section class="blob  p-4 cardpad mb-4">
+            <p>🌱 Sign up today and start planning your dream garden!
+            </p>
+          </section>
+        </div>
+      </div>
+      <p class="enclose problem">
+        <i class="fa-sharp fa-solid fa-circle-down cmn-t-pulse"></i>
+      </p>
+      <div class="enclose submit"> <% if user_signed_in? %>
+        <% else %> <button class= "btn btn-primary m-3 signbtn cmn-t-pulse
+">🌿 JOIN NOW </button>
+        <% end %>
+      </div>
+    </div>
+  </main>
+</div>
