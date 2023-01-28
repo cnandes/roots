@@ -1,22 +1,36 @@
 .navbar-lewagon {
   justify-content: space-between;
-  z-index: 1;
+  z-index: 10;
   height: 85px;
   padding-bottom: none;
   font-weight: 400;
 
   .navbar-brand {
-  font-family: "Molen";
-  font-size: 45px;
-  color: $darkgray;
+    font-family: 'Margin';
+    letter-spacing: .05rem;
+    font-size: 48px;
+    color: $darkgray;
+    z-index: 10;
+    // font-weight: bold;
+    //
   }
 
-  .nav-item{
+  .nav-item {
     font-weight: bold;
+    z-index: 10;
+    // font-family: 'Margin';
+    // letter-spacing: .01rem;
+    // font-size: 22px;
+
+
+    // font-stretch: condensed;
+
   }
 
   .dropdown-item {
     color: $darkgray;
+    z-index: 10;
+
   }
 }
 
@@ -27,20 +41,25 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
 .container-flud {
   height: 85px;
 }
+
 body {
   padding: 25px;
 }
 
 .cloud {
   margin-left: 18px;
+
   width: 120px;
   height: 85px;
   background-image: url(cloud-final.png);
   background-size: cover;
   text-align: center;
+  z-index: 10;
+
 
   a {
     margin-top: 24px;
