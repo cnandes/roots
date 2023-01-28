@@ -1,14 +1,17 @@
 h1 {
-  font-family: "Molen";
-  color: $mossgreen;
+  font-family: 'Margin';
+  color: #5a8231ca;
 
   .modal-title {
-    font-family: 'DM Serif Text', serif;
+    font-family: 'Margin';
   }
 }
 
 p {
   color: $darkgray;
+  strong {
+    color: #3c3c3cd9;
+  }
 }
 
 select {
@@ -16,5 +19,25 @@ select {
 }
 
 button {
-  color: $darkgray;
+  color: #3c3c3cd2;
+  font-weight: bold;
+}
+
+.btn {
+  color: #3c3c3cd9;
+  font-weight: bold;
+
+}
+
+.btn-secondary {
+  color: white;
+}
+
+h2{
+  letter-spacing: .02rem;
+  color: #3c3c3cd9;
+}
+h5{
+  letter-spacing: .02rem;
+  color: #3c3c3cd9;
 }
