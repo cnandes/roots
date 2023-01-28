@@ -9,7 +9,8 @@ SUMMER_VEG_ARRAY = [
   'Rockmelons',
   'Swedes',
   'Tomatoes',
-  'Watermelons'
+  'Watermelons',
+  'Sweet Potatoes'
 ]
 
 AUTUMN_VEG_ARRAY = [
