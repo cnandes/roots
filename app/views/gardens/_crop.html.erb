@@ -49,6 +49,30 @@
         <div class="d-flex justify-content-between pb-2 <%= crop.season.downcase %>">
           <span class="badge rounded-4 mb-2"><%= crop.season %> </span>
           <% unless current_page?(gardens_path) %>
+            <%# Info button %>
+            <div class="btn-group dropend">
+              <button type="button" class="btn btn-light" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-circle-info text-success"></i>
+              </button>
+              <ul class="dropdown-menu rounded-4 shadow border-0 tips" style="width: 400px; z-axis:999999;">
+
+                <%# tips %>
+                  <div class="tips-text m-3 p-3 rounded-4">
+                  <% if VEGGIE_INFO[crop.veggie.name.to_sym] %>
+                    <% VEGGIE_INFO[crop.veggie.name.to_sym].each do |tip| %>
+                      <li>
+                        <p>🐝 <%= tip %></p>
+                      </li>
+                    <% end %>
+                  <% else %>
+                    <li>
+                      <p>Very Yummy 😋</p>
+                    </li>
+                  <% end %>
+                </div>
+              </ul>
+            </div>
+            <!--
             <button type="button"
                     class="btn btn-light"
                     style="all: unset; cursor: pointer;"
@@ -60,6 +84,7 @@
                     data-bs-content="<%= VEGGIE_INFO[crop.veggie.name.to_sym] ? VEGGIE_INFO[crop.veggie.name.to_sym].sample : 'Very Yummy 😋'  %>">
               <h5><i class="fa-solid fa-circle-info text-success"></i></h5>
             </button>
+            -->
           <% end %>
         </div>
 
