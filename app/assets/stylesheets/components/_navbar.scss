@@ -1,22 +1,27 @@
 .navbar-lewagon {
   justify-content: space-between;
-  z-index: 1;
+  z-index: 10;
   height: 85px;
   padding-bottom: none;
   font-weight: 400;
 
   .navbar-brand {
-  font-family: "Molen";
-  font-size: 45px;
-  color: $darkgray;
+    font-family: "Molen";
+    font-size: 45px;
+    color: $darkgray;
+    z-index: 10;
   }
 
-  .nav-item{
+  .nav-item {
     font-weight: bold;
+    z-index: 10;
+
   }
 
   .dropdown-item {
     color: $darkgray;
+    z-index: 10;
+
   }
 }
 
@@ -27,9 +32,11 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
 .container-flud {
   height: 85px;
 }
+
 body {
   padding: 25px;
 }
@@ -41,6 +48,8 @@ body {
   background-image: url(cloud-final.png);
   background-size: cover;
   text-align: center;
+  z-index: 10;
+
 
   a {
     margin-top: 24px;
