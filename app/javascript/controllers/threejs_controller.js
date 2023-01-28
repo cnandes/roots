@@ -73,11 +73,11 @@ export default class extends Controller {
     this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     this.renderer.outputEncoding = THREE.sRGBEncoding;
     /* ------------------------------- create cube ------------------------------ */
-    this.geometry = new THREE.BoxGeometry();
-    this.material = new THREE.MeshStandardMaterial({
-      color: red,
-      wireframe: false,
-    });
+    // this.geometry = new THREE.BoxGeometry();
+    // this.material = new THREE.MeshStandardMaterial({
+    //   color: red,
+    //   wireframe: false,
+    // });
     // this.cube = this.createCube(0, 0, 0);
     // this.offsetcube = this.createCube(1, 1, -2);
     /* -------------------------------- add cube -------------------------------- */
