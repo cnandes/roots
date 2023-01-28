@@ -31,7 +31,8 @@
 <%# ------  history page behaviour -------- %>
 <% else %>
   <!-- ------------------------------- emoji modal button  -------------------------------- -->
-  <h1 data-filter-planned-crops-target="crop" id="<%= bed.id %>" class="m-2" value="<%= season %>">
+  <%# removed the following to get working for demo day: data-filter-planned-crops-target="crop" %>
+  <h1 id="<%= bed.id %>" class="m-2" value="<%= season %>">
     <a style="text-decoration: none;" data-bs-toggle="modal" href="#cropmodal<%= crop.id %>" role="button"><%= crop.emoji %></a>
   </h1>
 <% end %>
