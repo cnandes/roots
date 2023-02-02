@@ -4,15 +4,11 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["season", "crop"]
   connect() {
-    // this.cropTargets.forEach((target) => {
-    //   target.classList.add("d-none")
-    // });
+    hideAll(cropTargets)
   };
 
   filterBySeason(event) {
-    this.cropTargets.forEach((target) => {
-      target.classList.add("d-none")
-    });
+    hideAll(cropTargets)
     let season = this.seasonTarget.value;
     console.log(season)
     this.cropTargets.forEach((target) => {
@@ -20,6 +16,12 @@ export default class extends Controller {
       if (target.getAttribute('value') === season) {
         target.classList.remove("d-none")
       };
+    });
+  }
+
+  hideAll(targets) {
+    this.targets.forEach((target) => {
+      target.classList.add("d-none")
     });
   }
 }
