@@ -22,16 +22,20 @@
     </div>
 
     <!-- ------------------------------- emoji modal button  -------------------------------- -->
-    <h1 data-filter-planned-crops-target="crop" id="<%= bed.id %>" class="mb-3 ps-10" value="<%= season %>">
+    <h1 id="<%= bed.id %>" class="mb-3 ps-10" value="<%= season %>">
       <a style="text-decoration: none;" data-bs-toggle="modal" href="#cropmodal<%= crop.id %>" role="button"><%= crop.emoji %></a>
     </h1>
   </div>
 </div>
 
-<%# ------  history page behaviour -------- %>
+<%# ------  plans page emoji modal button -------- %>
+<% elsif current_page?(plans_path) %>
+  <h1 id="<%= bed.id %>" data-filter-planned-crops-target="crop" class="m-2" value="<%= season %>">
+    <a style="text-decoration: none;" data-bs-toggle="modal" href="#cropmodal<%= crop.id %>" role="button"><%= crop.emoji %></a>
+  </h1>
+
+<%# ------  history page emoji modal button -------- %>
 <% else %>
-  <!-- ------------------------------- emoji modal button  -------------------------------- -->
-  <%# removed the following to get working for demo day: data-filter-planned-crops-target="crop" %>
   <h1 id="<%= bed.id %>" class="m-2" value="<%= season %>">
     <a style="text-decoration: none;" data-bs-toggle="modal" href="#cropmodal<%= crop.id %>" role="button"><%= crop.emoji %></a>
   </h1>
