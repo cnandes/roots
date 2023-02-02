@@ -4,24 +4,24 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["season", "crop"]
   connect() {
-    hideAll(cropTargets)
+    this.cropTargets.forEach((target) => {
+      target.classList.add("d-none")
+    });
   };
 
   filterBySeason(event) {
-    hideAll(cropTargets)
-    let season = this.seasonTarget.value;
-    console.log(season)
     this.cropTargets.forEach((target) => {
-      console.log(target.getAttribute('value'))
+      target.classList.add("d-none")
+    });
+    let season = this.seasonTarget.value;
+    // console.log(season)
+    this.cropTargets.forEach((target) => {
+      // console.log(target.getAttribute('value'))
       if (target.getAttribute('value') === season) {
         target.classList.remove("d-none")
       };
     });
   }
 
-  hideAll(targets) {
-    this.targets.forEach((target) => {
-      target.classList.add("d-none")
-    });
-  }
+
 }
