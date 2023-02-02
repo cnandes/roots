@@ -21,10 +21,10 @@
                 %>
           </li>
 
-          <%# TODO: implement the garden edit modal %>
           <%# ------------- Edit Button ------------- %>
-          <%# <li> %>
-          <%# </li> %>
+          <li>
+            <%= link_to ('<i class="fa-solid fa-binoculars"></i>').html_safe + " Edit Garden", edit_garden_path(garden), class: "btn btn-light" %>
+          </li>
 
           <%# ------------- Delete Garden Button ------------- %>
           <li>
