@@ -1,34 +1,8 @@
-<div class="card my-3">
-  <div class="card-header">
-    <h2>Add New Garden?</h2>
+<%= simple_form_for(@garden) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <div class="form-input">
+    <%= f.input :name %>
   </div>
-  <div class="card-body">
-    <!-- ------------------------------- modal1 -------------------------------- -->
-    <div class="modal fade" id="newbedmodal1" aria-hidden="true" aria-labelledby="newbedmodal1" tabindex="-1">
-      <div class="modal-dialog modal-xl modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="newbedmodal1">+ Garden</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="container-fluid">
-              <div class="row">
-                <!-- ------------------------------- new garden form -------------------------------- -->
-                <h2>Update Details</h2>
-                <%= simple_form_for(@garden) do |f| %>
-                  <div class="form-input">
-                    <%= f.input :name %>
-                  </div>
-                  <%= f.button :submit, "Create Gardan", class: "btn btn-primary" %>
-                <%end%>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- ------------------------------- button -------------------------------- -->
-    <a class="btn btn-primary" data-bs-toggle="modal" href="#newbedmodal1" role="button">+ Garden</a>
-  </div>
-</div>
+  <%= f.button :submit, "Edit Garden", class: "btn btn-primary" %>
+<%end%>
