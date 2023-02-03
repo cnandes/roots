@@ -50,6 +50,7 @@
           <span class="badge rounded-4 mb-3"><%= crop.season %></span>
           <% unless current_page?(gardens_path) %>
             <%# Info button %>
+            <% if VEGGIE_INFO[crop.veggie.name.to_sym] %>
             <div class="btn-group dropend">
               <button type="button" class="btn btn-light" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fa-solid fa-circle-info text-success"></i>
@@ -58,20 +59,15 @@
 
                 <%# tips %>
                   <div class="tips-text m-3 p-3 rounded-4">
-                  <% if VEGGIE_INFO[crop.veggie.name.to_sym] %>
-                    <% VEGGIE_INFO[crop.veggie.name.to_sym].each do |tip| %>
+                    <% VEGGIE_INFO[crop.veggie.name.to_sym].sample(4).each do |tip| %>
                       <li>
                         <p>🐝 <%= tip %></p>
                       </li>
                     <% end %>
-                  <% else %>
-                    <li>
-                      <p>Very Yummy 😋</p>
-                    </li>
-                  <% end %>
                 </div>
               </ul>
             </div>
+            <% end %>
           <% end %>
         </div>
 
