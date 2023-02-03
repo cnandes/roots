@@ -69,6 +69,16 @@ VEGGIE_INFO = {
     "Chives are relatively low maintenance and do not require regular fertilization. If desired, you can side-dress with compost or well-rotted manure in the spring.",
     "Cut back the chives regularly to encourage new growth and to prevent the plants from becoming woody and unproductive.",
     "Chives can be harvested year-round, but be sure to leave at least a few inches of growth on the plants so they can continue to grow."
+  ],
+  Corn: [
+    "Corn is a warm-season crop that requires full sun exposure and fertile, well-drained soil.",
+    "Sow seeds in the garden after the last frost date, spacing them about 6-8 inches apart in rows that are 2-3 feet apart.",
+    "Corn is a heavy feeder and benefits from soil that is rich in organic matter. Consider adding compost or well-rotted manure to the soil before planting.",
+    "Water the corn regularly, providing 1-2 inches of water per week, especially during dry spells.",
+    "Corn is wind-pollinated, so it is important to plant it in blocks of at least 4 rows, rather than in a single row, to ensure good pollination and good ear development.",
+    "To control weeds and retain moisture, mulch the area around the corn plants with straw, leaves, or grass clippings.",
+    "Corn is susceptible to a variety of pests and diseases, including corn borers, earwigs, and corn smut. Keep an eye out for these and take action if necessary to prevent damage to the plants.",
+    "Corn is usually ready to harvest in about 75-100 days, when the ears are plump and the kernels are full and milky."
   ]
 
 }
