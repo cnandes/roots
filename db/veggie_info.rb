@@ -59,5 +59,16 @@ VEGGIE_INFO = {
     "If desired, you can add a trellis or stake for the beans to climb, this will help support the plants and keep the beans off the ground.",
     "Fertilize the beans every 2-3 weeks with a balanced fertilizer, or with a side dressing of compost or well-rotted manure.",
     "Beans are usually ready to harvest in about 55-65 days, when the pods are plump and the seeds inside are fully developed. Pick regularly to keep the plants producing."
+  ],
+  Chives: [
+    "Chives are a hardy herb that can be grown in full sun to partial shade. They are adaptable to a variety of soils as long as they are well-draining.",
+    "Chives can be started from seed or from nursery-grown plants. If starting from seed, sow seeds in pots or seed trays, and then transplant into the garden once they are established.",
+    "Space the chive plants about 6-8 inches apart in a well-drained garden bed or container.",
+    "Chives prefer a slightly acidic to neutral soil pH (6.0-7.0). If necessary, amend the soil with compost or other organic matter to improve fertility and drainage.",
+    "Water the chives regularly, being careful not to overwater or let the soil dry out completely.",
+    "Chives are relatively low maintenance and do not require regular fertilization. If desired, you can side-dress with compost or well-rotted manure in the spring.",
+    "Cut back the chives regularly to encourage new growth and to prevent the plants from becoming woody and unproductive.",
+    "Chives can be harvested year-round, but be sure to leave at least a few inches of growth on the plants so they can continue to grow."
   ]
+
 }
