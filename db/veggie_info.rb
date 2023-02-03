@@ -90,11 +90,20 @@ VEGGIE_INFO = {
     "Okra is usually ready to harvest in 50-60 days, when the pods are still young and tender."
   ],
   Pumpkins: [
-  "Pumpkins are a warm-season crop that require full sun exposure and fertile, well-drained soil.",
-  "Sow seeds directly in the garden after the last frost date, spacing them about 3-4 feet apart in rows that are 6-8 feet apart.",
-  "Pumpkins prefer soil with a pH between 6.0-7.0. Add compost or well-rotted manure to the soil before planting to improve fertility and drainage.",
-  "Water the pumpkins regularly, providing 1-2 inches of water per week, especially during dry spells. Make sure not to over-water, as this can cause the fruit to split.",
-  "Pumpkins are heavy fruits that will need support, so consider planting them near a trellis or wall, or using slings made from old pantyhose to support the fruit.",
-  "Pumpkins are susceptible to insect pests, such as squash bugs and cucumber beetles, as well as fungal diseases, such as powdery mildew and downy mildew. Keep an eye out for these and take action if necessary to prevent damage to the plants.",
-  "Pumpkins are usually ready to harvest in 90-120 days, when the skin is hard and the stem is dry."
+    "Pumpkins are a warm-season crop that require full sun exposure and fertile, well-drained soil.",
+    "Sow seeds directly in the garden after the last frost date, spacing them about 3-4 feet apart in rows that are 6-8 feet apart.",
+    "Pumpkins prefer soil with a pH between 6.0-7.0. Add compost or well-rotted manure to the soil before planting to improve fertility and drainage.",
+    "Water the pumpkins regularly, providing 1-2 inches of water per week, especially during dry spells. Make sure not to over-water, as this can cause the fruit to split.",
+    "Pumpkins are heavy fruits that will need support, so consider planting them near a trellis or wall, or using slings made from old pantyhose to support the fruit.",
+    "Pumpkins are susceptible to insect pests, such as squash bugs and cucumber beetles, as well as fungal diseases, such as powdery mildew and downy mildew. Keep an eye out for these and take action if necessary to prevent damage to the plants.",
+    "Pumpkins are usually ready to harvest in 90-120 days, when the skin is hard and the stem is dry."
+  ],
+  Radishes: [
+    "Radishes are a cool-season crop that can be planted in spring or fall in Melbourne.",
+    "Sow seeds directly in the garden, spacing them about 1-2 inches apart in rows that are 12-18 inches apart.",
+    "Radishes prefer soil that is fertile, well-drained, and slightly acidic, with a pH between 6.0-6.8.",
+    "Water the radishes regularly, providing 1-2 inches of water per week, especially during dry spells. Make sure not to over-water, as this can cause the roots to become watery and tasteless.",
+    "Radishes are a fast-growing crop, and will usually be ready to harvest in 21-30 days, depending on the variety.",
+    "Radishes are susceptible to a few insect pests, such as aphids and cutworms, as well as a few fungal diseases, such as clubroot and blackleg. Keep an eye out for these and take action if necessary to prevent damage to the plants."
+  ]
 }
