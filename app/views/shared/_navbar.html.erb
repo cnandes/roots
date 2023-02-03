@@ -41,7 +41,7 @@
             <%= link_to "History", history_path, class: "nav-link" %>
           </li>
           <div class="m-2">
-            <li class="nav-item dropdown sun">
+            <li data-weather-target="icon" class="nav-item dropdown sun">
               <%= image_tag "root-st.png", class: "avatar dropdown-toggle ml-2",style: "height:42px",
                   id: "navbarDropdown2", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <div class="dropdown-menu rounded-4 dropdown-menu-end shadow border-0" aria-labelledby="navbarDropdown2">
@@ -53,7 +53,7 @@
             </li>
           </div>
           <div class="m-2">
-            <li class="nav-item">
+            <li class="nav-item" style="min-width: 53px;">
               <h4 data-weather-target="temp"></h4>
             </li>
           </div>
