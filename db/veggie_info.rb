@@ -99,7 +99,7 @@ VEGGIE_INFO = {
     "Pumpkins are usually ready to harvest in 90-120 days, when the skin is hard and the stem is dry."
   ],
   Radishes: [
-    # "Radishes are a cool-season crop that can be planted in spring or fall in Melbourne.",
+    # "Radishes are a cool-season crop that can be planted in spring or fall in Melbourne.", conflicts with summer classification
     "Sow seeds directly in the garden, spacing them about 1-2 inches apart in rows that are 12-18 inches apart.",
     "Radishes prefer soil that is fertile, well-drained, and slightly acidic, with a pH between 6.0-6.8.",
     "Water the radishes regularly, providing 1-2 inches of water per week, especially during dry spells. Make sure not to over-water, as this can cause the roots to become watery and tasteless.",
