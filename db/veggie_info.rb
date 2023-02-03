@@ -79,6 +79,16 @@ VEGGIE_INFO = {
     "To control weeds and retain moisture, mulch the area around the corn plants with straw, leaves, or grass clippings.",
     "Corn is susceptible to a variety of pests and diseases, including corn borers, earwigs, and corn smut. Keep an eye out for these and take action if necessary to prevent damage to the plants.",
     "Corn is usually ready to harvest in about 75-100 days, when the ears are plump and the kernels are full and milky."
+  ],
+  Okras: [
+    "Okra is a warm-season crop that requires full sun exposure and fertile, well-drained soil.",
+    "Sow seeds in the garden after the last frost date, spacing them about 2-3 feet apart in rows that are 3-4 feet apart.",
+    "Okra prefers soil with a pH between 6.0-7.0. Add compost or well-rotted manure to the soil before planting to improve fertility and drainage.",
+    "Water the okra regularly, providing 1-2 inches of water per week, especially during dry spells.",
+    "Okra can be tall plants, so it is important to provide support for the stems, such as stakes or cages, to prevent them from falling over.",
+    "Okra is susceptible to insect pests, such as aphids and grasshoppers, as well as fungal diseases, such as powdery mildew and verticillium wilt. Keep an eye out for these and take action if necessary to prevent damage to the plants.",
+    "Okra is usually ready to harvest in 50-60 days, when the pods are still young and tender.",
+    "Okra is a staple in many cuisines and can be enjoyed cooked or pickled."
   ]
 
 }
