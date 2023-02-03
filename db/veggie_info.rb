@@ -31,7 +31,7 @@ VEGGIE_INFO = {
     "Keep an eye out for pests and diseases, common problem in carrots include carrot fly and root rot.",
     "Carrots prefer a soil pH of 6-7."
   ],
-  :"Sweet Potatoes" => [
+  'Sweet Potatoes': [
     "Plant sweet potato slips, which are rooted stem cuttings, in a sunny location with well-draining soil.",
     "Sweet potatoes prefer a soil pH of 6-7.",
     "Keep an eye out for pests and diseases, common problem in sweet potatoes include root rot, and nematodes.",
@@ -47,5 +47,17 @@ VEGGIE_INFO = {
     "Keep the soil consistently moist but not waterlogged. A good way to ensure this is to mulch around the base of the plants to help retain moisture in the soil.",
     "Onions are light feeders, so they don't require a lot of fertilizer. But if you choose to use it, use a well-balanced fertilizer, or a side dressing of compost or well-rotted manure.",
     "Keep an eye out for pests and diseases, common problem in onions include onion maggots, thrips, and downy mildew."
+  ],
+  Beans: [
+    "Beans are a warm-season crop, they prefer temperatures between 60-85°F.",
+    "Choose a location with full sun exposure and well-draining soil, till the soil to a depth of at least 6 inches",
+    "Beans are nitrogen-fixing plants, which means they can improve soil fertility.",
+    "When planting, space seeds 2-3 inches apart, and cover with 1-2 inches of soil. Rows should be spaced 18-24 inches apart.",
+    "Water the beans regularly, being careful not to overwater or let the soil dry out completely.",
+    "If desired, you can add a trellis or stake for the beans to climb, this will help support the plants and keep the beans off the ground.",
+    "Keep an eye out for pests and diseases, such as bean beetles, aphids, and mosaic virus.",
+    "If desired, you can add a trellis or stake for the beans to climb, this will help support the plants and keep the beans off the ground.",
+    "Fertilize the beans every 2-3 weeks with a balanced fertilizer, or with a side dressing of compost or well-rotted manure.",
+    "Beans are usually ready to harvest in about 55-65 days, when the pods are plump and the seeds inside are fully developed. Pick regularly to keep the plants producing."
   ]
 }
