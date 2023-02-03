@@ -114,6 +114,13 @@ VEGGIE_INFO = {
     "Rockmelons are heavy fruits that will need support, so consider planting them near a trellis or wall, or using slings made from old pantyhose to support the fruit.",
     "Rockmelons are susceptible to insect pests, such as squash bugs and cucumber beetles, as well as fungal diseases, such as powdery mildew and downy mildew. Keep an eye out for these and take action if necessary to prevent damage to the plants.",
     "Rockmelons are usually ready to harvest in 70-85 days, when the skin turns from green to a tan or yellow color."
+  ],
+  Swedes: [
+    "Swedes are a cool-season crop that can be planted in late summer or early autumn in Melbourne.",
+    "Sow seeds directly in the garden, spacing them about 4-6 inches apart in rows that are 18-24 inches apart.",
+    "Swedes prefer soil that is fertile, well-drained, and slightly acidic, with a pH between 6.0-7.0.",
+    "Water the swedes regularly, providing 1-2 inches of water per week, especially during dry spells. Make sure not to over-water, as this can cause the roots to become watery and tasteless.",
+    "Swedes are a slow-growing crop, and will usually be ready to harvest in 100-120 days, depending on the variety.",
+    "Swedes are hardy crops that are resistant to most pests and diseases. However, they can be susceptible to clubroot, a soil-borne disease that affects the roots."
   ]
-
 }
