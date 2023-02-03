@@ -17,7 +17,7 @@ export default class extends Controller {
   displayWeatherData(data) {
     console.log(data);
     console.log(data.weather[0].main)
-    this.tempTarget.innerHTML = `${Math.round((data.main.temp - 273.15))}°C`;
+    this.tempTarget.innerHTML = `<h4>${Math.round((data.main.temp - 273.15))}</h4><h6>°C</h6>`;
     // complete on another branch, will update background image of avatar nav icon
     // this.iconTarget.classList.add(data.weather[0].main)
   }
