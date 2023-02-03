@@ -87,8 +87,14 @@ VEGGIE_INFO = {
     "Water the okra regularly, providing 1-2 inches of water per week, especially during dry spells.",
     "Okra can be tall plants, so it is important to provide support for the stems, such as stakes or cages, to prevent them from falling over.",
     "Okra is susceptible to insect pests, such as aphids and grasshoppers, as well as fungal diseases, such as powdery mildew and verticillium wilt. Keep an eye out for these and take action if necessary to prevent damage to the plants.",
-    "Okra is usually ready to harvest in 50-60 days, when the pods are still young and tender.",
-    "Okra is a staple in many cuisines and can be enjoyed cooked or pickled."
-  ]
-
+    "Okra is usually ready to harvest in 50-60 days, when the pods are still young and tender."
+  ],
+  Pumpkins: [
+  "Pumpkins are a warm-season crop that require full sun exposure and fertile, well-drained soil.",
+  "Sow seeds directly in the garden after the last frost date, spacing them about 3-4 feet apart in rows that are 6-8 feet apart.",
+  "Pumpkins prefer soil with a pH between 6.0-7.0. Add compost or well-rotted manure to the soil before planting to improve fertility and drainage.",
+  "Water the pumpkins regularly, providing 1-2 inches of water per week, especially during dry spells. Make sure not to over-water, as this can cause the fruit to split.",
+  "Pumpkins are heavy fruits that will need support, so consider planting them near a trellis or wall, or using slings made from old pantyhose to support the fruit.",
+  "Pumpkins are susceptible to insect pests, such as squash bugs and cucumber beetles, as well as fungal diseases, such as powdery mildew and downy mildew. Keep an eye out for these and take action if necessary to prevent damage to the plants.",
+  "Pumpkins are usually ready to harvest in 90-120 days, when the skin is hard and the stem is dry."
 }
