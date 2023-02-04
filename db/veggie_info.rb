@@ -1,4 +1,5 @@
 VEGGIE_INFO = {
+  # Summer Veggies
   Tomatoes: [
     "Tomatoes can be planted in Melbourne right through summer, although tomatoes planted in summer will have a shorter growing window.",
     "Tomatoes prefer rich, well-drained soil with high levels of organic matter, though they will grow in almost any soil type",
@@ -122,5 +123,108 @@ VEGGIE_INFO = {
     "Water the swedes regularly, providing 1-2 inches of water per week, especially during dry spells. Make sure not to over-water, as this can cause the roots to become watery and tasteless.",
     "Swedes are a slow-growing crop, and will usually be ready to harvest in 100-120 days, depending on the variety.",
     "Swedes are hardy crops that are resistant to most pests and diseases. However, they can be susceptible to clubroot, a soil-borne disease that affects the roots."
+  ],
+  # Autumn Veggies
+  Broccolis: [
+    "Broccoli is a cool-season crop that grows best in temperatures between 60-65°F.",
+    "Plant seeds or seedlings about 18-24 inches apart in fertile, well-drained soil.",
+    "Broccoli requires consistent moisture and a moderate amount of fertilizer. Water regularly and add a balanced fertilizer every 2-3 weeks.",
+    "Broccoli is a heavy feeder and will benefit from the addition of compost or well-rotted manure.",
+    "To extend the harvest season, consider planting a few seeds every few weeks so you have a continuous supply of fresh broccoli.",
+    "Broccoli is prone to aphids, caterpillars, and clubroot, among other pests and diseases. Keep an eye out for these issues and treat promptly if necessary.",
+    "Harvest broccoli when the head is firm, green, and before the buds start to open and yellow."
+  ],
+  'Brussel Sprouts': [
+    "Brussels Sprouts are a cool-season crop that grow best in temperatures between 60-65°F.",
+    "Plant seeds or seedlings about 18-24 inches apart in fertile, well-drained soil.",
+    "Brussels Sprouts require consistent moisture and a moderate amount of fertilizer. Water regularly and add a balanced fertilizer every 2-3 weeks.",
+    "Brussels Sprouts grow best in full sun but will tolerate some shade.",
+    "To extend the harvest season, consider planting a few seeds every few weeks so you have a continuous supply of fresh Brussels Sprouts.",
+    "Brussels Sprouts are prone to aphids, caterpillars, and clubroot, among other pests and diseases. Keep an eye out for these issues and treat promptly if necessary.",
+    "Harvest Brussels Sprouts when they are firm and green, usually about 100-120 days after planting."
+  ],
+  Cauliflowers: [
+    "Cauliflower is a cool-season crop that grows best in temperatures between 60-65°F.",
+    "Plant seeds or seedlings about 18-24 inches apart in fertile, well-drained soil.",
+    "Cauliflower requires consistent moisture and a moderate amount of fertilizer. Water regularly and add a balanced fertilizer every 2-3 weeks.",
+    "Cauliflower heads grow best in full sun but will tolerate some shade.",
+    "To extend the harvest season, consider planting a few seeds every few weeks so you have a continuous supply of fresh cauliflower.",
+    "Cauliflower is prone to aphids, caterpillars, and clubroot, among other pests and diseases. Keep an eye out for these issues and treat promptly if necessary."
+  ],
+  'Fennel Bulbs': [
+    "Fennel bulbs require full sun to grow properly, so select a location that gets at least 6 hours of direct sunlight a day.",
+    "Fennel grows best in a well-drained soil with a pH of 6.0 to 7.0. To improve soil drainage, you can add compost or well-rotted manure before planting.",
+    "Fennel bulbs can be planted in the spring or early autumn, depending on your climate. In Melbourne, it's best to plant in early autumn to take advantage of the cooler temperatures and longer daylight hours.",
+    "Space fennel bulbs 8 to 12 inches apart, with the wider spacing for taller varieties. The plants will grow to about 2 to 3 feet tall.",
+    "Fennel requires consistent watering, especially during dry spells, to keep the soil evenly moist. Avoid over-watering, as this can lead to root rot.",
+    "Fennel bulbs are ready to harvest when they reach 2 to 3 inches in diameter. To harvest, simply pull up the plant and cut the bulb off at the base.",
+    "Fennel is relatively pest-free, but can be susceptible to aphids, slugs and snails. Regularly inspecting the plants and removing any pests by hand can help keep them at bay."
+  ],
+  Leeks: [
+    "Choose a sunny location with well-drained soil and amend the soil with compost or well-rotted manure before planting.",
+    "Plant leek seeds or seedlings in early spring or late summer. Space the plants 10-15 cm apart in rows that are 30-40 cm apart.",
+    "Water the plants regularly to keep the soil evenly moist, but not waterlogged. This will help the leeks to form sturdy, flavorful bulbs.",
+    "Mulch around the plants to help conserve moisture and suppress weeds.",
+    "Fertilize the plants with a balanced, slow-release fertilizer every 4-6 weeks during the growing season.",
+    "To prevent the leeks from falling over, mound soil up around the stems as they grow. This will also help to blanch the stems and keep them tender and mild-flavored.",
+    "Harvest leeks when the bulbs are large enough to use, typically around 4-8 months after planting, depending on the variety and growing conditions."
+  ],
+  Lettuces: [
+    "Choose a sunny location with well-drained soil for planting. Lettuces can also tolerate partial shade.",
+    "Prepare the soil by incorporating compost or well-rotted manure to improve the fertility and structure.",
+    "Sow lettuce seeds directly in the garden or start seedlings indoors and transplant them when they have 4-6 true leaves. Space the seedlings 20-30 cm apart in rows that are 30-40 cm apart.",
+    "Water the lettuce regularly, especially during dry spells, to keep the soil evenly moist. Over-watering can cause the lettuce to bolt (go to seed) or rot.",
+    "Fertilize the lettuce with a balanced, slow-release fertilizer every 4-6 weeks during the growing season.",
+    "Mulch the soil around the lettuce to conserve moisture and suppress weeds.",
+    "Harvest lettuce leaves as soon as they are big enough to use. Pick the outer leaves first and let the inner leaves continue to grow. You can also harvest the whole head of lettuce when it is mature.",
+    "To extend the harvest, plant lettuce seeds every 4-6 weeks for a continuous supply of fresh greens. Lettuces also grow well in containers if you don't have a garden."
+  ],
+  'Mustard Greens': [
+    "Choose a sunny location with well-drained soil for planting. Mustard greens can also tolerate partial shade.",
+    "Prepare the soil by incorporating compost or well-rotted manure to improve the fertility and structure.",
+    "Sow mustard green seeds directly in the garden or start seedlings indoors and transplant them when they have 4-6 true leaves. Space the seedlings 20-30 cm apart in rows that are 30-40 cm apart.",
+    "Water the mustard greens regularly, especially during dry spells, to keep the soil evenly moist. Over-watering can cause the mustard greens to bolt (go to seed) or rot.",
+    "Fertilize the mustard greens with a balanced, slow-release fertilizer every 4-6 weeks during the growing season.",
+    "Mulch the soil around the mustard greens to conserve moisture and suppress weeds.",
+    "Harvest the mustard greens when they are big enough to use. Pick the outer leaves first and let the inner leaves continue to grow. You can also harvest the whole plant when it is mature.",
+    "To extend the harvest, plant mustard green seeds every 4-6 weeks for a continuous supply of fresh greens. Mustard greens also grow well in containers if you don't have a garden."],
+  Parsnips: [
+    "Choose a sunny spot with well-draining soil for planting parsnips.",
+    "Sow seeds directly into the ground in late spring or early summer, about 2 cm deep and 10 cm apart.",
+    "Keep the soil consistently moist but not waterlogged.",
+    "Thin seedlings to about 20-30 cm apart when they are about 10 cm tall to give each plant enough space to grow.",
+    "Mulch around the base of the plants to conserve moisture and suppress weeds.",
+    "Parsnips take several months to mature, so be patient and don't harvest until they have had a chance to reach full size.",
+    "To harvest, simply pull up the parsnips by the green tops and gently twist to break them free from the soil.",
+    "Store harvested parsnips in a cool, dark place to keep them fresh for several weeks."
+  ],
+  Shallots: [
+    "Choose a sunny spot with well-draining soil for planting shallots.",
+    "Plant bulbs about 5 cm deep and 10 cm apart in late spring or early summer.",
+    "Water regularly to keep the soil consistently moist, but avoid over-watering to prevent rotting.",
+    "Apply a layer of mulch around the base of the plants to suppress weeds and conserve moisture.",
+    "Shallots take several months to mature, so be patient and don't harvest until they are ready.",
+    "To harvest, gently pull up the shallots by the green tops.",
+    "Store harvested shallots in a cool, dark place to keep them fresh for several months."
+  ],
+  'Sugar Snap Peas': [
+    "Sugar snap peas are a cool-season crop, so plant them in early spring or late autumn.",
+    "Choose a sunny spot with rich, well-drained soil for planting.",
+    "Plant seeds directly in the ground about 2.5 cm deep and 5 cm apart.",
+    "Keep the soil consistently moist, but avoid over-watering to prevent root rot.",
+    "Provide support for the plants to climb on, such as a trellis, fence, or stake.",
+    "Harvest sugar snap peas regularly, picking the pods when they are plump and bright green.",
+    "Keep the plants picked to encourage continued production throughout the season.",
+    "If the weather turns hot, provide shade or protect the plants from the heat to prevent damage."
+  ],
+  Womboks: [
+    "Womboks are a cool-season crop, so plant them in early spring or late autumn.",
+    "Choose a sunny spot with rich, well-drained soil for planting.",
+    "Sow seeds directly in the ground about 2.5 cm deep and 30 cm apart.",
+    "Keep the soil consistently moist, but avoid over-watering to prevent root rot.",
+    "Fertilize the soil with a balanced fertilizer before planting and regularly throughout the growing season.",
+    "Remove any yellowing leaves to keep the plants healthy and encourage new growth.",
+    "Harvest womboks when they are firm and crisp, usually after about 60-80 days.",
+    "To harvest, cut the heads off at the base, leaving the roots in the ground for regrowth."
   ]
 }
