@@ -32,7 +32,7 @@
   <%# <div class="main-card-container"> %>
     <% if @gardens %>
     <!-- ------------------------------- Display Garden Cards -------------------------------- -->
-      <% @gardens.each do |garden| %>
+      <% @gardens.sort.each do |garden| %>
         <%= render "garden", garden: garden %>
       <% end %>
     <% else %>
