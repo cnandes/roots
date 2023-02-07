@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   get 'history', to: 'pages#history', as: :history
 
   resources :gardens, only: %i[create index show edit update destroy] do
-    resources :beds, only: %i[new create show]
+    resources :beds, only: %i[new create show edit update]
   end
 
-  resources :beds, only: %i[edit update destroy] do
+  resources :beds, only: %i[ destroy] do
     resources :crops, only: %i[create]
   end
   resources :crops, only: %i[update destroy] do
