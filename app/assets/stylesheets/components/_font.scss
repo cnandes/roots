@@ -1,6 +1,6 @@
 h1 {
   font-family: 'Margin';
-  color: #5a8231ca;
+  // color: #5a8231ca;
 
   .modal-title {
     font-family: 'Margin';
@@ -36,6 +36,10 @@ button {
 h2{
   letter-spacing: .02rem;
   color: #3c3c3cd9;
+  a {
+    text-decoration: none;
+    color: #3c3c3cd9;
+  }
 }
 h5{
   letter-spacing: .02rem;
