@@ -6,6 +6,27 @@
         <h2><%= link_to garden.name, garden_path(garden) %></h2>
       </div>
 
+      <!-- ------------------------------- edit garden modal -------------------------------- -->
+      <div class="modal fade" id="editgardenmodal<%= garden.id %>" aria-hidden="true" aria-labelledby="editgardenmodal<%= garden.id %>" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content rounded-4">
+            <div class="modal-header">
+              <h2 class="modal-title fs-5" id="editgardenmodal<%= garden.id %>">Edit Garden</h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <div class="row">
+                  <!-- ------------------------------- edit garden form -------------------------------- -->
+                  <%= render "form", garden: garden %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
       <%# Menu button %>
       <div class="btn-group dropdown">
         <button type="button" class="btn btn-light" data-bs-toggle="dropdown" aria-expanded="false">
@@ -23,7 +44,8 @@
 
           <%# ------------- Edit Button ------------- %>
           <li>
-            <%= link_to ('<i class="fa-solid fa-binoculars"></i>').html_safe + " Edit Garden", edit_garden_path(garden), class: "btn btn-light" %>
+            <a class="btn btn-light" data-bs-toggle="modal" href="#editgardenmodal<%= garden.id %>" role="button"><i class="fa-solid fa-binoculars"></i> Edit Garden</a>
+            <%# <%= link_to ('<i class="fa-solid fa-binoculars"></i>').html_safe + " Edit Garden", edit_garden_path(garden), class: "btn btn-light" %>
           </li>
 
           <%# ------------- Delete Garden Button ------------- %>

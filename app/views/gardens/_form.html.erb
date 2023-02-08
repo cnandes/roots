@@ -1,5 +1,5 @@
-<%=turbo_frame_tag dom_id(@garden, :new_garden_form) do %>
-  <%= simple_form_for (@garden), data: {controller: "turboform"} do |f| %>
+<%=turbo_frame_tag dom_id(garden, :new_garden_form) do %>
+  <%= simple_form_for (garden), data: {controller: "turboform"} do |f| %>
 
       <div class="form-input">
         <%= f.input :name, input_html: { class: "rounded-4" } %>
