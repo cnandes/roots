@@ -226,5 +226,80 @@ VEGGIE_INFO = {
     "Remove any yellowing leaves to keep the plants healthy and encourage new growth.",
     "Harvest womboks when they are firm and crisp, usually after about 60-80 days.",
     "To harvest, cut the heads off at the base, leaving the roots in the ground for regrowth."
+  ],
+  # Winter Veggies
+  Asparagus: [
+    "Choose a sunny location with well-draining soil.",
+    "Start with 1-year-old crowns or 2-year-old roots.",
+    "Plant crowns or roots about 15 cm deep and 50 cm apart in rows 1.5 m apart.",
+    "Mulch the bed to conserve moisture and suppress weeds.",
+    "Harvest asparagus spears in the 3rd or 4th year after planting, once the plants have become established."
+  ],
+  Beetroots: [
+    "Choose a sunny spot with fertile, well-drained soil.",
+    "Sow seeds directly in the garden in late spring or early summer.",
+    "Space seedlings about 5 cm apart, and thin to 15-20 cm as they grow.",
+    "Keep the soil consistently moist, and mulch to conserve moisture.",
+    "Harvest beetroots when they are 5-7 cm in diameter."
+  ],
+  'Broad Beans': [
+    "Choose a sunny spot with fertile, well-drained soil.",
+    "Sow seeds directly in the garden in late summer or early autumn.",
+    "Space seeds about 15 cm apart, and thin to 30-45 cm as they grow.",
+    "Provide support for the plants, especially in windy conditions.",
+    "Harvest broad beans when the pods are full and plump."
+  ],
+  Cabbages: [
+    "Plant cabbage seeds or seedlings in early spring, or in autumn for a winter crop.",
+    "Choose a location with well-drained soil and full sun to partial shade.",
+    "Space cabbage plants about 18-24 inches apart, with 24-30 inches between rows.",
+    "Mulch the soil around the plants to conserve moisture, suppress weeds and regulate soil temperature.",
+    "Water regularly and consistently, especially during dry spells, to prevent the formation of small, tough heads.",
+    "Fertilize cabbages every 2-3 weeks with a balanced, slow-release fertilizer.",
+    "Watch out for pests and diseases, such as aphids, caterpillars, and clubroot."
+  ],
+  'Garlic Bulbs': [
+    "Plant garlic bulbs in early spring, 4-6 weeks before the last frost date.",
+    "Choose a location with well-drained soil and full sun.",
+    "Break apart the garlic bulbs into individual cloves, leaving the papery covering intact.",
+    "Plant the garlic cloves about 2-4 inches deep, with 4-6 inches between each clove and 12-18 inches between rows.",
+    "Mulch the soil around the garlic with organic matter to conserve moisture, suppress weeds and regulate soil temperature.",
+    "Water regularly, especially during dry spells, to prevent the bulbs from drying out and splitting.",
+    "Fertilize the garlic with compost or a balanced organic fertilizer every 4-6 weeks.",
+    "Harvest garlic bulbs when the leaves begin to yellow and wilt, usually in late summer or early autumn."
+  ],
+  Peas: [
+    "Plant pea seeds in early spring, as soon as the soil can be worked.",
+    "Choose a location with well-drained soil and full sun to partial shade.",
+    "Sow pea seeds about 1 inch deep and 2-3 inches apart, with 18-24 inches between rows.",
+    "Provide pea plants with a trellis, netting or support for climbing, especially for tall varieties.",
+    "Mulch the soil around the pea plants to conserve moisture, suppress weeds and regulate soil temperature.",
+    "Water regularly and consistently, especially during dry spells.",
+    "Fertilize pea plants with a balanced, slow-release fertilizer every 4-6 weeks.",
+    "Harvest pea pods when they are plump and filled with well-formed peas, usually in mid- to late spring."
+  ],
+  Potatoes: [
+    "Choose a well-drained, fertile soil with a pH between 4.8 and 5.5.",
+    "Plant seed potatoes in spring when the soil has warmed to around 10°C.",
+    "Space them 40-60cm apart and cover them with 10-15cm of soil.",
+    "Keep the soil consistently moist but not waterlogged.",
+    "Once the plants have reached 15-20cm tall, mound soil up around the stems to cover the lower leaves, this will encourage the formation of new tubers.",
+    "Harvest when the plants begin to yellow and die back."
+  ],
+  'Snow Peas': [
+    "Snow peas grow best in cooler weather, so plant them in spring or autumn.",
+    "Choose a sunny, well-drained location and amend the soil with compost or well-rotted manure.",
+    "Plant seeds 2-3cm deep and about 5cm apart.",
+    "Keep the soil consistently moist, but not waterlogged.",
+    "Support the plants with stakes or a trellis to keep the stems upright.",
+    "Harvest the pods when they are young and tender, before the peas inside have developed."
+  ],
+  'Spinach leaves': [
+    "Spinach grows best in cooler weather, so plant it in early spring or autumn.",
+    "Choose a sunny or partially shaded location with well-drained soil.",
+    "amend the soil with compost or well-rotted manure to improve fertility.",
+    "Sow seeds thinly and cover with a light layer of soil.",
+    "Keep the soil consistently moist, but not waterlogged.",
+    "Harvest the leaves as needed, starting with the outer leaves first and leaving the inner leaves to continue growing."
   ]
 }
