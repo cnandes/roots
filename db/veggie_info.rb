@@ -301,5 +301,92 @@ VEGGIE_INFO = {
     "Sow seeds thinly and cover with a light layer of soil.",
     "Keep the soil consistently moist, but not waterlogged.",
     "Harvest the leaves as needed, starting with the outer leaves first and leaving the inner leaves to continue growing."
+  ],
+  # Spring Veggies
+  Artichokes: [
+    "Choose a location that receives full sun and well-drained soil",
+    "Space artichoke plants 3 to 4 feet apart",
+    "Mulch soil around the plants to conserve moisture and suppress weeds",
+    "Provide consistent water to prevent stress to the plants",
+    "Harvest the artichokes when the buds are plump and before the petals start to open"
+  ],
+  Capsicums: [
+    "Choose a location that receives full sun and well-drained soil",
+    "Space capsicum plants 18 to 24 inches apart",
+    "Mulch soil around the plants to conserve moisture and suppress weeds",
+    "Provide consistent water to prevent stress to the plants",
+    "Fertilize regularly with a balanced fertilizer",
+    "Harvest capsicums when they are firm and fully colored"
+  ],
+  Celeries: [
+    "Choose a location with partial shade and well-drained soil",
+    "Space celery plants 8 to 10 inches apart",
+    "Keep soil consistently moist to prevent stress to the plants",
+    "Fertilize regularly with a balanced fertilizer",
+    "Harvest celeries when the stalks are firm and well-formed."
+  ],
+  Cucumbers: [
+    "Plant cucumber seeds directly in the garden after the last frost date, or start them indoors a few weeks before.",
+    "Choose a sunny location with well-drained soil.",
+    "Provide support for the vines, such as a trellis or fence.",
+    "Water regularly, especially during dry spells.",
+    "Apply a balanced fertilizer every 2-3 weeks."
+  ],
+  Eggplants: [
+    "Plant eggplant seeds indoors 4-6 weeks before the last frost date, or purchase seedlings.",
+    "Transplant to the garden when the seedlings are 6-8 weeks old.",
+    "Choose a sunny location with well-drained soil.",
+    "Provide support for the plants, such as a stake or cage.",
+    "Water regularly, especially during dry spells.",
+    "Apply a balanced fertilizer every 2-3 weeks."
+  ],
+  'Jerusalem Artichokes': [
+    "Plant Jerusalem artichoke tubers in spring or autumn in well-drained soil.",
+    "Choose a sunny location with fertile soil.",
+    "Space the tubers 8-12 inches apart, with 4-6 feet between rows.",
+    "Water regularly, especially during dry spells.",
+    "Provide support for the tall stems, such as a cage or stake."
+  ],
+  'Rhubarb (crowns)': [
+    "Rhubarb is a hardy perennial vegetable that is best planted in early spring.",
+    "Choose a location that gets full sun and has well-drained soil.",
+    "Plant the crowns about 2-3 feet apart and cover with soil.",
+    "Water the plants regularly, especially during dry periods, to keep the soil consistently moist.",
+    "Harvest the stalks by pulling gently from the base once they reach a good size."
+  ],
+  'Spring Onions': [
+    "Spring onions can be grown year-round in temperate climates and can be planted from seed or from sets.",
+    "Choose a location that gets full sun and has well-drained soil.",
+    "Sow the seeds about 1/4 inch deep and about an inch apart.",
+    "Thin the seedlings to about 4 inches apart once they have reached about 2 inches tall.",
+    "Water the plants regularly, especially during dry periods, to keep the soil consistently moist."
+  ],
+  Squashes: [
+    "Squashes are warm-season vegetables that are best planted after the last frost.",
+    "Choose a location that gets full sun and has well-drained soil.",
+    "Plant the seeds about 1 inch deep and about 4-6 feet apart.",
+    "Water the plants regularly, especially during dry periods, to keep the soil consistently moist.",
+    "Provide support for the vines as they grow and prune back any yellow or wilting leaves."
+  ],
+  Sunflowers: [
+    "Sunflowers are native to North America and prefer full sun (6-8 hours of direct sunlight per day)",
+    "Plant in well-drained soil, with a pH between 6.0 and 7.5",
+    "Space plants about 1 to 2 feet apart",
+    "Water regularly to keep soil moist, but not water-logged",
+    "Provide support for tall varieties as they can become top-heavy and fall over"
+  ],
+  Turnips: [
+    "Turnips prefer well-drained soil with a pH between 6.0 and 7.0",
+    "Plant seeds in early spring or in late summer for a fall harvest",
+    "Space plants about 3 to 4 inches apart in rows that are 12 to 18 inches apart",
+    "Thin seedlings to 4 to 6 inches apart once they are 2 to 3 inches tall",
+    "Water regularly to keep soil moist, but not water-logged"
+  ],
+  Zucchinis: [
+    "Zucchinis prefer well-drained soil with a pH between 6.0 and 7.0",
+    "Plant seeds in well-prepared soil, after all danger of frost has passed",
+    "Space plants about 2 to 3 feet apart in rows that are 4 to 6 feet apart",
+    "Water regularly, providing at least 1 inch of water per week, especially during dry spells",
+    "Harvest zucchinis when they are 6 to 8 inches long and still firm to the touch"
   ]
 }
