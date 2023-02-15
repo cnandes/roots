@@ -8,6 +8,7 @@
 
 require 'faker'
 require_relative 'veggie_names'
+require_relative 'veggie_info'
 
 # if User.all.empty?
 #   puts "Please create at least one User via the sign up page."
@@ -69,6 +70,15 @@ veggie_array.each do |vege|
   Veggie.create(name: vege, season: "Spring")
 end
 puts "Added spring veggies to the database 🌱"
+
+puts "Populating Veggie Tips"
+tips_hash = VEGGIE_INFO
+tips_hash.each do |veggie, tips|
+  tips.each do |tip|
+    VeggieTip.create(tip:, veggie_id: Veggie.where(name: veggie)[0].id)
+  end
+end
+puts "Added veggie tips to database 💡"
 
 # Add Crops to Beds
 # puts "Planting Crops in Beds"
