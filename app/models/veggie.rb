@@ -1,5 +1,6 @@
 class Veggie < ApplicationRecord
   has_many :beds, through: :crops
+  has_many :veggie_tips, dependent: :destroy
 
   validates :name, presence: true, uniqueness: true
   validates :season, presence: true, inclusion: {
