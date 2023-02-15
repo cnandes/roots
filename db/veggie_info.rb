@@ -226,5 +226,167 @@ VEGGIE_INFO = {
     "Remove any yellowing leaves to keep the plants healthy and encourage new growth.",
     "Harvest womboks when they are firm and crisp, usually after about 60-80 days.",
     "To harvest, cut the heads off at the base, leaving the roots in the ground for regrowth."
+  ],
+  # Winter Veggies
+  Asparagus: [
+    "Choose a sunny location with well-draining soil.",
+    "Start with 1-year-old crowns or 2-year-old roots.",
+    "Plant crowns or roots about 15 cm deep and 50 cm apart in rows 1.5 m apart.",
+    "Mulch the bed to conserve moisture and suppress weeds.",
+    "Harvest asparagus spears in the 3rd or 4th year after planting, once the plants have become established."
+  ],
+  Beetroots: [
+    "Choose a sunny spot with fertile, well-drained soil.",
+    "Sow seeds directly in the garden in late spring or early summer.",
+    "Space seedlings about 5 cm apart, and thin to 15-20 cm as they grow.",
+    "Keep the soil consistently moist, and mulch to conserve moisture.",
+    "Harvest beetroots when they are 5-7 cm in diameter."
+  ],
+  'Broad Beans': [
+    "Choose a sunny spot with fertile, well-drained soil.",
+    "Sow seeds directly in the garden in late summer or early autumn.",
+    "Space seeds about 15 cm apart, and thin to 30-45 cm as they grow.",
+    "Provide support for the plants, especially in windy conditions.",
+    "Harvest broad beans when the pods are full and plump."
+  ],
+  Cabbages: [
+    "Plant cabbage seeds or seedlings in early spring, or in autumn for a winter crop.",
+    "Choose a location with well-drained soil and full sun to partial shade.",
+    "Space cabbage plants about 18-24 inches apart, with 24-30 inches between rows.",
+    "Mulch the soil around the plants to conserve moisture, suppress weeds and regulate soil temperature.",
+    "Water regularly and consistently, especially during dry spells, to prevent the formation of small, tough heads.",
+    "Fertilize cabbages every 2-3 weeks with a balanced, slow-release fertilizer.",
+    "Watch out for pests and diseases, such as aphids, caterpillars, and clubroot."
+  ],
+  'Garlic Bulbs': [
+    "Plant garlic bulbs in early spring, 4-6 weeks before the last frost date.",
+    "Choose a location with well-drained soil and full sun.",
+    "Break apart the garlic bulbs into individual cloves, leaving the papery covering intact.",
+    "Plant the garlic cloves about 2-4 inches deep, with 4-6 inches between each clove and 12-18 inches between rows.",
+    "Mulch the soil around the garlic with organic matter to conserve moisture, suppress weeds and regulate soil temperature.",
+    "Water regularly, especially during dry spells, to prevent the bulbs from drying out and splitting.",
+    "Fertilize the garlic with compost or a balanced organic fertilizer every 4-6 weeks.",
+    "Harvest garlic bulbs when the leaves begin to yellow and wilt, usually in late summer or early autumn."
+  ],
+  Peas: [
+    "Plant pea seeds in early spring, as soon as the soil can be worked.",
+    "Choose a location with well-drained soil and full sun to partial shade.",
+    "Sow pea seeds about 1 inch deep and 2-3 inches apart, with 18-24 inches between rows.",
+    "Provide pea plants with a trellis, netting or support for climbing, especially for tall varieties.",
+    "Mulch the soil around the pea plants to conserve moisture, suppress weeds and regulate soil temperature.",
+    "Water regularly and consistently, especially during dry spells.",
+    "Fertilize pea plants with a balanced, slow-release fertilizer every 4-6 weeks.",
+    "Harvest pea pods when they are plump and filled with well-formed peas, usually in mid- to late spring."
+  ],
+  Potatoes: [
+    "Choose a well-drained, fertile soil with a pH between 4.8 and 5.5.",
+    "Plant seed potatoes in spring when the soil has warmed to around 10°C.",
+    "Space them 40-60cm apart and cover them with 10-15cm of soil.",
+    "Keep the soil consistently moist but not waterlogged.",
+    "Once the plants have reached 15-20cm tall, mound soil up around the stems to cover the lower leaves, this will encourage the formation of new tubers.",
+    "Harvest when the plants begin to yellow and die back."
+  ],
+  'Snow Peas': [
+    "Snow peas grow best in cooler weather, so plant them in spring or autumn.",
+    "Choose a sunny, well-drained location and amend the soil with compost or well-rotted manure.",
+    "Plant seeds 2-3cm deep and about 5cm apart.",
+    "Keep the soil consistently moist, but not waterlogged.",
+    "Support the plants with stakes or a trellis to keep the stems upright.",
+    "Harvest the pods when they are young and tender, before the peas inside have developed."
+  ],
+  'Spinach leaves': [
+    "Spinach grows best in cooler weather, so plant it in early spring or autumn.",
+    "Choose a sunny or partially shaded location with well-drained soil.",
+    "amend the soil with compost or well-rotted manure to improve fertility.",
+    "Sow seeds thinly and cover with a light layer of soil.",
+    "Keep the soil consistently moist, but not waterlogged.",
+    "Harvest the leaves as needed, starting with the outer leaves first and leaving the inner leaves to continue growing."
+  ],
+  # Spring Veggies
+  Artichokes: [
+    "Choose a location that receives full sun and well-drained soil",
+    "Space artichoke plants 3 to 4 feet apart",
+    "Mulch soil around the plants to conserve moisture and suppress weeds",
+    "Provide consistent water to prevent stress to the plants",
+    "Harvest the artichokes when the buds are plump and before the petals start to open"
+  ],
+  Capsicums: [
+    "Choose a location that receives full sun and well-drained soil",
+    "Space capsicum plants 18 to 24 inches apart",
+    "Mulch soil around the plants to conserve moisture and suppress weeds",
+    "Provide consistent water to prevent stress to the plants",
+    "Fertilize regularly with a balanced fertilizer",
+    "Harvest capsicums when they are firm and fully colored"
+  ],
+  Celeries: [
+    "Choose a location with partial shade and well-drained soil",
+    "Space celery plants 8 to 10 inches apart",
+    "Keep soil consistently moist to prevent stress to the plants",
+    "Fertilize regularly with a balanced fertilizer",
+    "Harvest celeries when the stalks are firm and well-formed."
+  ],
+  Cucumbers: [
+    "Plant cucumber seeds directly in the garden after the last frost date, or start them indoors a few weeks before.",
+    "Choose a sunny location with well-drained soil.",
+    "Provide support for the vines, such as a trellis or fence.",
+    "Water regularly, especially during dry spells.",
+    "Apply a balanced fertilizer every 2-3 weeks."
+  ],
+  Eggplants: [
+    "Plant eggplant seeds indoors 4-6 weeks before the last frost date, or purchase seedlings.",
+    "Transplant to the garden when the seedlings are 6-8 weeks old.",
+    "Choose a sunny location with well-drained soil.",
+    "Provide support for the plants, such as a stake or cage.",
+    "Water regularly, especially during dry spells.",
+    "Apply a balanced fertilizer every 2-3 weeks."
+  ],
+  'Jerusalem Artichokes': [
+    "Plant Jerusalem artichoke tubers in spring or autumn in well-drained soil.",
+    "Choose a sunny location with fertile soil.",
+    "Space the tubers 8-12 inches apart, with 4-6 feet between rows.",
+    "Water regularly, especially during dry spells.",
+    "Provide support for the tall stems, such as a cage or stake."
+  ],
+  'Rhubarb (crowns)': [
+    "Rhubarb is a hardy perennial vegetable that is best planted in early spring.",
+    "Choose a location that gets full sun and has well-drained soil.",
+    "Plant the crowns about 2-3 feet apart and cover with soil.",
+    "Water the plants regularly, especially during dry periods, to keep the soil consistently moist.",
+    "Harvest the stalks by pulling gently from the base once they reach a good size."
+  ],
+  'Spring Onions': [
+    "Spring onions can be grown year-round in temperate climates and can be planted from seed or from sets.",
+    "Choose a location that gets full sun and has well-drained soil.",
+    "Sow the seeds about 1/4 inch deep and about an inch apart.",
+    "Thin the seedlings to about 4 inches apart once they have reached about 2 inches tall.",
+    "Water the plants regularly, especially during dry periods, to keep the soil consistently moist."
+  ],
+  Squashes: [
+    "Squashes are warm-season vegetables that are best planted after the last frost.",
+    "Choose a location that gets full sun and has well-drained soil.",
+    "Plant the seeds about 1 inch deep and about 4-6 feet apart.",
+    "Water the plants regularly, especially during dry periods, to keep the soil consistently moist.",
+    "Provide support for the vines as they grow and prune back any yellow or wilting leaves."
+  ],
+  Sunflowers: [
+    "Sunflowers are native to North America and prefer full sun (6-8 hours of direct sunlight per day)",
+    "Plant in well-drained soil, with a pH between 6.0 and 7.5",
+    "Space plants about 1 to 2 feet apart",
+    "Water regularly to keep soil moist, but not water-logged",
+    "Provide support for tall varieties as they can become top-heavy and fall over"
+  ],
+  Turnips: [
+    "Turnips prefer well-drained soil with a pH between 6.0 and 7.0",
+    "Plant seeds in early spring or in late summer for a fall harvest",
+    "Space plants about 3 to 4 inches apart in rows that are 12 to 18 inches apart",
+    "Thin seedlings to 4 to 6 inches apart once they are 2 to 3 inches tall",
+    "Water regularly to keep soil moist, but not water-logged"
+  ],
+  Zucchinis: [
+    "Zucchinis prefer well-drained soil with a pH between 6.0 and 7.0",
+    "Plant seeds in well-prepared soil, after all danger of frost has passed",
+    "Space plants about 2 to 3 feet apart in rows that are 4 to 6 feet apart",
+    "Water regularly, providing at least 1 inch of water per week, especially during dry spells",
+    "Harvest zucchinis when they are 6 to 8 inches long and still firm to the touch"
   ]
 }
