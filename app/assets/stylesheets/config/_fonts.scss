@@ -4,21 +4,26 @@
 
 // Define fonts for body and headers
 $body-font:'Nunito', sans-serif;
-$headers-font:'Margin';
+$headers-font: "Jazz_Ball";
 
 @font-face {
-  font-family: "Hairage";
-  src: font-url('Hairage.ttf') format('truetype');
+  font-family: "Jazz_Ball";
+  src: font-url('Jazz_Ball.ttf');
 }
 
 @font-face {
-  font-family: "Molen";
-  src: font-url('Molen_Surplus.ttf') format('truetype');
+  font-family: "Psycho";
+  src: font-url('Psycho.otf');
 }
 
 @font-face {
   font-family: "Margin";
   src: font-url('Margin.otf');
+}
+
+@font-face {
+  font-family: "Magilio";
+  src: font-url('Magilio.otf')
 }
 
 // To use a font file (.woff) uncomment following lines
