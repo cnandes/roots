@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_17_082746) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_15_112106) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -58,6 +58,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_17_082746) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "veggie_tips", force: :cascade do |t|
+    t.string "tip"
+    t.bigint "veggie_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["veggie_id"], name: "index_veggie_tips_on_veggie_id"
+  end
+
   create_table "veggies", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -69,4 +77,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_17_082746) do
   add_foreign_key "crops", "beds"
   add_foreign_key "crops", "veggies", column: "veggie_id"
   add_foreign_key "gardens", "users"
+  add_foreign_key "veggie_tips", "veggies", column: "veggie_id"
 end
